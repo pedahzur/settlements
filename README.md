@@ -28,3 +28,7 @@ The two sources are complementary (Peace Now for long/current West Bank populati
 ## Caveats
 
 East Jerusalem: CBS does not report annexed East Jerusalem as a separate geographic area; the 11 East Jerusalem entities (B'Tselem only, 1996–2017) are not directly comparable to West Bank settlement counts.
+
+## GIS layers (`gis_osm_*`)
+
+OpenStreetMap vector extracts (roads, traffic, transport, water, waterways) in ESRI Shapefile format (`.shp/.dbf/.prj/.shx/.cpg`). Source: data extracts from the OpenStreetMap project, hosted and updated daily by **Geofabrik GmbH** as a free open-data download service. Used for the geographic context of the settlement panel (e.g. distance-from-Green-Line and road-network analysis).
