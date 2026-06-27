@@ -1,0 +1,7 @@
+# Consolidation pipeline dependencies.
+pandas>=2.0
+openpyxl>=3.1
+requests>=2.31
+# Optional (built-up-area / OCHA polygon step). Installed separately in CI so a
+# build failure there does not block the rest of the pipeline:
+#   geopandas>=0.14, shapely>=2.0, pyogrio

@@ -1,0 +1,71 @@
+name: Weekly settlements data refresh
+
+# Rebuilds the consolidated settlement database from all sources and republishes
+# the interactive map to GitHub Pages. Runs weekly; also runnable on demand.
+#
+# Note: scheduled runs use the workflow file on the repository's DEFAULT branch,
+# so this fires automatically only once merged to main. Use "Run workflow"
+# (workflow_dispatch) to trigger it from any branch in the meantime.
+
+on:
+  schedule:
+    - cron: "17 4 * * 1"          # every Monday 04:17 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: settlements-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write                  # commit refreshed data back to the branch
+  pages: write                     # deploy to GitHub Pages
+  id-token: write                  # required by deploy-pages
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          # geopandas enables the built-up-area (OCHA polygon) step; optional.
+          pip install "geopandas>=0.14" "shapely>=2.0" pyogrio || \
+            echo "geopandas unavailable; built-up step will be skipped"
+
+      - name: Run consolidation pipeline
+        run: python -m pipeline.run_all
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name  "settlements-bot"
+          git config user.email "actions@github.com"
+          git add db/ web/data/ || true
+          if git diff --cached --quiet; then
+            echo "No data changes this run."
+          else
+            git commit -m "data: weekly refresh of consolidated settlement DB [skip ci]"
+            git push
+          fi
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+
+  deploy:
+    needs: refresh
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
