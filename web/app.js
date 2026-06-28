@@ -24,6 +24,23 @@ const TYPE_COLORS = { Settlement:"#2171b5", Outpost:"#e6550d",
                       "East Jerusalem":"#6a51a3", "Hebron Enclave":"#ce1256",
                       "Settlement (B'Tselem-only)":"#3182bd" };
 
+// Knesset ballot slate-letter codes (otiyot) -> party name. Tuned for the recent
+// cycles (K21-25), which is what the popup's latest-election value almost always
+// is; a few letters were reused by different parties in older elections, so the
+// raw code is always shown alongside the name.
+const PARTY_NAMES = {
+  "מחל": "Likud", "פה": "Yesh Atid", "ט": "Religious Zionism",
+  "כן": "National Unity", "שס": "Shas", "ג": "United Torah Judaism",
+  "ל": "Yisrael Beiteinu", "אמת": "Labor", "מרצ": "Meretz",
+  "עם": "Ra'am (UAL)", "ום": "Hadash-Ta'al", "ד": "Balad",
+  "טב": "Jewish Home", "ב": "Yamina", "מ": "New Hope", "כף": "Otzma Yehudit",
+};
+const partyLabel = code => {
+  if (!code) return null;
+  const n = PARTY_NAMES[code];
+  return n ? `${n} (${code})` : code;
+};
+
 // Metric registry: how to read a value and how to colour it.
 const METRICS = {
   latest_pop:      { label: "Population (latest)", kind: "seq", ramp: RAMP_BLUE,
@@ -103,7 +120,7 @@ function popupHtml(p) {
   add("Growth (CAGR)", p.cagr_pct != null ? p.cagr_pct.toFixed(1) + "%" : null);
   add("Trajectory", p.trajectory);
   add("Right-bloc vote", p.right_bloc_share != null ? (p.right_bloc_share*100).toFixed(1) + "% (K" + p.latest_knesset + ")" : null);
-  add("Leading party", p.top_party);
+  add("Leading party", partyLabel(p.top_party));
   add("Socio-econ cluster", p.se_cluster != null ? `${p.se_cluster} (rank ${p.se_rank ?? "—"})` : null);
   add("Built-up area", p.built_up_dunams != null ? p.built_up_dunams.toLocaleString() + " dunams" : null);
   return `<b>${p.name_en || ""}</b> ${p.name_he ? `<span dir="rtl">${p.name_he}</span>` : ""}` +
