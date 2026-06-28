@@ -64,6 +64,12 @@ def _resource_list() -> list[dict]:
         return []
 
 
+def _norm(c) -> str:
+    """Strip gershayim/quotes/spaces from a Hebrew header for robust matching."""
+    return (str(c).replace('"', "").replace("'", "")
+            .replace("״", "").replace("׳", "").strip())
+
+
 def _has_hebrew_locality_col(df: pd.DataFrame) -> bool:
     return any("שוב" in str(c) and "שם" in str(c) for c in df.columns)
 
@@ -151,12 +157,15 @@ def _load_resource(res: dict, knesset: int) -> pd.DataFrame | None:
 def _aggregate_one(df: pd.DataFrame, knesset: int) -> pd.DataFrame:
     df = df.rename(columns=lambda c: str(c).strip())
     cols = list(df.columns)
-    has = lambda c, *subs: all(s in c for s in subs)  # noqa: E731
+    # Normalise away gershayim/quotes (e.g. בז״ב, מח״ל) before matching so the
+    # eligible-voters column isn't mistaken for a party slate.
+    nm = {c: _norm(c) for c in cols}
+    has = lambda c, *subs: all(s in nm[c] for s in subs)  # noqa: E731
     name_col = next((c for c in cols if has(c, "שם", "שוב")), None)
     semel_col = next((c for c in cols if has(c, "סמל", "שוב")), None)
-    valid_col = next((c for c in cols if "כשר" in c), None)
-    bzb_col = next((c for c in cols if c == "בזב" or has(c, "בעלי", "זכות")), None)
-    voters_col = next((c for c in cols if "מצביע" in c), None)
+    valid_col = next((c for c in cols if "כשר" in nm[c]), None)
+    bzb_col = next((c for c in cols if nm[c] == "בזב" or has(c, "בעלי", "זכות")), None)
+    voters_col = next((c for c in cols if "מצביע" in nm[c]), None)
     if not (name_col and valid_col):
         log(f"WARN K{knesset}: missing core columns; headers={cols[:8]}")
         return pd.DataFrame()
@@ -166,10 +175,11 @@ def _aggregate_one(df: pd.DataFrame, knesset: int) -> pd.DataFrame:
     for c in (valid_col, bzb_col, voters_col):
         if c:
             df[c] = pd.to_numeric(df[c], errors="coerce")
+    meta_norm = {_norm(m) for m in _META_COLS}
     party_cols = []
-    skip = _META_COLS | {name_col, semel_col, valid_col, bzb_col, voters_col}
+    skip = {name_col, semel_col, valid_col, bzb_col, voters_col}
     for c in cols:
-        if c in skip or str(c).startswith("_"):
+        if c in skip or str(c).startswith("_") or nm[c] in meta_norm:
             continue
         s = pd.to_numeric(df[c], errors="coerce")
         if s.notna().mean() > 0.5:
@@ -187,7 +197,7 @@ def _aggregate_one(df: pd.DataFrame, knesset: int) -> pd.DataFrame:
         agg[voters_col] = "sum"
     g = df.groupby(group_keys, dropna=False).agg(agg).reset_index()
 
-    right = [c for c in party_cols if c in config.RIGHT_BLOC_SLATES]
+    right = [c for c in party_cols if nm[c] in config.RIGHT_BLOC_SLATES]
     g["right_bloc_votes"] = g[right].sum(axis=1) if right else 0.0
     # NaN-safe ratios: cast to plain float64 and divide by valid-where-positive
     # (avoid Series.astype(float) on nullable NA, which raises in pandas 3.0).
