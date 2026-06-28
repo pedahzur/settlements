@@ -63,24 +63,52 @@ def _resource_list() -> list[dict]:
         return []
 
 
+def _has_hebrew_locality_col(df: pd.DataFrame) -> bool:
+    return any("שוב" in str(c) and "שם" in str(c) for c in df.columns)
+
+
 def _read_csv(body: bytes) -> pd.DataFrame | None:
-    for enc in ("utf-8-sig", "cp1255", "utf-8"):
+    """Parse a CEC ballot CSV. These are Windows-1255 (Hebrew) with occasional
+    ragged rows, so we try several encodings, validate that real Hebrew headers
+    came through (guarding against silent mojibake), and fall back to a tolerant
+    parse. The specific failures are logged so a bad file is diagnosable."""
+    errs: list[str] = []
+    fallback = None
+    attempts = [
+        {"encoding": "cp1255"},
+        {"encoding": "iso-8859-8"},
+        {"encoding": "utf-8-sig"},
+        {"encoding": "cp1255", "encoding_errors": "replace", "on_bad_lines": "skip"},
+        {"encoding": "cp1255", "encoding_errors": "replace", "on_bad_lines": "skip",
+         "engine": "python", "sep": None},
+    ]
+    for kw in attempts:
         try:
-            return pd.read_csv(io.BytesIO(body), encoding=enc)
-        except Exception:  # noqa: BLE001
+            df = pd.read_csv(io.BytesIO(body), **kw)
+        except Exception as exc:  # noqa: BLE001
+            errs.append(f"{kw.get('encoding')}:{type(exc).__name__}")
             continue
+        if _has_hebrew_locality_col(df):
+            return df
+        if fallback is None and df.shape[1] > 3:
+            fallback = df
+    if fallback is not None:
+        return fallback
+    log(f"    parse attempts failed: {errs}")
     return None
 
 
 def _aggregate_one(df: pd.DataFrame, knesset: int) -> pd.DataFrame:
     df = df.rename(columns=lambda c: str(c).strip())
-    name_col = next((c for c in df.columns if c in ("שם ישוב", "שם_ישוב")), None)
-    semel_col = next((c for c in df.columns if c in ("סמל ישוב", "סמל_ישוב")), None)
-    valid_col = next((c for c in df.columns if c == "כשרים"), None)
-    bzb_col = next((c for c in df.columns if c == "בזב"), None)
-    voters_col = next((c for c in df.columns if c == "מצביעים"), None)
+    cols = list(df.columns)
+    has = lambda c, *subs: all(s in c for s in subs)  # noqa: E731
+    name_col = next((c for c in cols if has(c, "שם", "שוב")), None)
+    semel_col = next((c for c in cols if has(c, "סמל", "שוב")), None)
+    valid_col = next((c for c in cols if "כשר" in c), None)
+    bzb_col = next((c for c in cols if c == "בזב" or has(c, "בעלי", "זכות")), None)
+    voters_col = next((c for c in cols if "מצביע" in c), None)
     if not (name_col and valid_col):
-        log(f"WARN K{knesset}: missing core columns")
+        log(f"WARN K{knesset}: missing core columns; headers={cols[:8]}")
         return pd.DataFrame()
 
     party_cols = [c for c in df.columns if c not in _META_COLS
