@@ -19,13 +19,14 @@ import re
 import pandas as pd
 
 from . import config
-from .utils import he_key, http_get, log
+from .utils import ckan_datastore_search, he_key, http_get, log
 
 # Metadata (non-party) columns in the CEC ballot files, by Hebrew header.
 _META_COLS = {
     "שם ישוב", "שם_ישוב", "סמל ישוב", "סמל_ישוב", "קלפי", "ברזל",
     "בזב", "מצביעים", "פסולים", "כשרים", "ריכוז", "שופט", "ת. עדכון",
     "סמל ועדה", "ועדה",
+    "_id", "_full_text", "rank",   # CKAN datastore internal columns
 }
 # Detect the Knesset number from a resource's name/url/notes. The data.gov.il
 # resources are named inconsistently (Hebrew "הכנסת ה-25", English "knesset_25",
@@ -98,6 +99,55 @@ def _read_csv(body: bytes) -> pd.DataFrame | None:
     return None
 
 
+def _datastore_records(rid: str, knesset: int) -> list[dict]:
+    """Page through a CKAN datastore resource and return all records.
+
+    This is the reliable path on data.gov.il: the raw file URLs for the CEC
+    ballot resources redirect to a Google sign-in wall, but the datastore API
+    serves the actual rows as JSON.
+    """
+    out: list[dict] = []
+    offset, page = 0, 32000
+    while True:
+        body = http_get(f"{config.DATAGOV_BASE}/datastore_search",
+                        cache=config.RAW / f"votes_k{knesset}_{offset}.json",
+                        params={"resource_id": rid, "limit": page, "offset": offset})
+        if not body:
+            break
+        try:
+            res = json.loads(body)["result"]
+        except Exception:  # noqa: BLE001
+            break
+        recs = res.get("records", [])
+        out.extend(recs)
+        total = res.get("total", len(out))
+        offset += len(recs)
+        if not recs or offset >= total:
+            break
+    return out
+
+
+def _load_resource(res: dict, knesset: int) -> pd.DataFrame | None:
+    """Load one election's ballot table, datastore-first with a file fallback."""
+    rid = res.get("id")
+    if rid:
+        recs = _datastore_records(rid, knesset)
+        if recs:
+            df = pd.DataFrame(recs)
+            if _has_hebrew_locality_col(df) or df.shape[1] > 3:
+                log(f"  K{knesset}: datastore {len(df)} ballot rows")
+                return df
+    url = str(res.get("url", ""))
+    body = http_get(url, cache=config.RAW / f"votes_k{knesset}.csv", binary=True)
+    if not body:
+        return None
+    head = body[:512].lstrip().lower()
+    if head.startswith(b"<!doctype") or b"<html" in head:
+        log(f"  WARN K{knesset}: file download is an HTML auth wall, not CSV")
+        return None
+    return _read_csv(body)
+
+
 def _aggregate_one(df: pd.DataFrame, knesset: int) -> pd.DataFrame:
     df = df.rename(columns=lambda c: str(c).strip())
     cols = list(df.columns)
@@ -111,9 +161,23 @@ def _aggregate_one(df: pd.DataFrame, knesset: int) -> pd.DataFrame:
         log(f"WARN K{knesset}: missing core columns; headers={cols[:8]}")
         return pd.DataFrame()
 
-    party_cols = [c for c in df.columns if c not in _META_COLS
-                  and pd.api.types.is_numeric_dtype(df[c])
-                  and c not in (valid_col, bzb_col, voters_col)]
+    # The CKAN datastore returns values as strings; coerce count/party columns
+    # to numeric (keep a column only if it's mostly numeric => a real tally).
+    for c in (valid_col, bzb_col, voters_col):
+        if c:
+            df[c] = pd.to_numeric(df[c], errors="coerce")
+    party_cols = []
+    skip = _META_COLS | {name_col, semel_col, valid_col, bzb_col, voters_col}
+    for c in cols:
+        if c in skip or str(c).startswith("_"):
+            continue
+        s = pd.to_numeric(df[c], errors="coerce")
+        if s.notna().mean() > 0.5:
+            df[c] = s
+            party_cols.append(c)
+    if not party_cols:
+        log(f"WARN K{knesset}: no numeric party columns")
+        return pd.DataFrame()
     group_keys = [c for c in (semel_col, name_col) if c]
     agg = {c: "sum" for c in party_cols}
     agg[valid_col] = "sum"
@@ -178,14 +242,8 @@ def build() -> pd.DataFrame:
 
     frames = []
     for knesset in sorted(candidates):
-        url = candidates[knesset]["url"]
-        log(f"  fetching K{knesset}: {url}")
-        body = http_get(url, cache=config.RAW / f"votes_k{knesset}.csv", binary=True)
-        if not body:
-            continue
-        df = _read_csv(body)
+        df = _load_resource(candidates[knesset], knesset)
         if df is None or df.empty:
-            log(f"  WARN K{knesset}: could not parse CSV")
             continue
         agg = _aggregate_one(df, knesset)
         if not agg.empty:
