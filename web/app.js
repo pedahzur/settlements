@@ -13,8 +13,13 @@ const RAMP_BLUE = ["#eff3ff","#c6dbef","#9ecae1","#6baed6","#4292c6","#2171b5","
 const RAMP_RED  = ["#fee5d9","#fcae91","#fb6a4a","#de2d26","#a50f15"];
 const DIVERGE   = ["#b2182b","#ef8a62","#fddbc7","#f7f7f7","#d1e5f0","#67a9cf","#2166ac"]; // neg→pos growth
 const SE_RAMP   = ["#762a83","#9970ab","#c2a5cf","#e7d4e8","#d9f0d3","#a6dba0","#5aae61","#1b7837","#00441b","#003d20"]; // cluster 1..10
-const TRAJ_COLORS = { successful:"#1a9850", surviving:"#fee08b", declining:"#d73027",
-                      evacuated:"#777777" };
+// Match by keyword so full labels like "Successful (fast growth)" still colour.
+const TRAJ_RULES = [
+  [/success/i, "#1a9850"], [/surviv/i, "#fee08b"], [/declin/i, "#d73027"],
+  [/evacuat/i, "#777777"], [/east jerusalem/i, "#6a51a3"], [/insufficient/i, "#c7ccd1"],
+];
+const trajColor = v => { if (!v) return "#bbb";
+  for (const [re, c] of TRAJ_RULES) if (re.test(v)) return c; return "#bbb"; };
 const TYPE_COLORS = { Settlement:"#2171b5", Outpost:"#e6550d",
                       "East Jerusalem":"#6a51a3", "Hebron Enclave":"#ce1256",
                       "Settlement (B'Tselem-only)":"#3182bd" };
@@ -26,7 +31,7 @@ const METRICS = {
   cagr_pct:        { label: "Growth rate (CAGR %)", kind: "div", ramp: DIVERGE,
                      get: p => p.cagr_pct, fmt: v => v?.toFixed(1) + "%" },
   trajectory:      { label: "Trajectory typology", kind: "cat",
-                     get: p => p.trajectory, color: v => TRAJ_COLORS[v] || "#bbb" },
+                     get: p => p.trajectory, color: trajColor },
   type:            { label: "Settlement type", kind: "cat",
                      get: p => p.type, color: v => TYPE_COLORS[v] || "#bbb" },
   dist_gl_km:      { label: "Distance from Green Line (km)", kind: "seq", ramp: RAMP_RED,
