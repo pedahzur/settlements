@@ -188,12 +188,14 @@ def _aggregate_one(df: pd.DataFrame, knesset: int) -> pd.DataFrame:
     g = df.groupby(group_keys, dropna=False).agg(agg).reset_index()
 
     right = [c for c in party_cols if c in config.RIGHT_BLOC_SLATES]
-    g["right_bloc_votes"] = g[right].sum(axis=1) if right else 0
-    valid = g[valid_col].replace(0, pd.NA)
-    g["right_bloc_share"] = (g["right_bloc_votes"] / valid).astype(float)
-    # Winning slate per locality.
+    g["right_bloc_votes"] = g[right].sum(axis=1) if right else 0.0
+    # NaN-safe ratios: cast to plain float64 and divide by valid-where-positive
+    # (avoid Series.astype(float) on nullable NA, which raises in pandas 3.0).
+    valid = pd.to_numeric(g[valid_col], errors="coerce")
+    valid_nz = valid.where(valid > 0)
+    g["right_bloc_share"] = pd.to_numeric(g["right_bloc_votes"], errors="coerce") / valid_nz
     g["top_party"] = g[party_cols].idxmax(axis=1)
-    g["top_party_share"] = (g[party_cols].max(axis=1) / valid).astype(float)
+    g["top_party_share"] = g[party_cols].max(axis=1) / valid_nz
 
     out = pd.DataFrame({
         "knesset": knesset,
@@ -208,7 +210,8 @@ def _aggregate_one(df: pd.DataFrame, knesset: int) -> pd.DataFrame:
         "top_party_share": g["top_party_share"],
     })
     if voters_col and bzb_col:
-        out["turnout"] = (g[voters_col] / g[bzb_col].replace(0, pd.NA)).astype(float)
+        bzb = pd.to_numeric(g[bzb_col], errors="coerce")
+        out["turnout"] = pd.to_numeric(g[voters_col], errors="coerce") / bzb.where(bzb > 0)
     out["he_join_key"] = out["name_he"].map(he_key)
     return out
 
