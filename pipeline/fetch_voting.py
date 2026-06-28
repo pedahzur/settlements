@@ -27,7 +27,27 @@ _META_COLS = {
     "בזב", "מצביעים", "פסולים", "כשרים", "ריכוז", "שופט", "ת. עדכון",
     "סמל ועדה", "ועדה",
 }
-_KNESSET_RE = re.compile(r"(?:knesset|כנסת)[^0-9]*([12][0-9])", re.I)
+# Detect the Knesset number from a resource's name/url/notes. The data.gov.il
+# resources are named inconsistently (Hebrew "הכנסת ה-25", English "knesset_25",
+# bare filenames like "expb25.csv" or ".../Knesset_25/expb.csv"), so we try
+# several signals and validate the number is a plausible Knesset (16-27).
+_KNESSET_PATTERNS = [
+    re.compile(r"(?:knesset|כנסת)\D{0,8}(\d{2})", re.I),  # word + number
+    re.compile(r"\bk[-_ ]?(\d{2})\b", re.I),               # k25 / k-25
+    re.compile(r"(?:^|[^0-9])(1[6-9]|2[0-7])(?:[^0-9]|$)"),  # bare 16-27 token
+]
+
+
+def _detect_knesset(res: dict) -> int | None:
+    text = " ".join(str(res.get(k, "")) for k in ("name", "url", "notes",
+                                                  "description", "id"))
+    for pat in _KNESSET_PATTERNS:
+        m = pat.search(text)
+        if m:
+            n = int(m.group(1))
+            if 16 <= n <= 27:
+                return n
+    return None
 
 
 def _resource_list() -> list[dict]:
@@ -102,35 +122,55 @@ def _aggregate_one(df: pd.DataFrame, knesset: int) -> pd.DataFrame:
 
 
 def build() -> pd.DataFrame:
-    frames = []
-    for res in _resource_list():
+    resources = _resource_list()
+    log(f"voting: votes-knesset package lists {len(resources)} resources")
+    # Pick CSV resources (by declared format OR a .csv url) and tag each with a
+    # detected Knesset number. Keep only the latest CSV per Knesset.
+    candidates: dict[int, dict] = {}
+    for res in resources:
         fmt = str(res.get("format", "")).lower()
-        url = res.get("url", "")
-        name = f"{res.get('name','')} {url}"
-        if fmt != "csv":
+        url = str(res.get("url", ""))
+        is_csv = fmt == "csv" or url.lower().split("?")[0].endswith(".csv")
+        knesset = _detect_knesset(res)
+        if not is_csv or knesset is None:
+            log(f"  skip resource name={res.get('name','')!r} fmt={fmt!r} "
+                f"knesset={knesset}")
             continue
-        m = _KNESSET_RE.search(name)
-        if not m:
-            continue
-        knesset = int(m.group(1))
-        if knesset < 19:        # focus on the modern, per-ballot-box era
-            continue
+        # Prefer per-ballot-box files (expb) when several CSVs share a Knesset.
+        prev = candidates.get(knesset)
+        if prev is None or ("expb" in url.lower() and "expb" not in str(prev.get("url", "")).lower()):
+            candidates[knesset] = res
+
+    if not candidates:
+        log("voting: no usable CSV resources matched (see skip lines above); "
+            "empty table")
+        return pd.DataFrame(columns=["knesset", "name_he", "cbs_semel",
+                                     "valid_votes", "right_bloc_share",
+                                     "top_party", "he_join_key"])
+
+    frames = []
+    for knesset in sorted(candidates):
+        url = candidates[knesset]["url"]
+        log(f"  fetching K{knesset}: {url}")
         body = http_get(url, cache=config.RAW / f"votes_k{knesset}.csv", binary=True)
         if not body:
             continue
         df = _read_csv(body)
         if df is None or df.empty:
+            log(f"  WARN K{knesset}: could not parse CSV")
             continue
-        frames.append(_aggregate_one(df, knesset))
+        agg = _aggregate_one(df, knesset)
+        if not agg.empty:
+            frames.append(agg)
     if not frames:
-        log("voting: no data (likely restricted egress); empty table")
+        log("voting: resources found but none parsed into rows; empty table")
         return pd.DataFrame(columns=["knesset", "name_he", "cbs_semel",
                                      "valid_votes", "right_bloc_share",
                                      "top_party", "he_join_key"])
-    res = pd.concat(frames, ignore_index=True)
-    log(f"voting: {len(res)} locality-election rows across "
-        f"{res['knesset'].nunique()} elections")
-    return res
+    out = pd.concat(frames, ignore_index=True)
+    log(f"voting: {len(out)} locality-election rows across "
+        f"{out['knesset'].nunique()} elections")
+    return out
 
 
 if __name__ == "__main__":
