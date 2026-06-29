@@ -1,2 +1,2 @@
-2026-06-28 01:50 UTC
+2026-06-29 05:58 UTC
 settlements=483 pop_rows=6845 voting_rows=9611 economic_rows=255 expansion_rows=133
