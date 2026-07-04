@@ -1,0 +1,541 @@
+<title>Consensus Without Settlers &#8212; Settlement Demography &amp; the Geography of Access</title>
+<style>
+  :root{
+    --paper:#ECEEEA;
+    --paper-2:#E3E6E1;
+    --ink:#191C1F;
+    --rust:#A64B2A;
+    --teal:#2E5D5A;
+    --sand:#B49A72;
+    --sand-dk:#8A6B3C;
+    --mute:#63685F;
+    --flag:#976A15;
+    --rule:rgba(25,28,31,.14);
+    --rule-2:rgba(25,28,31,.08);
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --sans:"Avenir Next","Avenir","Helvetica Neue",Helvetica,Arial,sans-serif;
+    --measure:39rem;
+  }
+  *{box-sizing:border-box}
+  body{margin:0}
+  .wrap{
+    background:var(--paper);color:var(--ink);
+    font-family:var(--serif);font-size:18px;line-height:1.66;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    padding:clamp(1.4rem,4vw,4rem) clamp(1.1rem,5vw,2rem) 4rem;
+  }
+  .col{max-width:var(--measure);margin:0 auto}
+  .plate{max-width:53rem;margin:0 auto}
+
+  /* masthead */
+  .eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;color:var(--rust);margin:0 0 1.1rem}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.3rem,6.4vw,3.9rem);line-height:1.02;letter-spacing:-.012em;text-wrap:balance;margin:0 0 .5rem}
+  h1 em{font-style:italic;color:var(--rust)}
+  .dek{font-size:clamp(1.08rem,2.4vw,1.3rem);line-height:1.5;color:var(--mute);font-style:italic;text-wrap:pretty;margin:0 0 1.6rem;max-width:37rem}
+  .byline{font-family:var(--sans);font-size:.78rem;letter-spacing:.04em;color:var(--mute);border-top:1px solid var(--rule);padding-top:.9rem;display:flex;flex-wrap:wrap;gap:.35rem 1.1rem}
+  .byline b{color:var(--ink);font-weight:600}
+
+  /* stat bands */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:2.6rem auto;max-width:53rem}
+  .stat{background:var(--paper);padding:1.3rem 1.2rem 1.35rem}
+  .stat .n{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,4.4vw,2.5rem);line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+  .stat .n.rust{color:var(--rust)}
+  .stat .n.teal{color:var(--teal)}
+  .stat .lab{font-family:var(--sans);font-size:.73rem;line-height:1.4;letter-spacing:.01em;color:var(--mute);margin-top:.55rem}
+  .stat .lab b{color:var(--ink);font-weight:600}
+
+  /* prose */
+  .col p{margin:0 0 1.15rem;text-wrap:pretty}
+  .col p.lead:first-letter{font-size:3.1rem;line-height:.8;float:left;padding:.34rem .12rem 0 0;color:var(--rust);font-weight:600}
+  .col p b{font-weight:600}
+  .col p em{font-style:italic}
+
+  h2.part{max-width:53rem;margin:3.8rem auto 1.5rem;padding-bottom:.55rem;border-bottom:2px solid var(--ink);
+    font-family:var(--serif);font-weight:600;font-size:clamp(1.45rem,3.6vw,2rem);letter-spacing:-.012em;
+    display:flex;align-items:baseline;gap:.75rem;flex-wrap:wrap}
+  h2.part .pn{font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.14em;color:var(--rust);text-transform:uppercase}
+
+  .kicker{font-family:var(--sans);font-weight:600;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin:2.6rem 0 .1rem}
+  hr.rule{border:0;border-top:1px solid var(--rule);margin:2.6rem auto;max-width:53rem}
+
+  .pullquote{max-width:47rem;margin:2.6rem auto;font-family:var(--serif);font-style:italic;font-size:clamp(1.25rem,3vw,1.6rem);line-height:1.36;color:var(--ink);text-wrap:balance;border-left:3px solid var(--rust);padding:.2rem 0 .2rem 1.3rem}
+  .pullquote b{font-style:normal;color:var(--rust);font-weight:600}
+
+  /* figures */
+  figure{margin:2.2rem auto;max-width:53rem}
+  .figframe{background:var(--paper);border:1px solid var(--rule);padding:clamp(1rem,3vw,1.7rem)}
+  .fighead{display:flex;align-items:baseline;gap:.7rem;margin-bottom:.2rem;flex-wrap:wrap}
+  .figno{font-family:var(--sans);font-weight:700;font-size:.72rem;letter-spacing:.1em;color:var(--rust);white-space:nowrap}
+  .figtitle{font-family:var(--serif);font-weight:600;font-size:1.15rem;line-height:1.2;letter-spacing:-.005em}
+  figcaption{font-family:var(--sans);font-size:.8rem;line-height:1.5;color:var(--mute);margin-top:1rem;padding-top:.85rem;border-top:1px solid var(--rule-2);max-width:46rem}
+  figcaption b{color:var(--ink);font-weight:600}
+  svg{display:block;width:100%;height:auto;overflow:visible}
+  .legend{display:flex;flex-wrap:wrap;gap:.4rem 1.3rem;font-family:var(--sans);font-size:.82rem;color:var(--ink);margin:.2rem 0 1rem}
+  .legend span{display:inline-flex;align-items:center;gap:.45rem}
+  .swatch{width:1.4rem;height:3px;border-radius:2px;display:inline-block}
+  .swatch.dot{width:.7rem;height:.7rem;border-radius:50%}
+
+  text{font-family:var(--sans)}
+  .axis{fill:var(--mute);font-size:12px}
+  .axis.y{text-anchor:end}
+  .gridline{stroke:var(--rule-2);stroke-width:1}
+  .baseline{stroke:var(--rule);stroke-width:1}
+  .endval{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+
+  .guide{stroke:var(--ink);stroke-width:1;stroke-dasharray:3 3;opacity:0;transition:opacity .12s}
+  .hv-dot{opacity:0;transition:opacity .12s}
+  .readout{position:relative;min-height:1.4rem;font-family:var(--sans);font-size:.85rem;color:var(--ink);margin:.9rem 0 0;padding-top:.85rem;border-top:1px solid var(--rule-2);display:flex;flex-wrap:wrap;gap:.3rem 1.4rem;align-items:baseline}
+  .readout .yr{font-weight:700;font-variant-numeric:tabular-nums;min-width:3.2rem;display:inline-block}
+  .readout .ro-j b{color:var(--rust)} .readout .ro-d b{color:var(--teal)} .readout .ro-gap{color:var(--mute)}
+  .readout b{font-variant-numeric:tabular-nums;font-weight:700}
+  .hint{color:var(--mute);font-style:italic;font-family:var(--serif)}
+
+  /* explorer */
+  .controls{display:flex;flex-wrap:wrap;gap:.9rem 1.4rem;align-items:center;margin-bottom:1.1rem}
+  .cgroup{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}
+  .clabel{font-family:var(--sans);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);font-weight:600;margin-right:.15rem}
+  .chip{font-family:var(--sans);font-size:.8rem;font-weight:500;background:transparent;color:var(--mute);border:1px solid var(--rule);border-radius:100px;padding:.3rem .8rem;cursor:pointer;transition:all .13s}
+  .chip:hover{border-color:var(--ink);color:var(--ink)}
+  .chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .chip:focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+  .chip.sortbtn[aria-pressed="true"]{background:var(--rust);border-color:var(--rust)}
+  .rows{display:flex;flex-direction:column}
+  .row{display:grid;grid-template-columns:1.4rem minmax(7rem,1fr) 3.2rem 8fr 3.4rem;align-items:center;gap:.7rem;padding:.5rem 0;border-top:1px solid var(--rule-2);font-family:var(--sans)}
+  .row.head{border-top:none;padding-bottom:.55rem;font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;color:var(--mute);font-weight:600}
+  .row .rk{font-size:.78rem;color:var(--mute);font-variant-numeric:tabular-nums;text-align:right}
+  .row .nm{font-size:.92rem;font-weight:600;color:var(--ink);line-height:1.2}
+  .row .nm .frm{display:block;font-size:.7rem;font-weight:500;color:var(--mute);letter-spacing:.01em}
+  .row .fy{font-size:.82rem;color:var(--mute);font-variant-numeric:tabular-nums;text-align:right}
+  .row .barcell{display:flex;align-items:center;gap:.55rem}
+  .bartrack{flex:1;height:.62rem;background:var(--paper-2);border-radius:2px;overflow:hidden}
+  .barfill{height:100%;background:var(--rust);border-radius:2px;transition:width .5s cubic-bezier(.22,.61,.36,1)}
+  .barfill.k{background:var(--ink)}
+  .pop{font-size:.82rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;min-width:3rem;text-align:right}
+  .row .cagr{font-size:.84rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;text-align:right}
+  .flagdot{display:inline-block;width:.42rem;height:.42rem;border-radius:50%;background:var(--flag);margin-left:.3rem;vertical-align:middle}
+  .expl-note{font-family:var(--sans);font-size:.78rem;color:var(--mute);margin-top:1rem;line-height:1.5}
+
+  /* economy card */
+  .econ{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+  @media (max-width:980px){.econ{grid-template-columns:repeat(2,1fr)}}
+  .econ .cell{background:var(--paper);padding:1.25rem 1.15rem 1.35rem;display:flex;flex-direction:column;gap:.65rem}
+  .econ .ehead{font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+  .econ .ehead.wb{color:var(--rust)} .econ .ehead.jv{color:var(--sand-dk)} .econ .ehead.gl{color:var(--teal)}
+  .econ .big{font-family:var(--serif);font-weight:600;font-size:1.7rem;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+  .econ .biglab{font-family:var(--sans);font-size:.72rem;line-height:1.4;color:var(--mute);margin-top:-.25rem}
+  .econ .biglab b{color:var(--ink);font-weight:600}
+  .econ .eline{font-family:var(--sans);font-size:.78rem;line-height:1.4;color:var(--ink)}
+  .econ .eline b{font-weight:700}
+  .econ .etag{margin-top:auto;font-family:var(--sans);font-size:.71rem;line-height:1.35;color:var(--mute);border-top:1px solid var(--rule-2);padding-top:.6rem}
+  .econ .etag b{color:var(--ink);font-weight:600}
+  .caveat{max-width:53rem;margin:1rem auto 0;font-family:var(--sans);font-size:.78rem;line-height:1.55;color:var(--mute);background:var(--paper-2);border-left:3px solid var(--sand);padding:.85rem 1rem}
+  .caveat b{color:var(--ink);font-weight:600}
+
+  /* parity */
+  .parity{max-width:53rem;margin:2.6rem auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:clamp(1rem,4vw,2.5rem);background:var(--paper);border:1px solid var(--rule);padding:1.8rem clamp(1.1rem,4vw,2.4rem)}
+  .parity .side{display:flex;flex-direction:column}
+  .parity .side.j{text-align:right}
+  .parity .pn{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,4.6vw,2.5rem);line-height:1;font-variant-numeric:tabular-nums}
+  .parity .side.j .pn{color:var(--rust)} .parity .side.d .pn{color:var(--teal)}
+  .parity .pl{font-family:var(--sans);font-size:.72rem;letter-spacing:.03em;color:var(--mute);margin-top:.5rem;line-height:1.35}
+  .parity .vs{font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--mute)}
+
+  footer.src{max-width:53rem;margin:3rem auto 0;padding-top:1.2rem;border-top:1px solid var(--rule);font-family:var(--sans);font-size:.76rem;line-height:1.6;color:var(--mute)}
+  footer.src b{color:var(--ink);font-weight:600}
+  footer.src p{margin:0 0 .6rem}
+
+  @media (max-width:600px){
+    .stats,.econ{grid-template-columns:1fr}
+    .row{grid-template-columns:1.2rem minmax(5.5rem,1fr) 6fr 3rem;gap:.5rem}
+    .row .fy,.row.head .fy{display:none}
+    .parity{grid-template-columns:1fr;text-align:center;gap:.5rem}
+    .parity .side.j{text-align:center}
+    .parity .vs{padding:.3rem 0}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<article class="wrap">
+  <header class="col">
+    <p class="eyebrow">Settlement demography &amp; the geography of access &#183; CBS &#183; Peace Now &#183; 2003&#8211;2024</p>
+    <h1>Consensus <em>Without</em> Settlers</h1>
+    <p class="dek">The one arena Israel formally annexed is the slow lane of its settlement enterprise. The reason is not law or ideology but a map &#8212; the settlements that compound sit within a short commute of Tel Aviv and Jerusalem, and the Golan is two hours away.</p>
+    <p class="byline"><span><b>Ami Pedahzur</b></span><span><i>Israel Affairs</i> working figures</span><span>162 localities across three arenas</span></p>
+  </header>
+
+  <section class="stats" aria-label="Headline figures">
+    <div class="stat"><div class="n rust">&#215;1.81</div><div class="lab">Golan Jewish population growth, <b>2003&#8594;2024</b> &#8212; 16,510 to 29,950. West Bank settlements roughly doubled; their urban core compounded far faster.</div></div>
+    <div class="stat"><div class="n">82.5%</div><div class="lab">of <b>all</b> settlers &#8212; Golan, Jordan Valley and West Bank together &#8212; live within <b>35 km</b> of Tel Aviv or Jerusalem. The Golan is nearly the entire far tail.</div></div>
+    <div class="stat"><div class="n teal">&#8776; 1 : 1</div><div class="lab">Near parity on the Golan in 2024: <b>29,950</b> Jewish residents against <b>27,661</b> Druze and Alawite residents in five towns.</div></div>
+  </section>
+
+  <div class="col">
+    <p class="lead">In 1981 Israel extended its law to the Golan Heights; in 2019 the United States recognized the annexation. No other arena of the settlement project carries that political standing. Yet by the measure the project sets for itself &#8212; bodies on the ground &#8212; the Golan is where it has performed the worst. This piece asks why, and finds the answer on a road map.</p>
+  </div>
+
+  <h2 class="part"><span class="pn">Part I</span> The slow lane</h2>
+
+  <div class="col">
+    <p>The Central Bureau of Statistics has published population for every Golan locality each year since 2003. Read across two decades, the file tells a story that legal status and ideology do not predict: the annexed highland grew slowly, its one town slowest of all, while the five Druze and Alawite towns it was meant to demographically overtake held their ground.</p>
+  </div>
+
+  <p class="kicker">Figure 1 &#8212; The crossover</p>
+  <figure class="plate">
+    <div class="figframe">
+      <div class="fighead"><span class="figno">FIG. 1</span><span class="figtitle">Jewish and Druze/Alawite population, Golan Heights, 2003&#8211;2024</span></div>
+      <div class="legend">
+        <span><span class="swatch" style="background:var(--rust)"></span>Jewish localities (33)</span>
+        <span><span class="swatch" style="background:var(--teal)"></span>Druze &amp; Alawite towns (5)</span>
+      </div>
+      <div id="fig1"></div>
+      <div class="readout" id="ro1"><span class="hint">Hover the plot to read any year. In 2003 the Druze and Alawite towns outnumbered the settlers; the lines cross around 2013.</span></div>
+      <figcaption><b>Source:</b> CBS annual localities file, 2003&#8211;2024. The Jewish series climbs steadily but from behind; it overtakes the Druze/Alawite towns only in the mid-2010s and, by 2024, leads by roughly 2,300 &#8212; a margin narrower than a single mid-sized settlement. The 2022&#8211;2023 step reflects post-census revisions.</figcaption>
+    </div>
+  </figure>
+
+  <div class="col">
+    <p>The gap that opened is thin. After annexation, American recognition, and half a century of settlement, the Jewish population passed the pre-1967 Druze and Alawite population only recently, and by a margin &#8212; about <b>2,300 people</b> &#8212; smaller than the town of Katzrin. Why so slow? Because what drives the West Bank is absent here. The settlements that compound &#8212; the ultra-Orthodox cities, the commuter communities &#8212; have no equivalent on the Golan, whose form profile mirrors the Jordan Valley: moshavim and kibbutzim, one town, a handful of community settlements.</p>
+  </div>
+
+  <p class="kicker">Figure 2 &#8212; Growth by arena and form</p>
+  <figure class="plate">
+    <div class="figframe">
+      <div class="fighead"><span class="figno">FIG. 2</span><span class="figtitle">Annual growth rate: Golan sectors vs. West Bank settlement forms</span></div>
+      <div class="legend">
+        <span><span class="swatch dot" style="background:var(--teal)"></span>Golan Heights</span>
+        <span><span class="swatch dot" style="background:var(--rust)"></span>West Bank settlements (median by form)</span>
+      </div>
+      <div id="fig2"></div>
+      <figcaption><b>Compound annual growth, over each series' available window.</b> The Golan's fastest measure &#8212; its Jewish population in aggregate, near 2.9%/yr &#8212; barely clears the West Bank's <em>slowest</em> settlement form. Its town and its Druze/Alawite towns sit at the very bottom. West Bank medians are drawn from the settlements panel (Peace Now / B'Tselem, tracing to CBS).</figcaption>
+    </div>
+  </figure>
+
+  <h2 class="part"><span class="pn">Part II</span> The map decides</h2>
+
+  <div class="col">
+    <p class="lead">Israel has two economic gravity wells: Gush Dan, the Tel Aviv metropolis, and Greater Jerusalem. A settlement's demography turns less on its politics than on its distance &#8212; in driving time &#8212; from one of them. Where a settler can live in the hills and still reach an office in under 45 minutes, settlements fill and compound. Where the commute runs past an hour, they thin into villages.</p>
+    <p>The West Bank blocs sit inside that radius. The ultra-Orthodox cities of Modi'in Illit and Beitar Illit, the commuter suburb of Ma'ale Adumim &#8212; the enterprise's demographic engines &#8212; are 25 to 40 minutes from a major core. The Jordan Valley, though inside the West Bank, lies beyond it. The Golan is not in the conversation.</p>
+  </div>
+
+  <section class="stats" aria-label="Proximity figures">
+    <div class="stat"><div class="n rust">23 <span style="font-size:.5em;font-weight:600">min</span></div><div class="lab">Ma'ale Adumim to Jerusalem &#8212; the West Bank's third-largest settlement is a <b>23-minute</b> drive from a core. Katzrin to Tel Aviv is <b>138</b>.</div></div>
+    <div class="stat"><div class="n">20 <span style="font-size:.5em;font-weight:600">of 21</span></div><div class="lab">settlements over <b>5,000</b> residents sit within 40 km of a metropolis. The single exception is <b>Katzrin</b>, on the Golan.</div></div>
+    <div class="stat"><div class="n teal">6.1%</div><div class="lab">of all settlers live beyond 60 km of a core &#8212; and that entire far tail is the <b>Golan Heights</b>.</div></div>
+  </section>
+
+  <p class="kicker">Figure 3 &#8212; Driving time to the economy</p>
+  <figure class="plate">
+    <div class="figframe">
+      <div class="fighead"><span class="figno">FIG. 3</span><span class="figtitle">Minutes by car to the nearest economic core</span></div>
+      <div class="legend">
+        <span><span class="swatch dot" style="background:var(--rust)"></span>West Bank</span>
+        <span><span class="swatch dot" style="background:var(--sand)"></span>Jordan Valley</span>
+        <span><span class="swatch dot" style="background:var(--teal)"></span>Golan Heights</span>
+      </div>
+      <div id="figTravel"></div>
+      <figcaption><b>Source:</b> road driving times computed by OSRM routing (off-peak, no congestion) from each locality to central Tel Aviv and central Jerusalem; the bar shows the shorter of the two, and the arrow marks which core. The West Bank's demographic anchors sit inside an ordinary commute; the Jordan Valley is an hour-plus to Jerusalem; the Golan is 2&#188;&#8211;2&#189; hours to Tel Aviv &#8212; beyond any daily journey to work.</figcaption>
+    </div>
+  </figure>
+
+  <div class="col">
+    <p>Driving time explains where large settlements can <em>exist</em>; it does not, by itself, set the growth rate of any single village. That distinction is the honest core of the argument. Plot every settlement in all three arenas by its distance to the nearest core against its size, and the pattern is not a slope but a ceiling: proximity does not make a village grow faster &#8212; it decides whether a village can ever become a city.</p>
+  </div>
+
+  <p class="kicker">Figure 4 &#8212; Distance sets the ceiling</p>
+  <figure class="plate">
+    <div class="figframe">
+      <div class="fighead"><span class="figno">FIG. 4</span><span class="figtitle">Distance to the nearest core vs. population, 2024 &#8212; all 162 settlements</span></div>
+      <div class="legend">
+        <span><span class="swatch dot" style="background:var(--rust)"></span>West Bank (105)</span>
+        <span><span class="swatch dot" style="background:var(--sand)"></span>Jordan Valley (24)</span>
+        <span><span class="swatch dot" style="background:var(--teal)"></span>Golan Heights (33)</span>
+      </div>
+      <div id="figScatter"></div>
+      <div class="readout" id="roScatter"><span class="hint">Hover any point for its name, distance and population. Every settlement over ~5,000 sits at the left; the Golan is strung along the far right.</span></div>
+      <figcaption><b>Population (log scale) against straight-line distance to Tel Aviv or Jerusalem, whichever is nearer.</b> The large settlements cluster on the left, inside the commuting band; past ~60 km there is nothing but villages &#8212; and Katzrin, the lone town beyond the range. Distance predicts <em>size</em>, not growth <em>rate</em>: a village-level growth rate barely correlates with distance (r &#8776; 0), because tiny young settlements post high percentages in every arena. What proximity governs is the ceiling on how large a settlement can become. <b>82.5%</b> of all settlers live within 35 km of a core.</figcaption>
+    </div>
+  </figure>
+
+  <div class="pullquote">Proximity doesn't make a village grow faster. It decides whether a village can ever become a <b>city</b> &#8212; and only the West Bank has the geography for it.</div>
+
+  <div class="col">
+    <p>The mechanism behind the map is work. The 2008 Census &#8212; the last to record place of work and industry at the regional-council level &#8212; profiles each council, and on those numbers the three arenas could not look more different.</p>
+  </div>
+
+  <p class="kicker">Figure 5 &#8212; Place of work and economy</p>
+  <figure class="plate">
+    <div class="figframe">
+      <div class="fighead"><span class="figno">FIG. 5</span><span class="figtitle">Four regional councils compared &#8212; 2008 Census place of work</span></div>
+      <div class="legend"><span style="font-family:var(--sans);font-size:.8rem;color:var(--mute)">Each council is &#8805;98% Jewish. The headline figure is the share of employed residents who work <b style="color:var(--ink)">outside their own locality</b>.</span></div>
+      <div class="econ">
+        <div class="cell">
+          <div class="ehead wb">West Bank &#183; Mateh Binyamin</div>
+          <div class="big">74%</div>
+          <div class="biglab">of employed residents work <b>outside their locality</b> &#8212; a commuter council feeding Jerusalem and Gush Dan.</div>
+          <div class="eline">Agriculture: just <b>0.9%</b> of workers &#183; salaried <b>87%</b> &#183; academic occupations <b>21%</b>.</div>
+          <div class="etag"><b>A young dormitory</b> &#183; median age <b>18</b> &#183; 44,200 residents.</div>
+        </div>
+        <div class="cell">
+          <div class="ehead wb">West Bank &#183; Gush Etzion</div>
+          <div class="big">73%</div>
+          <div class="biglab">of employed residents work <b>outside their locality</b> &#8212; the Jerusalem bloc south of the city repeats the pattern.</div>
+          <div class="eline">Agriculture: <b>2.0%</b> of workers &#183; salaried <b>85%</b> &#183; academic occupations <b>24%</b>.</div>
+          <div class="etag"><b>A young dormitory</b> &#183; median age <b>19</b> &#183; 14,200 residents.</div>
+        </div>
+        <div class="cell">
+          <div class="ehead jv">Jordan Valley &#183; Arvot HaYarden</div>
+          <div class="big">53%</div>
+          <div class="biglab">work outside their locality &#8212; but to nearby farms and regional employers, not a metropolis.</div>
+          <div class="eline">Agriculture: <b>19.4%</b> of workers &#183; self-employed <b>21%</b> &#183; academic <b>12%</b>.</div>
+          <div class="etag"><b>An agricultural council</b> &#183; median age <b>26</b> &#183; 3,300 residents.</div>
+        </div>
+        <div class="cell">
+          <div class="ehead gl">Golan &#183; Golan RC</div>
+          <div class="big">48%</div>
+          <div class="biglab">work outside their locality &#8212; the lowest of the four, with no metropolis within reach.</div>
+          <div class="eline">Agriculture: <b>18.9%</b> of workers &#183; self-employed <b>23%</b> &#183; academic <b>12%</b>.</div>
+          <div class="etag"><b>An agricultural council</b> &#183; median age <b>24</b> &#183; 11,900 residents.</div>
+        </div>
+      </div>
+      <figcaption><b>Source:</b> Israel CBS, 2008 Census of Population &#8212; profiles of geographic units, regional-council profiles for Mateh Binyamin, Gush Etzion, Arvot HaYarden and Golan (files <code>mamad_h_073/076/075/071</code>). The 2008 census is the last to record place of work and industry at this resolution. "Work outside locality" counts anyone employed beyond their own settlement, regardless of destination.</figcaption>
+    </div>
+  </figure>
+
+  <div class="caveat"><b>On the numbers.</b> These are the actual 2008-census figures for each council, not estimates &#8212; the contrast <em>is</em> the argument. The two West Bank councils, north and south of Jerusalem, tell one story twice: almost no farmers (0.9% and 2.0%) and roughly three-quarters of the workforce commuting out to salaried jobs. The Golan and the Jordan Valley remain roughly one-fifth agricultural, older, and more self-employed. CBS has published no locality-level place-of-work product since 2008, so this is the most recent comparable reading. A useful corroborant from 2017 (CBS Local Authorities File, via the Jerusalem Institute): about <b>36,300</b> people commute from the West Bank into Jerusalem for work.</div>
+
+  <h2 class="part"><span class="pn">Part III</span> Inside the Golan</h2>
+
+  <div class="col">
+    <p>Return to the annexed highland with the mechanism in hand. The growth that exists in the Jewish sector is real but small, and spread across many tiny bases rather than concentrated in a compounding core. A moshav that went from 47 residents to 770 posts a spectacular rate; it is still a village. Filter the 33 Jewish localities by settlement form, or sort by size against growth, and the pattern reads directly: the largest places grew slowest, and the fastest rates belong to the smallest.</p>
+  </div>
+
+  <p class="kicker">Figure 6 &#8212; The Golan field</p>
+  <figure class="plate">
+    <div class="figframe">
+      <div class="fighead"><span class="figno">FIG. 6</span><span class="figtitle">Golan Jewish localities &#8212; size, form, and growth, 2003&#8211;2024</span></div>
+      <div class="controls">
+        <div class="cgroup" id="formfilter" role="group" aria-label="Filter by settlement form">
+          <span class="clabel">Form</span>
+          <button class="chip" data-form="all" aria-pressed="true">All</button>
+          <button class="chip" data-form="Moshav" aria-pressed="false">Moshav</button>
+          <button class="chip" data-form="Cooperative moshav" aria-pressed="false">Coop. moshav</button>
+          <button class="chip" data-form="Kibbutz" aria-pressed="false">Kibbutz</button>
+          <button class="chip" data-form="Community" aria-pressed="false">Community</button>
+          <button class="chip" data-form="Town" aria-pressed="false">Town</button>
+        </div>
+        <div class="cgroup" id="sortby" role="group" aria-label="Sort order">
+          <span class="clabel">Sort</span>
+          <button class="chip sortbtn" data-sort="pop24" aria-pressed="true">Population 2024</button>
+          <button class="chip sortbtn" data-sort="cagr" aria-pressed="false">Growth rate</button>
+        </div>
+      </div>
+      <div class="rows" id="rows">
+        <div class="row head" aria-hidden="true"><div class="rk">#</div><div class="nm">Locality</div><div class="fy">Est.</div><div class="barcell"><div style="flex:1">Population 2024</div></div><div class="cagr">%/yr</div></div>
+      </div>
+      <div class="expl-note"><span class="flagdot"></span> Currently more than 5% below its own historical peak &#8212; three localities (Natur, Ani'am, Haspin) have already turned down.</div>
+      <figcaption><b>Source:</b> CBS annual localities file, 2003&#8211;2024; founding years and settlement form from the CBS locality registry. Growth is each locality's compound annual rate from 2003 (or first appearance) to 2024. Katzrin is shown in black as the sector's single town.</figcaption>
+    </div>
+  </figure>
+
+  <hr class="rule">
+
+  <div class="col">
+    <p>Set the two Golan populations side by side and the argument closes itself. This is what six decades of the most legally secure settlement effort in the Israeli repertoire produced against the population it set out to outweigh:</p>
+  </div>
+
+  <section class="parity" aria-label="2024 parity">
+    <div class="side j"><span class="pn">29,950</span><span class="pl">JEWISH RESIDENTS &#183; 33 localities &#183; est. 1967&#8211;2022</span></div>
+    <div class="vs">against</div>
+    <div class="side d"><span class="pn">27,661</span><span class="pl">DRUZE &amp; ALAWITE RESIDENTS &#183; 5 towns</span></div>
+  </section>
+
+  <div class="col">
+    <p>Consensus, in Israeli politics, is what the Golan has: no serious party proposes returning it. Settlers are what it lacks. Geography and economics &#8212; not the annexation vote, not the recognition &#8212; decided the demography. Measured in driving time, the Golan was never within range of the machine that built the West Bank. The arena with the strongest political standing shows the weakest performance, and that inversion is the finding the comparative article is built to explain.</p>
+  </div>
+
+  <footer class="src col">
+    <p><b>Data.</b> Population &#8212; Israel CBS annual localities file, 2003&#8211;2024, and the 2024 locality registry (Golan, 39 localities); West Bank and Jordan Valley series and coordinates from the Peace Now settlements dataset (1969&#8211;May 2024, tracing to CBS / B'Tselem). Distances are great-circle from each locality to central Tel Aviv (32.085, 34.782) or Jerusalem (31.768, 35.214), whichever is nearer. Driving times from OSRM road routing, off-peak. Place-of-work, occupation and industry figures from the CBS 2008 Census regional-council profiles (Mateh Binyamin, Gush Etzion, Arvot HaYarden, Golan); commuting-flow corroborant from CBS via the Jerusalem Institute (2017).</p>
+    <p><b>Method.</b> Compound annual growth runs from 2003, or a locality's first appearance, to 2024; young localities with tiny bases show inflated rates and must be read alongside absolute size. The distance&#8211;growth-rate correlation across 129 West Bank and Jordan Valley settlements is effectively zero (Pearson r &#8776; +0.04); the relationship is with settlement <em>size</em>, not rate. <b>Caveats:</b> no CBS annual per-locality data before 2003; no clean per-locality commuting rate for the Golan or Jordan Valley councils (see note above).</p>
+    <p style="color:var(--rust)"><b>Working figures</b> for the <i>Israel Affairs</i> special-issue manuscript, "Consensus Without Settlers." Not for citation without the accompanying method note.</p>
+  </footer>
+</article>
+
+<script>
+const DATA = {"years":[2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"jewish":[16510,16881,17457,17867,18242,18379,18805,19306,19725,20260,20762,21911,22492,23513,24064,24658,25261,25997,26792,27956,29220,29950],"druze":[20422,20880,21376,21858,22299,22025,22456,22888,23214,23831,24138,24505,24921,25297,25599,25892,26261,26526,26885,27128,27428,27661],
+"locs":[{"name":"Qazrin","founded":"1977","form":"Town","pop24":8012,"cagr":1.16,"dpk":0.0},{"name":"Haspin","founded":"1973","form":"Community","pop24":1956,"cagr":2.11,"dpk":-10.1},{"name":"Bene Yehuda","founded":"1972","form":"Community","pop24":1244,"cagr":1.35,"dpk":-1.1},{"name":"Nov","founded":"1973","form":"Moshav","pop24":1192,"cagr":4.58,"dpk":0.0},{"name":"Avne Etan","founded":"1978","form":"Moshav","pop24":1079,"cagr":5.59,"dpk":0.0},{"name":"Qeshet","founded":"1974","form":"Cooperative moshav","pop24":979,"cagr":3.31,"dpk":0.0},{"name":"Yonatan","founded":"1976","form":"Cooperative moshav","pop24":895,"cagr":5.15,"dpk":0.0},{"name":"Had-Nes","founded":"1989","form":"Community","pop24":885,"cagr":3.85,"dpk":-2.7},{"name":"Ramot","founded":"1970","form":"Moshav","pop24":872,"cagr":2.9,"dpk":0.0},{"name":"Merom Golan","founded":"1967","form":"Kibbutz","pop24":817,"cagr":4.08,"dpk":0.0},{"name":"Ramat Magshimim","founded":"1968","form":"Cooperative moshav","pop24":815,"cagr":2.77,"dpk":-0.6},{"name":"Giv'at Yo'av","founded":"1968","form":"Moshav","pop24":804,"cagr":3.86,"dpk":0.0},{"name":"Natur","founded":"1980","form":"Moshav","pop24":770,"cagr":14.24,"dpk":-19.6},{"name":"Ne'ot Golan","founded":"1967","form":"Moshav","pop24":742,"cagr":5.06,"dpk":0.0},{"name":"Ma'ale Gamla","founded":"1976","form":"Moshav","pop24":734,"cagr":4.5,"dpk":0.0},{"name":"Qidmat Zevi","founded":"1985","form":"Moshav","pop24":734,"cagr":3.81,"dpk":0.0},{"name":"El-Rom","founded":"1971","form":"Kibbutz","pop24":621,"cagr":3.99,"dpk":0.0},{"name":"Eli-Ad","founded":"1968","form":"Moshav","pop24":593,"cagr":4.4,"dpk":-2.1},{"name":"Mevo Hamma","founded":"1968","form":"Kibbutz","pop24":568,"cagr":2.37,"dpk":0.0},{"name":"Kefar Haruv","founded":"1974","form":"Kibbutz","pop24":544,"cagr":4.12,"dpk":0.0},{"name":"Kanaf","founded":"1991","form":"Moshav","pop24":543,"cagr":3.26,"dpk":0.0},{"name":"En Ziwan","founded":"1968","form":"Kibbutz","pop24":534,"cagr":4.5,"dpk":-1.7},{"name":"Allone HaBashan","founded":"1981","form":"Cooperative moshav","pop24":512,"cagr":3.45,"dpk":-1.2},{"name":"Ani'am","founded":"1978","form":"Moshav","pop24":475,"cagr":1.51,"dpk":-11.4},{"name":"Sha'al","founded":"1976","form":"Moshav","pop24":452,"cagr":3.27,"dpk":0.0},{"name":"Qela","founded":"1984","form":"Community","pop24":415,"cagr":9.91,"dpk":0.0},{"name":"Afiq","founded":"1967","form":"Kibbutz","pop24":402,"cagr":2.69,"dpk":0.0},{"name":"Mezar","founded":"1981","form":"Moshav","pop24":379,"cagr":10.45,"dpk":0.0},{"name":"Ortal","founded":"1978","form":"Kibbutz","pop24":374,"cagr":1.96,"dpk":-0.5},{"name":"Geshur","founded":"1971","form":"Kibbutz","pop24":357,"cagr":3.65,"dpk":0.0},{"name":"Odem","founded":"1976","form":"Cooperative moshav","pop24":314,"cagr":5.81,"dpk":0.0},{"name":"Newe Ativ","founded":"1972","form":"Moshav","pop24":226,"cagr":1.63,"dpk":-0.4},{"name":"President Trump Heights","founded":"2022","form":"Community","pop24":111,"cagr":12.95,"dpk":0.0}],
+"fig2":[{"name":"Katzrin","note":"Golan town","v":1.16,"g":"golan"},{"name":"Druze & Alawite towns","note":"Golan aggregate","v":1.46,"g":"golan"},{"name":"Moshav","note":"West Bank median","v":1.8,"g":"wb"},{"name":"Golan Jewish","note":"Golan aggregate","v":2.88,"g":"golan"},{"name":"Kibbutz","note":"West Bank median","v":3.9,"g":"wb"},{"name":"Community","note":"West Bank median","v":6.4,"g":"wb"},{"name":"Urban","note":"West Bank median","v":7.3,"g":"wb"}]};
+const DATA2 = {"travel":[{"name":"Ma'ale Adumim","note":"West Bank \u00b7 Jerusalem commuter","near":"Jerusalem","min":23,"arena":"wb"},{"name":"Beitar Illit","note":"West Bank \u00b7 Haredi city","near":"Jerusalem","min":27,"arena":"wb"},{"name":"Modi'in Illit","note":"West Bank \u00b7 Haredi city","near":"Tel Aviv","min":33,"arena":"wb"},{"name":"Ariel","note":"West Bank \u00b7 mid-depth","near":"Tel Aviv","min":41,"arena":"wb"},{"name":"Ma'ale Efraim","note":"Jordan Valley \u00b7 town","near":"Jerusalem","min":62,"arena":"jv"},{"name":"Argaman","note":"Jordan Valley \u00b7 moshav","near":"Jerusalem","min":75,"arena":"jv"},{"name":"Katzrin","note":"Golan \u00b7 town","near":"Tel Aviv","min":138,"arena":"gl"},{"name":"Merom Golan","note":"Golan \u00b7 kibbutz","near":"Tel Aviv","min":154,"arena":"gl"}],
+"scatter":[{"a":"wb","n":"Avnei Hefetz","d":35.4,"p":2536},{"a":"wb","n":"Ovnat","d":23.4,"p":286},{"a":"wb","n":"Adora","d":30.4,"p":541},{"a":"wb","n":"Oranit","d":20.5,"p":9397},{"a":"wb","n":"Itamar","d":45.9,"p":1596},{"a":"wb","n":"Elon More","d":52.9,"p":2111},{"a":"wb","n":"Alon Shvut","d":15.2,"p":2967},{"a":"wb","n":"Almog","d":23.5,"p":264},{"a":"wb","n":"El'azar","d":13.8,"p":2712},{"a":"wb","n":"Alfei Menashe","d":23.9,"p":8000},{"a":"wb","n":"Elkana","d":24.0,"p":4453},{"a":"wb","n":"Asfar","d":20.4,"p":1394},{"a":"wb","n":"Efrat","d":13.2,"p":11940},{"a":"jv","n":"Argaman","d":53.5,"p":141},{"a":"wb","n":"Ariel","d":37.2,"p":21004},{"a":"wb","n":"Eshkolot","d":51.4,"p":633},{"a":"wb","n":"Beit El","d":19.1,"p":6469},{"a":"wb","n":"Beit Arye","d":25.9,"p":5603},{"a":"jv","n":"Beit Ha'arava","d":25.5,"p":557},{"a":"wb","n":"Beit Horon","d":14.5,"p":1434},{"a":"wb","n":"Beitar Illit","d":12.5,"p":68293},{"a":"jv","n":"Bqa'ot","d":57.4,"p":192},{"a":"wb","n":"Bruchin","d":29.1,"p":2723},{"a":"wb","n":"Bracha","d":47.0,"p":3301},{"a":"wb","n":"Barqan","d":30.6,"p":2119},{"a":"wb","n":"Bat Ayin","d":16.1,"p":1814},{"a":"wb","n":"Geva Binyamin (Adam)","d":10.9,"p":6115},{"a":"wb","n":"Giv'on Ha'hadasha","d":10.2,"p":1022},{"a":"wb","n":"Givat Ze'ev","d":11.2,"p":22503},{"a":"jv","n":"Gitit","d":40.9,"p":547},{"a":"jv","n":"Gilgal","d":33.8,"p":239},{"a":"wb","n":"Ganei Modiin","d":25.9,"p":2772},{"a":"wb","n":"Dolev","d":19.2,"p":1614},{"a":"wb","n":"Har Adar","d":10.3,"p":4140},{"a":"wb","n":"Har Gilo","d":6.7,"p":1666},{"a":"jv","n":"Vered Yericho","d":21.6,"p":391},{"a":"wb","n":"Haggai","d":33.5,"p":797},{"a":"wb","n":"Hinanit","d":57.2,"p":1707},{"a":"wb","n":"Halamish","d":27.7,"p":1668},{"a":"jv","n":"Chemdat","d":61.2,"p":370},{"a":"jv","n":"Hamra","d":52.2,"p":253},{"a":"wb","n":"Hermesh","d":49.1,"p":243},{"a":"wb","n":"Hashmonaim","d":25.5,"p":2504},{"a":"wb","n":"Talmon","d":20.2,"p":5702},{"a":"wb","n":"Tene","d":50.1,"p":1057},{"a":"jv","n":"Yitav","d":28.1,"p":231},{"a":"jv","n":"Yafit","d":40.7,"p":219},{"a":"wb","n":"Yitzhar","d":43.4,"p":2302},{"a":"wb","n":"Yakir","d":32.1,"p":2758},{"a":"wb","n":"Kochav Ha'shachar","d":24.5,"p":2622},{"a":"wb","n":"Kochav Ya'akov","d":12.5,"p":3138},{"a":"wb","n":"Kfar Adumim","d":13.3,"p":5123},{"a":"wb","n":"Kfar Ha'oranim","d":23.6,"p":2550},{"a":"wb","n":"Kfar Etzion","d":16.1,"p":1390},{"a":"wb","n":"Kfar Tapuah","d":39.1,"p":1673},{"a":"wb","n":"Karmei Tzur","d":20.7,"p":997},{"a":"wb","n":"Carmel","d":37.6,"p":527},{"a":"wb","n":"Mevo Dotan","d":52.4,"p":699},{"a":"wb","n":"Mevo Horon","d":18.9,"p":2730},{"a":"jv","n":"Mevo'ot Jericho","d":24.6,"p":403},{"a":"wb","n":"Migdal Oz","d":15.9,"p":592},{"a":"wb","n":"Migdalim","d":37.8,"p":668},{"a":"wb","n":"Modi'in Illit","d":24.2,"p":86816},{"a":"jv","n":"Mechola","d":72.2,"p":742},{"a":"jv","n":"Mechora","d":47.8,"p":186},{"a":"wb","n":"Ma'on","d":39.8,"p":649},{"a":"wb","n":"Ma'ale Adumim","d":8.5,"p":38097},{"a":"jv","n":"Ma'ale Efraim","d":38.3,"p":1419},{"a":"wb","n":"Ma'ale Levona","d":31.9,"p":1084},{"a":"wb","n":"Ma'ale Michmash","d":15.1,"p":1903},{"a":"wb","n":"Ma'ale Amos","d":19.1,"p":1190},{"a":"wb","n":"Ma'ale Shomron","d":28.6,"p":995},{"a":"wb","n":"Yatir","d":46.1,"p":722},{"a":"wb","n":"Mitzpe Yericho","d":17.8,"p":2887},{"a":"wb","n":"Mitzpe Shalem","d":28.5,"p":242},{"a":"jv","n":"Masu'a","d":45.8,"p":364},{"a":"jv","n":"Maskiyot","d":66.9,"p":373},{"a":"wb","n":"Matityahu","d":24.9,"p":969},{"a":"wb","n":"Negohot","d":37.7,"p":566},{"a":"wb","n":"Neve Daniel","d":12.2,"p":2383},{"a":"wb","n":"Nofim","d":31.0,"p":1315},{"a":"wb","n":"Nokdim","d":13.9,"p":3524},{"a":"wb","n":"Nahliel","d":23.9,"p":747},{"a":"wb","n":"Nili","d":26.8,"p":2148},{"a":"jv","n":"Niran","d":31.9,"p":128},{"a":"wb","n":"Na'ale","d":25.9,"p":2955},{"a":"jv","n":"Na'ama","d":28.6,"p":291},{"a":"jv","n":"Netiv Ha'gdud","d":32.8,"p":211},{"a":"wb","n":"Susiya","d":43.2,"p":1695},{"a":"wb","n":"Sal'it","d":30.5,"p":1483},{"a":"wb","n":"Sansana","d":53.9,"p":719},{"a":"wb","n":"Ateret","d":26.0,"p":932},{"a":"wb","n":"Eli","d":34.2,"p":4814},{"a":"wb","n":"Alei Zahav","d":26.6,"p":5018},{"a":"wb","n":"Almon","d":10.1,"p":1434},{"a":"wb","n":"Amihai","d":32.7,"p":318},{"a":"wb","n":"Immanuel","d":34.5,"p":5142},{"a":"wb","n":"Enav","d":39.1,"p":1146},{"a":"wb","n":"Ofra","d":20.6,"p":3488},{"a":"wb","n":"Etz Efraim","d":25.1,"p":2518},{"a":"wb","n":"Otniel","d":40.6,"p":1049},{"a":"wb","n":"Pedu'el","d":25.5,"p":2114},{"a":"wb","n":"Pnei Hever","d":31.8,"p":757},{"a":"wb","n":"Psagot","d":14.4,"p":2155},{"a":"jv","n":"Petzael","d":37.4,"p":393},{"a":"wb","n":"Tzofim","d":24.9,"p":2700},{"a":"wb","n":"Kedumim","d":38.5,"p":4600},{"a":"wb","n":"Keidar","d":9.2,"p":1624},{"a":"wb","n":"Kalia","d":24.0,"p":514},{"a":"wb","n":"Kiryat Arba","d":27.3,"p":7601},{"a":"wb","n":"Kiryat Netafim","d":31.3,"p":999},{"a":"wb","n":"Karnei Shomron","d":31.1,"p":10179},{"a":"wb","n":"Rosh Tzurim","d":14.1,"p":1056},{"a":"wb","n":"Revava","d":32.7,"p":3060},{"a":"jv","n":"Ro'i","d":59.2,"p":175},{"a":"jv","n":"Rotem","d":69.4,"p":289},{"a":"wb","n":"Rechelim","d":37.1,"p":1175},{"a":"wb","n":"Reihan","d":54.2,"p":445},{"a":"wb","n":"Rimonim","d":21.9,"p":688},{"a":"wb","n":"Shavei Shomron","d":42.6,"p":1112},{"a":"jv","n":"Shadmot Mehola","d":71.1,"p":699},{"a":"wb","n":"Shilo","d":32.5,"p":5458},{"a":"wb","n":"Shim'a","d":46.6,"p":1008},{"a":"wb","n":"Shaar Shomron","d":24.1,"p":9027},{"a":"wb","n":"Sha'arei Tikva","d":23.4,"p":6124},{"a":"wb","n":"Shaked","d":56.4,"p":1149},{"a":"jv","n":"Tomer","d":34.9,"p":321},{"a":"wb","n":"Telem","d":28.6,"p":574},{"a":"wb","n":"Tko'a","d":12.9,"p":4503},{"a":"gl","n":"Avne Etan","d":123.4,"p":1079},{"a":"gl","n":"Odem","d":152.9,"p":314},{"a":"gl","n":"Ortal","d":144.1,"p":374},{"a":"gl","n":"El-Rom","d":153.0,"p":621},{"a":"gl","n":"Allone HaBashan","d":145.4,"p":512},{"a":"gl","n":"Eli-Ad","d":119.9,"p":593},{"a":"gl","n":"Ani'am","d":132.1,"p":475},{"a":"gl","n":"Afiq","d":115.6,"p":402},{"a":"gl","n":"Bene Yehuda","d":116.3,"p":1244},{"a":"gl","n":"Giv'at Yo'av","d":115.8,"p":804},{"a":"gl","n":"Geshur","d":119.7,"p":357},{"a":"gl","n":"Had-Nes","d":123.5,"p":885},{"a":"gl","n":"Haspin","d":127.1,"p":1956},{"a":"gl","n":"Yonatan","d":134.1,"p":895},{"a":"gl","n":"Kanaf","d":122.5,"p":543},{"a":"gl","n":"Kefar Haruv","d":111.8,"p":544},{"a":"gl","n":"Mevo Hamma","d":109.4,"p":568},{"a":"gl","n":"Mezar","d":117.3,"p":379},{"a":"gl","n":"Ma'ale Gamla","d":123.0,"p":734},{"a":"gl","n":"Merom Golan","d":149.1,"p":817},{"a":"gl","n":"Ne'ot Golan","d":115.5,"p":742},{"a":"gl","n":"Nov","d":125.3,"p":1192},{"a":"gl","n":"Newe Ativ","d":158.7,"p":226},{"a":"gl","n":"Natur","d":124.8,"p":770},{"a":"gl","n":"En Ziwan","d":147.1,"p":534},{"a":"gl","n":"Qidmat Zevi","d":135.6,"p":734},{"a":"gl","n":"Qela","d":143.7,"p":415},{"a":"gl","n":"Katzrin","d":131.7,"p":8012},{"a":"gl","n":"Qeshet","d":138.3,"p":979},{"a":"gl","n":"Ramot","d":118.7,"p":872},{"a":"gl","n":"Trump Heights","d":144.1,"p":111},{"a":"gl","n":"Ramat Magshimim","d":128.0,"p":815},{"a":"gl","n":"Sha'al","d":144.3,"p":452}]};
+
+const ARENA_COL={wb:"var(--rust)",jv:"var(--sand)",gl:"var(--teal)"};
+const ARENA_NAME={wb:"West Bank",jv:"Jordan Valley",gl:"Golan"};
+const NS="http://www.w3.org/2000/svg";
+const reduce=window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+function el(n,a){const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;}
+function fmt(n){return n.toLocaleString("en-US");}
+
+/* FIG 1 : crossover lines */
+(function(){
+  const W=720,H=430,mL=52,mR=24,mT=22,mB=42;
+  const yrs=DATA.years,n=yrs.length,x0=yrs[0],x1=yrs[n-1],yMax=32000;
+  const px=W-mL-mR,ph=H-mT-mB;
+  const X=y=>mL+(y-x0)/(x1-x0)*px, Y=v=>mT+(1-v/yMax)*ph;
+  const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":"Line chart: Jewish and Druze/Alawite population 2003 to 2024. The Jewish line rises from 16,510 and overtakes the Druze/Alawite line around 2013, reaching 29,950 against 27,661."});
+  for(let v=0;v<=yMax;v+=8000){
+    svg.appendChild(el("line",{class:v===0?"baseline":"gridline",x1:mL,x2:W-mR,y1:Y(v),y2:Y(v)}));
+    const t=el("text",{class:"axis y",x:mL-9,y:Y(v)+4});t.textContent=v===0?"0":(v/1000)+"k";svg.appendChild(t);
+  }
+  yrs.forEach(yr=>{if(yr%4===0||yr===x1){const t=el("text",{class:"axis",x:X(yr),y:H-mB+20,"text-anchor":"middle"});t.textContent=yr;svg.appendChild(t);}});
+  const path=arr=>arr.map((v,i)=>(i?"L":"M")+X(yrs[i]).toFixed(1)+" "+Y(v).toFixed(1)).join(" ");
+  const pD=el("path",{d:path(DATA.druze),fill:"none",stroke:"var(--teal)","stroke-width":2.4,"stroke-linejoin":"round","stroke-linecap":"round"});
+  const pJ=el("path",{d:path(DATA.jewish),fill:"none",stroke:"var(--rust)","stroke-width":2.8,"stroke-linejoin":"round","stroke-linecap":"round"});
+  svg.appendChild(pD);svg.appendChild(pJ);
+  const lJ=el("text",{class:"endval",x:X(x1)-4,y:Y(DATA.jewish[n-1])-9,fill:"var(--rust)","text-anchor":"end"});lJ.textContent=fmt(DATA.jewish[n-1]);svg.appendChild(lJ);
+  const lD=el("text",{class:"endval",x:X(x1)-4,y:Y(DATA.druze[n-1])+18,fill:"var(--teal)","text-anchor":"end"});lD.textContent=fmt(DATA.druze[n-1]);svg.appendChild(lD);
+  if(!reduce){[pJ,pD].forEach(p=>{const L=p.getTotalLength();p.style.strokeDasharray=L;p.style.strokeDashoffset=L;p.style.transition="stroke-dashoffset 1.4s ease";});
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{pJ.style.strokeDashoffset=0;pD.style.strokeDashoffset=0;}));}
+  const guide=el("line",{class:"guide",y1:mT,y2:H-mB});
+  const dotJ=el("circle",{class:"hv-dot",r:4.5,fill:"var(--rust)",stroke:"var(--paper)","stroke-width":1.5});
+  const dotD=el("circle",{class:"hv-dot",r:4.5,fill:"var(--teal)",stroke:"var(--paper)","stroke-width":1.5});
+  svg.appendChild(guide);svg.appendChild(dotJ);svg.appendChild(dotD);
+  const hit=el("rect",{x:mL,y:mT,width:px,height:ph,fill:"transparent",style:"cursor:crosshair"});svg.appendChild(hit);
+  const ro=document.getElementById("ro1");
+  function show(i){const yr=yrs[i],j=DATA.jewish[i],d=DATA.druze[i];
+    guide.setAttribute("x1",X(yr));guide.setAttribute("x2",X(yr));guide.style.opacity=1;
+    dotJ.setAttribute("cx",X(yr));dotJ.setAttribute("cy",Y(j));dotJ.style.opacity=1;
+    dotD.setAttribute("cx",X(yr));dotD.setAttribute("cy",Y(d));dotD.style.opacity=1;
+    const gap=j-d,lead=gap>=0?"Jewish +":"Druze/Alawite +";
+    ro.innerHTML=`<span class="yr">${yr}</span><span class="ro-j">Jewish <b>${fmt(j)}</b></span><span class="ro-d">Druze/Alawite <b>${fmt(d)}</b></span><span class="ro-gap">${lead}<b>${fmt(Math.abs(gap))}</b></span>`;}
+  function clr(){guide.style.opacity=0;dotJ.style.opacity=0;dotD.style.opacity=0;
+    ro.innerHTML='<span class="hint">Hover the plot to read any year. In 2003 the Druze and Alawite towns outnumbered the settlers; the lines cross around 2013.</span>';}
+  function loc(ev){const r=svg.getBoundingClientRect();const cx=(ev.touches?ev.touches[0].clientX:ev.clientX);
+    let i=Math.round(((cx-r.left)/r.width*W-mL)/px*(n-1));i=Math.max(0,Math.min(n-1,i));show(i);}
+  hit.addEventListener("mousemove",loc);hit.addEventListener("mouseleave",clr);
+  hit.addEventListener("touchstart",e=>loc(e),{passive:true});
+  hit.addEventListener("touchmove",e=>{loc(e);e.preventDefault();},{passive:false});
+  document.getElementById("fig1").appendChild(svg);
+})();
+
+/* FIG 2 : growth-rate ranking (arena palette: Golan teal, WB rust) */
+(function(){
+  const rows=DATA.fig2.slice().sort((a,b)=>a.v-b.v);
+  const W=720,rowH=44,mT=8,mB=8,mL=200,mR=52,H=mT+mB+rows.length*rowH,vMax=8,px=W-mL-mR;
+  const X=v=>mL+v/vMax*px;
+  const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":"Bar chart ranking annual growth rates. Golan sectors cluster at the bottom; Katzrin 1.16%, Druze and Alawite towns 1.46%, Golan Jewish 2.88%. West Bank forms: moshav 1.8%, kibbutz 3.9%, community 6.4%, urban 7.3%."});
+  for(let v=0;v<=vMax;v+=2)svg.appendChild(el("line",{class:v===0?"baseline":"gridline",x1:X(v),x2:X(v),y1:mT,y2:H-mB}));
+  rows.forEach((d,i)=>{
+    const cy=mT+i*rowH+rowH/2;
+    const col=d.g==="golan"?"var(--teal)":"var(--rust)";
+    const nm=el("text",{x:mL-12,y:cy-1,"text-anchor":"end",fill:"var(--ink)",style:"font-size:13.5px;font-weight:600"});nm.textContent=d.name;svg.appendChild(nm);
+    const nt=el("text",{x:mL-12,y:cy+13,"text-anchor":"end",fill:"var(--mute)",style:"font-size:10.5px"});nt.textContent=d.note;svg.appendChild(nt);
+    svg.appendChild(el("rect",{x:mL,y:cy-9,width:px,height:18,fill:"var(--paper-2)",rx:2}));
+    const bw=Math.max(2,X(d.v)-mL);
+    const bar=el("rect",{x:mL,y:cy-9,width:reduce?bw:2,height:18,fill:col,rx:2});svg.appendChild(bar);
+    if(!reduce){bar.style.transition="width .8s cubic-bezier(.22,.61,.36,1)";setTimeout(()=>bar.setAttribute("width",bw),80+i*70);}
+    const vt=el("text",{x:X(d.v)+8,y:cy+4,fill:"var(--ink)",style:"font-size:12.5px;font-weight:700;font-variant-numeric:tabular-nums"});vt.textContent=d.v.toFixed(2)+"%";svg.appendChild(vt);
+  });
+  document.getElementById("fig2").appendChild(svg);
+})();
+
+/* FIG 3 : travel time bars */
+(function(){
+  const T=DATA2.travel.slice().sort((a,b)=>a.min-b.min);
+  const W=720,rowH=48,mT=34,mB=30,mL=168,mR=48,H=mT+mB+T.length*rowH,vMax=180,px=W-mL-mR;
+  const X=v=>mL+v/vMax*px;
+  const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":"Driving time to the nearest core: West Bank settlements 23 to 41 minutes; Jordan Valley 62 to 75 minutes; Golan 138 to 154 minutes."});
+  svg.appendChild(el("rect",{x:mL,y:mT-8,width:X(45)-mL,height:H-mT-mB+8,fill:"var(--rust)","fill-opacity":.06}));
+  const bl=el("text",{x:X(45)-4,y:mT-14,"text-anchor":"end",fill:"var(--mute)",style:"font-size:10.5px"});bl.textContent="daily commuting range (\u2248 45 min)";svg.appendChild(bl);
+  for(let v=0;v<=vMax;v+=30){svg.appendChild(el("line",{class:v===0?"baseline":"gridline",x1:X(v),x2:X(v),y1:mT-8,y2:H-mB}));
+    const t=el("text",{class:"axis",x:X(v),y:H-mB+16,"text-anchor":"middle"});t.textContent=v;svg.appendChild(t);}
+  const xl=el("text",{class:"axis",x:mL+px/2,y:H-2,"text-anchor":"middle",style:"font-size:11px"});xl.textContent="minutes by car to the nearest economic core";svg.appendChild(xl);
+  T.forEach((d,i)=>{
+    const cy=mT+i*rowH+rowH/2-2,col=ARENA_COL[d.arena];
+    const nm=el("text",{x:mL-12,y:cy-1,"text-anchor":"end",fill:"var(--ink)",style:"font-size:13px;font-weight:600"});nm.textContent=d.name;svg.appendChild(nm);
+    const nt=el("text",{x:mL-12,y:cy+13,"text-anchor":"end",fill:"var(--mute)",style:"font-size:10px"});nt.textContent=d.note;svg.appendChild(nt);
+    svg.appendChild(el("rect",{x:mL,y:cy-9,width:px,height:18,fill:"var(--paper-2)",rx:2}));
+    const bw=Math.max(2,X(d.min)-mL);
+    const bar=el("rect",{x:mL,y:cy-9,width:reduce?bw:2,height:18,fill:col,rx:2});svg.appendChild(bar);
+    if(!reduce){bar.style.transition="width .8s cubic-bezier(.22,.61,.36,1)";setTimeout(()=>bar.setAttribute("width",bw),90+i*80);}
+    const inside=bw>150;
+    const lab=`${d.min} min  \u2192 ${d.near}`;
+    const vt=el("text",{y:cy+4,style:"font-size:12px;font-weight:700;font-variant-numeric:tabular-nums"});
+    if(inside){vt.setAttribute("x",X(d.min)-8);vt.setAttribute("text-anchor","end");vt.setAttribute("fill","var(--paper)");}
+    else{vt.setAttribute("x",X(d.min)+8);vt.setAttribute("text-anchor","start");vt.setAttribute("fill","var(--ink)");}
+    vt.textContent=lab;svg.appendChild(vt);
+  });
+  document.getElementById("figTravel").appendChild(svg);
+})();
+
+/* FIG 4 : distance vs population scatter (log y) */
+(function(){
+  const S=DATA2.scatter;
+  const W=720,H=470,mL=46,mR=16,mT=26,mB=62,px=W-mL-mR,ph=H-mT-mB;
+  const xMax=165,X=d=>mL+d/xMax*px;
+  const pMin=90,pMax=95000,lg=Math.log10,lo=lg(pMin),hi=lg(pMax);
+  const Y=p=>mT+(1-(lg(p)-lo)/(hi-lo))*ph;
+  const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":"Scatter plot of settlement population against distance to the nearest core. Large West Bank settlements cluster within 40 km; the Golan is strung along 110 to 160 km with only Katzrin above 5,000."});
+  // commuting band 0-35 km
+  svg.appendChild(el("rect",{x:mL,y:mT,width:X(35)-mL,height:ph,fill:"var(--rust)","fill-opacity":.05}));
+  const cb=el("text",{x:X(35)-5,y:mT+13,"text-anchor":"end",fill:"var(--mute)",style:"font-size:10px"});cb.textContent="within 35 km \u2192 82.5% of all settlers";svg.appendChild(cb);
+  // y gridlines
+  [100,1000,10000].forEach(v=>{svg.appendChild(el("line",{class:"gridline",x1:mL,x2:W-mR,y1:Y(v),y2:Y(v)}));
+    const t=el("text",{class:"axis y",x:mL-8,y:Y(v)+4});t.textContent=v>=1000?(v/1000)+"k":v;svg.appendChild(t);});
+  // x gridlines
+  for(let v=0;v<=160;v+=40){svg.appendChild(el("line",{class:v===0?"baseline":"gridline",x1:X(v),x2:X(v),y1:mT,y2:H-mB}));
+    const t=el("text",{class:"axis",x:X(v),y:H-mB+16,"text-anchor":"middle"});t.textContent=v;svg.appendChild(t);}
+  const xl=el("text",{class:"axis",x:mL+px/2,y:H-4,"text-anchor":"middle",style:"font-size:11px"});xl.textContent="kilometres to nearest economic core (Tel Aviv or Jerusalem)";svg.appendChild(xl);
+  // Golan cluster note
+  const gn=el("text",{x:X(135),y:mT+ph*0.9,"text-anchor":"middle",fill:"var(--teal)",style:"font-size:10.5px;font-style:italic"});gn.textContent="the Golan \u2014 none within 100 km";svg.appendChild(gn);
+  // dots
+  const ro=document.getElementById("roScatter");
+  const dots=[];
+  S.forEach(d=>{
+    const c=el("circle",{cx:X(d.d),cy:Y(d.p),r:d.p>=5000?5:3.6,fill:ARENA_COL[d.a],"fill-opacity":.75,stroke:"var(--paper)","stroke-width":.8,style:"cursor:pointer"});
+    const ttl=el("title");ttl.textContent=`${d.n} \u2014 ${fmt(d.p)} residents, ${d.d} km to nearest core (${ARENA_NAME[d.a]})`;c.appendChild(ttl);
+    c.addEventListener("mouseenter",()=>{c.setAttribute("r",d.p>=5000?7:5.5);c.setAttribute("fill-opacity",1);
+      ro.innerHTML=`<span style="color:${d.a==='wb'?'var(--rust)':d.a==='jv'?'var(--sand-dk)':'var(--teal)'};font-weight:700">${d.n}</span><span>${ARENA_NAME[d.a]}</span><span><b>${fmt(d.p)}</b> residents</span><span><b>${d.d}</b> km to core</span>`;});
+    c.addEventListener("mouseleave",()=>{c.setAttribute("r",d.p>=5000?5:3.6);c.setAttribute("fill-opacity",.75);
+      ro.innerHTML='<span class="hint">Hover any point for its name, distance and population. Every settlement over ~5,000 sits at the left; the Golan is strung along the far right.</span>';});
+    svg.appendChild(c);dots.push(c);
+  });
+  // annotations
+  function annot(name,dx,dy,anchor,color){
+    const p=S.find(s=>s.n===name);if(!p)return;
+    const t=el("text",{x:X(p.d)+dx,y:Y(p.p)+dy,"text-anchor":anchor,fill:color||"var(--ink)",style:"font-size:10.5px;font-weight:600"});
+    t.textContent=name+(p.p>=5000?" \u00b7 "+(p.p>=1000?Math.round(p.p/1000)+"k":p.p):"");svg.appendChild(t);
+  }
+  annot("Modi'in Illit",8,-6,"start","var(--rust)");
+  annot("Beitar Illit",8,4,"start","var(--rust)");
+  annot("Ma'ale Adumim",8,10,"start","var(--rust)");
+  // Katzrin callout with leader
+  const kz=S.find(s=>s.n==="Katzrin");
+  if(kz){svg.appendChild(el("line",{x1:X(kz.d),y1:Y(kz.p)-6,x2:X(kz.d)-6,y2:Y(kz.p)-24,stroke:"var(--teal)","stroke-width":1}));
+    const kt=el("text",{x:X(kz.d)-8,y:Y(kz.p)-26,"text-anchor":"end",fill:"var(--teal)",style:"font-size:10.5px;font-weight:700"});kt.textContent="Katzrin \u00b7 8k \u2014 the one town beyond the commute";svg.appendChild(kt);}
+  document.getElementById("figScatter").appendChild(svg);
+})();
+
+/* FIG 6 : Golan locality explorer */
+(function(){
+  const rowsEl=document.getElementById("rows");
+  const maxPop=Math.max(...DATA.locs.map(d=>d.pop24));
+  let state={form:"all",sort:"pop24"};
+  function render(){
+    [...rowsEl.querySelectorAll(".row:not(.head)")].forEach(r=>r.remove());
+    let list=DATA.locs.filter(d=>state.form==="all"||d.form===state.form);
+    list.sort((a,b)=>state.sort==="cagr"?b.cagr-a.cagr:b.pop24-a.pop24);
+    list.forEach((d,i)=>{
+      const row=document.createElement("div");row.className="row";
+      const isK=d.form==="Town",w=(d.pop24/maxPop*100).toFixed(1);
+      const flag=d.dpk<-5?'<span class="flagdot" title="Below historical peak"></span>':"";
+      row.innerHTML=`<div class="rk">${i+1}</div><div class="nm">${d.name}<span class="frm">${d.form}</span></div><div class="fy">${d.founded||"\u2014"}</div><div class="barcell"><div class="bartrack"><div class="barfill ${isK?'k':''}" style="width:${reduce?w+'%':'0%'}"></div></div><div class="pop">${fmt(d.pop24)}</div></div><div class="cagr">${d.cagr.toFixed(1)}${flag}</div>`;
+      rowsEl.appendChild(row);
+      if(!reduce){const f=row.querySelector(".barfill");requestAnimationFrame(()=>setTimeout(()=>f.style.width=w+"%",30+i*18));}
+    });
+  }
+  document.getElementById("formfilter").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
+    state.form=b.dataset.form;[...e.currentTarget.querySelectorAll("button")].forEach(x=>x.setAttribute("aria-pressed",x===b));render();});
+  document.getElementById("sortby").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
+    state.sort=b.dataset.sort;[...e.currentTarget.querySelectorAll("button")].forEach(x=>x.setAttribute("aria-pressed",x===b));render();});
+  render();
+})();
+</script>
