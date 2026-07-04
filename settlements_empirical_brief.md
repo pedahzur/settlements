@@ -37,6 +37,18 @@ The declining set is dominated almost entirely by **Jordan Valley moshavim**: Ha
 
 Peace Now lists **315 outposts** (no official population in any source). Their establishment clusters in two waves: the post-Oslo surge of the late 1990s–early 2000s, and a renewed wave from ~2012 onward, with a sharp spike of **farm outposts in 2024–2025**. Farm outposts (≈54% of the total) are now the dominant form — a qualitative shift from residential to territorial-control outposts worth a dedicated section.
 
+## The Golan extension (CBS, 2003–2024)
+
+The panel now covers the Golan Heights: 39 localities from the CBS annual localities file, 2003–2024 (`golan_summary` sheet). The headline numbers anchor the comparative argument:
+
+- **Jewish population grew from 16,510 (2003) to 29,950 (2024) — ×1.81**, an aggregate CAGR near 2.9%. Over a comparable window the West Bank settlements roughly doubled and their urban core compounded far faster. The Golan, the arena with the strongest political standing, is the slow lane of the enterprise.
+- **Katzrin, the urban anchor, is the slowest-growing town in the sub-district's Jewish sector in relative terms: 1.16% a year** (6,288 → 8,012). Compare median annual growth of ~7.3% in West Bank urban settlements. What the Golan lacks is exactly what drives the West Bank: ultra-Orthodox housing demand and metropolitan commuting range.
+- **Median settlement CAGR is 3.85%**, but from tiny bases (the fastest, Natur, went from 47 to 770). Trajectory counts: 16 successful, 14 surviving-slow, 3 declining (Haspin −10% from peak, Ani'am −11%, Natur −20%).
+- **Near demographic parity: the five Druze/Alawite towns hold 27,661 residents against 29,950 Jewish residents** (2024). After six decades, annexation, and American recognition, the Golan's Jewish majority over the pre-1967 population remains marginal.
+- Founding years (CBS): the Jewish settlements were established 1967–1991, plus Trump Heights (2022). The form profile mirrors the Jordan Valley, not Samaria: moshavim and kibbutzim dominate; only four community settlements and one town.
+
+**Caveat:** no CBS annual per-locality data before 2003. Pre-2003 requires census anchors (1972, 1983, 1995). The 2022–2023 figures reflect post-census revisions.
+
 ---
 
 ### Method notes and caveats

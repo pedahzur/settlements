@@ -1,12 +1,12 @@
-# West Bank & East Jerusalem Settlements — Quantitative Panel
+# West Bank, East Jerusalem & Golan Settlements — Quantitative Panel
 
-A settlement-level panel dataset for the quantitative study of Israeli settlement in the West Bank and East Jerusalem. Unit of analysis: **settlement × year**.
+A settlement-level panel dataset for the quantitative study of Israeli settlement in the West Bank, East Jerusalem, and the Golan Heights. Unit of analysis: **settlement × year**.
 
 ## Contents
 
 | File | Description |
 |------|-------------|
-| `settlements_master_panel.xlsx` | Master workbook. Sheets: `README`, `master_panel_long` (8,580 rows, entity × year, 1969–2024), `settlement_summary` (growth metrics + trajectory typology), `entity_registry` (483 entities), `outposts` (315), `source_agreement` (PN↔B'Tselem reliability audit), `crosswalk`, `peacenow_settlements_wide`. |
+| `settlements_master_panel.xlsx` | Master workbook. Sheets: `README`, `master_panel_long` (9,396 rows, entity × year, 1969–2024), `settlement_summary` (WB growth metrics + trajectory typology), `golan_summary` (Golan growth metrics, 2003–2024 window), `entity_registry` (522 entities: 483 WB/EJ + 39 Golan), `outposts` (315), `source_agreement` (PN↔B'Tselem reliability audit), `crosswalk`, `peacenow_settlements_wide`. |
 | `settlements_empirical_brief.md` | Empirical findings: aggregate growth, regional and typological variation, distance-from-Green-Line gradient, the declining Jordan Valley tail, outpost waves. |
 | `figures/` | Six publication-quality charts (PNG). |
 | `data/` | Raw source files (see Sources). |
@@ -16,6 +16,7 @@ A settlement-level panel dataset for the quantitative study of Israeli settlemen
 
 - **Peace Now** (Settlement Watch), public "list of settlements and outposts" (`data/peacenow_settlements.csv`, `data/peacenow_outposts.csv`), updated 1 May 2026. Population 1969–May 2024 plus distance from Green Line, regional council, urban pattern, elevation, coordinates. West Bank settlements only (East Jerusalem excluded). Underlying population: Israel CBS / Jerusalem Institute.
 - **B'Tselem** settlement population file, October 2019 revision (`data/btselem_2019_source.xlsx`). Population 1996–2017; includes East Jerusalem settlements and Hebron enclaves that Peace Now omits. Source: Israel CBS + Jerusalem Institute for Policy Research.
+- **Israel CBS** annual localities file ("קובץ יישובים", bycode), 2003–2024, downloaded 2 July 2026 from cbs.gov.il (`https://www.cbs.gov.il/he/publications/doclib/2019/ishuvim/bycode{YYYY}.xls[x]`; 2023 = `bycode2023Sofi.xlsx`, final post-census figures). Extracted Golan sub-district series: `data/cbs_golan_2003_2024.csv` (816 obs, 38 localities); registry attributes (founding year, settlement form, coordinates, elevation): `data/cbs_golan_registry_2024.csv`.
 
 The two sources are complementary (Peace Now for long/current West Bank population and geography; B'Tselem for East Jerusalem and Hebron) and mutually validating: **89.7%** of 2,614 overlapping settlement-years match exactly, **95.3%** within 1%.
 
@@ -69,6 +70,8 @@ it from a branch meanwhile.
 ## Caveats
 
 East Jerusalem: CBS does not report annexed East Jerusalem as a separate geographic area; the 11 East Jerusalem entities (B'Tselem only, 1996–2017) are not directly comparable to West Bank settlement counts.
+
+Golan (added 2026-07-02): 39 entities (`entity_id` 484–522), of which 34 are Jewish settlements (type `Golan Settlement`, incl. Katzrin and Trump Heights) and 5 are Druze/Alawite towns (type `Golan Non-Jewish Locality`: Majdal Shams, Buq'ata, Mas'ade, Ein Qiniyye, Ghajar). For Golan rows `pop_best` carries the CBS total-population figure and `pop_source` = `CBS`; `pop_peacenow`/`pop_btselem` are empty, and `dist_gl_km` is not applicable. No CBS annual per-locality file exists before 2003; extending the Golan series back to founding requires census anchors (1972, 1983, 1995). Nimrod has no published population. The 2008 and 2022–2023 values reflect census-based revisions. Golan trajectory metrics live in `golan_summary` (2003–2024 window, Golan-median threshold) and are deliberately kept out of `settlement_summary`, whose typology thresholds are West Bank-based.
 
 ## GIS layers (`gis_osm_*`)
 
