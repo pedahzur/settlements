@@ -482,3 +482,42 @@ settlement_id,name_en,name_he,type,source,regional_council,urban_pattern,dist_gl
 481,Nof Mishkan Farm,חוות נוף המשכן,Outpost,Peace Now,Binyamin,Farm Outpost,,,2025.0,1389.0,,35.298817,32.058425,active,,חוות נוף המשכן
 482,Meitr LaAretz Farm,חוות מאיר לארץ,Outpost,Peace Now,Binyamin,Farm Outpost,,,2025.0,1380.0,,35.064342,32.008023,active,,חוות מאיר לארץ
 483,Narhiva,נרחיבה,Outpost,Peace Now,Shomron,Outpost,,,2025.0,1346.0,,35.120873,32.126285,active,,נרחיבה
+484,Avne Etan,אבני איתן,Golan Settlement,CBS,Golan,Moshav,,381.0,1978.0,,,35.7652,32.8232,active,4011.0,אבני איתן
+485,Odem,אודם,Golan Settlement,CBS,Golan,Moshav Shitufi,,1050.0,1976.0,,,35.7495,33.1935,active,4010.0,אודם
+486,Ortal,אורטל,Golan Settlement,CBS,Golan,Kibbutz,,885.0,1978.0,,,35.7587,33.0869,active,4013.0,אורטל
+487,El-Rom,אל -רום,Golan Settlement,CBS,Golan,Kibbutz,,1049.0,1971.0,,,35.7713,33.1807,active,4003.0,אל רום
+488,Allone HaBashan,אלוני הבשן,Golan Settlement,CBS,Golan,Moshav Shitufi,,962.0,1981.0,,,35.8387,33.044,active,4017.0,אלוני הבשן
+489,Eli-Ad,אלי-עד,Golan Settlement,CBS,Golan,Moshav,,367.0,1968.0,,,35.7349,32.8051,active,4002.0,אלי עד
+490,Ani'am,אניעם,Golan Settlement,CBS,Golan,Moshav,,426.0,1978.0,,,35.7401,32.9573,active,4012.0,אניעם
+491,Afiq,אפיק,Golan Settlement,CBS,Golan,Kibbutz,,339.0,1967.0,,,35.7011,32.7783,active,4301.0,אפיק
+492,Buq'ata,בוקעאתא,Golan Non-Jewish Locality,CBS,Buq'ata,Village,,1096.0,,,,35.7787,33.2016,active,4001.0,בוקעאתא
+493,Bene Yehuda,בני יהודה,Golan Settlement,CBS,Golan,Community,,344.0,1972.0,,,35.6894,32.7982,active,4015.0,בני יהודה
+494,Giv'at Yo'av,גבעת יואב,Golan Settlement,CBS,Golan,Moshav,,311.0,1968.0,,,35.6817,32.7991,active,4021.0,גבעת יואב
+495,Geshur,גשור,Golan Settlement,CBS,Golan,Kibbutz,,347.0,1971.0,,,35.717,32.8188,active,4022.0,גשור
+496,Had-Nes,חד-נס,Golan Settlement,CBS,Golan,Community,,-7.0,1989.0,,,35.6424,32.9274,active,4026.0,חד נס
+497,Haspin,חספין,Golan Settlement,CBS,Golan,Community,,418.0,1973.0,,,35.7943,32.8454,active,4005.0,חספין
+498,Yonatan,יונתן,Golan Settlement,CBS,Golan,Moshav Shitufi,,550.0,1976.0,,,35.7944,32.938,active,4007.0,יונתן
+499,Kanaf,כנף,Golan Settlement,CBS,Golan,Moshav,,294.0,1991.0,,,35.6999,32.8696,active,4028.0,כנף
+500,Kefar Haruv,כפר חרוב,Golan Settlement,CBS,Golan,Kibbutz,,310.0,1974.0,,,35.6633,32.7627,active,4004.0,כפר חרוב
+501,Mevo Hamma,מבוא חמה,Golan Settlement,CBS,Golan,Kibbutz,,347.0,1968.0,,,35.6554,32.7377,active,4204.0,מבוא חמה
+502,Majdal Shams,מג'דל שמס,Golan Non-Jewish Locality,CBS,Majdal Shams,Village,,1226.0,,,,35.7702,33.2636,active,4201.0,מג דל שמס
+503,Mezar,מיצר,Golan Settlement,CBS,Golan,Moshav,,359.0,1981.0,,,35.736,32.7671,active,4019.0,מיצר
+504,Mas'ade,מסעדה,Golan Non-Jewish Locality,CBS,Mas'ade,Village,,1035.0,,,,35.7567,33.231,active,4203.0,מסעדה
+505,Ma'ale Gamla,מעלה גמלא,Golan Settlement,CBS,Golan,Moshav,,113.0,1976.0,,,35.6842,32.8894,active,4008.0,מעלה גמלא
+506,Merom Golan,מרום גולן,Golan Settlement,CBS,Golan,Kibbutz,,977.0,1967.0,,,35.7758,33.1331,active,4101.0,מרום גולן
+507,Ne'ot Golan,נאות גולן,Golan Settlement,CBS,Golan,Moshav,,312.0,1967.0,,,35.6911,32.7864,active,4551.0,נאות גולן
+508,Nov,נוב,Golan Settlement,CBS,Golan,Moshav,,408.0,1973.0,,,35.7827,32.8328,active,4304.0,נוב
+509,Newe Ativ,"נווה אטי""ב",Golan Settlement,CBS,Golan,Moshav,,978.0,1972.0,,,35.7417,33.2622,active,,נווה אטי ב
+510,Natur,נטור,Golan Settlement,CBS,Golan,Moshav,,411.0,1980.0,,,35.7531,32.8532,active,4014.0,נטור
+511,Nimrod,נמרוד,Golan Settlement,CBS,Golan,Community,,1095.0,,,,35.7517,33.2457,active,4035.0,נמרוד
+512,Ghajar,ע'ג'ר,Golan Non-Jewish Locality,CBS,Ghajar,Village,,282.0,,,,35.6234,33.2707,active,4501.0,ע ג ר
+513,En Ziwan,עין זיוון,Golan Settlement,CBS,Golan,Kibbutz,,969.0,1968.0,,,35.796,33.0965,active,4503.0,עין זיוון
+514,Ein Qiniyye,עין קנייא,Golan Non-Jewish Locality,CBS,Ein Qiniyye,Village,,801.0,,,,35.7315,33.2371,active,4502.0,עין קנייא
+515,Qidmat Zevi,קדמת צבי,Golan Settlement,CBS,Golan,Moshav,,475.0,1985.0,,,35.6977,33.03,active,4025.0,קדמת צבי
+516,Qela,קלע,Golan Settlement,CBS,Golan,Community,,612.0,1984.0,,,35.684,33.1317,active,4024.0,קלע
+517,Qazrin,קצרין,Golan Settlement,CBS,Katzrin,Urban,,332.0,1977.0,,,35.6868,32.9925,active,4100.0,קצרין
+518,Qeshet,קשת,Golan Settlement,CBS,Golan,Moshav Shitufi,,702.0,1974.0,,,35.8085,32.9798,active,4006.0,קשת
+519,Ramot,רמות,Golan Settlement,CBS,Golan,Moshav,,-9.0,1970.0,,,35.6667,32.8497,active,4702.0,רמות
+520,President Trump Heights,רמת הנשיא טראמפ,Golan Settlement,CBS,Golan,Community,,662.0,2022.0,,,35.6907,33.1323,active,4029.0,רמת הנשיא טראמפ
+521,Ramat Magshimim,רמת מגשימים,Golan Settlement,CBS,Golan,Moshav Shitufi,,429.0,1968.0,,,35.8079,32.8448,active,4701.0,רמת מגשימים
+522,Sha'al,שעל,Golan Settlement,CBS,Golan,Moshav,,779.0,1976.0,,,35.7182,33.1165,active,4009.0,שעל
