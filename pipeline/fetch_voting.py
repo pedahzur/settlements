@@ -19,7 +19,7 @@ import re
 import pandas as pd
 
 from . import config
-from .utils import ckan_datastore_search, he_key, http_get, log
+from .utils import he_key, http_get, log
 
 # Metadata (non-party) columns in the CEC ballot files, by Hebrew header.
 _META_COLS = {

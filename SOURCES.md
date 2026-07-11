@@ -1,8 +1,8 @@
-# Data Sources — Israeli West Bank & East Jerusalem Settlements
+# Data Sources — West Bank, East Jerusalem & Golan Settlements
 
 A curated inventory of reliable, citable data sources for the quantitative study
 of Israeli settlement, organised by theme. Each entry notes coverage,
-granularity, format/access, and reliability caveats. Verified June 2026.
+granularity, format/access, and reliability caveats. Verified July 2026.
 
 **Legend** — *Primary/official*: government statistical or UN bodies.
 *NGO/watchdog*: original field collection with explicit orientation.
@@ -98,7 +98,7 @@ finance. Religiosity-per-settlement is generally *inferred*, not measured.
 | Source | Type | Coverage | Format / licence |
 |---|---|---|---|
 | **UN OCHA oPt (HDX)** | Primary | Settlements, Barrier, Area A/B/C, checkpoints, firing zones, admin boundaries | Shapefile/GeoJSON/CSV — mostly **CC BY** — [org](https://data.humdata.org/organization/ocha-opt) |
-| **Geofabrik / OpenStreetMap** "Israel and Palestine" | Crowdsourced | Roads, buildings, places, landuse, water | PBF/Shapefile/GeoPackage — **ODbL 1.0** — [download](https://download.geofabrik.de/asia/israel-and-palestine.html) **[ingested]** (`gis_osm_*` road/water/transport layers) |
+| **Geofabrik / OpenStreetMap** "Israel and Palestine" | Crowdsourced | Roads, buildings, places, land use, water | PBF/Shapefile/GeoPackage — **ODbL 1.0** — [download](https://download.geofabrik.de/asia/israel-and-palestine.html) **[reference; not currently ingested]** |
 | **Peace Now interactive map + GIS layers** | NGO | Settlements, outposts, Green Line, Areas A/B | KML/shapefile + PDF |
 | **B'Tselem maps** | NGO | Settlements, state land, firing zones, Barrier | Web map + PDF |
 | **Israel GovMap / Survey of Israel** | Primary | Cadastral blocks (Gush) & parcels (Helka), zoning | Viewer + WMS/feature services — [govmap.gov.il](https://www.govmap.gov.il/?lang=en) |
