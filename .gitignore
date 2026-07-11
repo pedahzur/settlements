@@ -9,3 +9,6 @@ db/raw/
 
 # Large local GIS extracts are reference inputs, not pipeline dependencies.
 /gis_osm_*
+
+# Private manuscript drafts are maintained outside the public repository.
+/writing/

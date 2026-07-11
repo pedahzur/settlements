@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this dataset, code, or figures, please cite it as below."
+title: "Settlements: Quantitative Panel and Interactive Map"
+type: dataset
+authors:
+  - family-names: Pedahzur
+    given-names: Ami
+    orcid: "https://orcid.org/0000-0002-0925-4993"
+    affiliation: "University of Haifa"
+repository-code: "https://github.com/pedahzur/settlements"
+url: "https://pedahzur.github.io/settlements/"
+abstract: >-
+  A reproducible settlement-level panel combining population, electoral,
+  socio-economic, built-up-area, and geographic measures for Israeli
+  settlements and related localities in the West Bank, East Jerusalem, and
+  the Golan Heights. The release includes a canonical entity registry,
+  analysis-ready CSV and SQLite outputs, a curated research workbook, figures,
+  source provenance, and a public interactive map.
+keywords:
+  - Israeli settlements
+  - West Bank
+  - East Jerusalem
+  - Golan Heights
+  - political geography
+  - population
+  - elections
+  - geospatial data
+  - reproducible research
+license: CC-BY-4.0
+version: 0.1.0
+date-released: 2026-07-11
