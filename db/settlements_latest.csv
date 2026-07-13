@@ -254,7 +254,7 @@ settlement_id,name_en,name_he,type,source,regional_council,urban_pattern,dist_gl
 253,Kumi Uri,קומי אורי,Outpost,Peace Now,,Outpost,,,2014.0,1172.0,,35.236804,32.157813,active,,קומי אורי,,,,,,,,,,,,,,,,,
 254,Oz Vegaon,עוז וגאון,Outpost,Peace Now,Gush Etzion,Outpost,,,2014.0,1089.0,,35.13356,31.641507,active,,עוז וגאון,,,,,,,,,,,,,,,,,
 255,keidar South,קדר דרום - קדר הישנה,Outpost,Peace Now,Gush Etzion,Outpost,,,2014.0,347.0,,35.301578,31.746074,active,,קדר דרום קדר הישנה,,,,,,,,,,,,,,,,,272.9
-256,Malachei HaShalom,מלאכי השלום,Outpost,Peace Now,Binyamin,Farm Outpost,,,2015.0,1072.0,,35.363438,32.023651,active,,מלאכי השלום,,,,,,,,,,,,,,,,,
+256,Malachei HaShalom,מלאכי השלום,Outpost,Peace Now,Binyamin,Farm Outpost,,,2015.0,1072.0,,35.363438,32.023651,active,3863.0,מלאכי השלום,,,,,,,,,,,,,,,,,
 257,Mehula West - Neve Roim,שירת העשבים - נווה רועים,Outpost,Peace Now,Jordan Valley,Farm Outpost,,,2016.0,1068.0,,35.503758,32.36455,active,,שירת העשבים נווה רועים,,,,,,,,,,,,,,,,,
 258,Nof Gilad Farm - Um Zuka,"אום זוקא, חוות נוף גלעד",Outpost,Peace Now,Jordan Valley,Farm Outpost,,,2016.0,1069.0,,35.51909,32.289011,active,,"אום זוקא, חוות נוף גלעד",,,,,,,,,,,,,,,,,
 259,Meged Shami'm,מגד שמים,Outpost,Peace Now,Shomron,Outpost,,,2016.0,1211.0,,35.244525,32.166206,active,,מגד שמים,,,,,,,,,,,,,,,,,356.5
