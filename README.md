@@ -5,7 +5,8 @@ electoral, socio-economic, built-up-area, and geographic measures for Israeli
 settlements and related localities in the West Bank, East Jerusalem, and the
 Golan Heights.
 
-**[Explore the interactive map](https://pedahzur.github.io/settlements/)**
+**[Explore the interactive map](https://pedahzur.github.io/settlements/)** ·
+**[Golan Heights map](https://pedahzur.github.io/settlements/golan.html)**
 
 **Repository:** [github.com/pedahzur/settlements](https://github.com/pedahzur/settlements)
 
@@ -96,7 +97,9 @@ and `peacenow_settlements_wide`.
    voting, socio-economic, expansion, and latest-snapshot tables, then writes
    CSV and SQLite outputs.
 2. `pipeline.build_geojson` converts the snapshot and population panel into the
-   files consumed by the static map.
+   files consumed by the static map, and `pipeline.build_golan_map` emits
+   `web/data/golan.json` for the dynamic Golan Heights map (annual CBS
+   locality populations, 2003–2024, with the Druze/Alawite comparison group).
 
 Every generated fact table joins to `settlement_dimension.csv` through
 `settlement_id`. Israeli administrative sources first attach through CBS
