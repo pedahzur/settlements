@@ -10,13 +10,14 @@ the voting / economic / built-up tables fill in there.
 """
 from __future__ import annotations
 
-from . import build_geojson, consolidate
+from . import build_geojson, build_golan_map, consolidate
 from .utils import log
 
 
 def main() -> None:
     consolidate.run()
     build_geojson.build()
+    build_golan_map.build()
     log("pipeline complete")
 
 

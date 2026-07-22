@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>West Bank Settlements — Interactive Data Map</title>
+<title>Golan Heights Jewish Localities — Dynamic Population Map</title>
 <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
 <style>
   :root { --panel: #ffffff; --ink: #1b2430; --muted: #6b7785; --line: #e3e8ee; }
@@ -24,12 +24,20 @@
   select { padding: 6px; border: 1px solid var(--line); border-radius: 8px; font-size: 13px; background: #fff; }
   .yearrow { display: flex; align-items: center; gap: 8px; }
   .yearrow #yearval { font-variant-numeric: tabular-nums; font-weight: 600; min-width: 38px; text-align: right; }
+  .yearrow #play {
+    flex: none; width: 28px; height: 28px; border: 1px solid var(--line); border-radius: 8px;
+    background: #fff; cursor: pointer; font-size: 12px; line-height: 1; color: var(--ink);
+  }
+  .yearrow #play.on { background: #1b2430; color: #fff; border-color: #1b2430; }
   .chips { display: flex; flex-wrap: wrap; gap: 6px; }
   .chip { font-size: 11.5px; padding: 4px 9px; border: 1px solid var(--line); border-radius: 999px; cursor: pointer; user-select: none; background: #fff; }
   .chip.on { background: #1b2430; color: #fff; border-color: #1b2430; }
   .legend { font-size: 11.5px; }
   .legend .row { display: flex; align-items: center; gap: 7px; margin: 3px 0; }
   .legend .sw { width: 13px; height: 13px; border-radius: 3px; flex: none; }
+  .total { font-size: 12px; margin-top: 6px; line-height: 1.5; }
+  .total b { font-variant-numeric: tabular-nums; }
+  .count { font-size: 11px; color: var(--muted); margin-top: 6px; }
   .foot { font-size: 10.5px; color: var(--muted); margin-top: 10px; border-top: 1px solid var(--line); padding-top: 8px; line-height: 1.5; }
   .foot a { color: #2b6cb0; }
   .leaflet-popup-content { font-size: 12.5px; line-height: 1.5; }
@@ -37,17 +45,15 @@
   .leaflet-popup-content table { border-collapse: collapse; margin-top: 4px; }
   .leaflet-popup-content td { padding: 1px 6px 1px 0; }
   .leaflet-popup-content td.k { color: var(--muted); }
-  .count { font-size: 11px; color: var(--muted); margin-top: 6px; }
 </style>
 </head>
 <body>
 <div id="map"></div>
 <div class="panel">
-  <h1>West Bank Settlements</h1>
-  <p class="sub">Settlement-level panel — population, growth, voting, socio-economic
-  standing &amp; built-up area. Marker size = population in the selected year;
-  colour = the selected metric. Built from the consolidated database.
-  <a href="golan.html">Golan Heights map ›</a></p>
+  <h1>Golan Heights Jewish Localities</h1>
+  <p class="sub">Annual CBS locality populations, 2003–2024. Marker size =
+  population in the selected year; colour = the selected metric. Druze/Alawite
+  localities can be added for comparison. <a href="./">West Bank map ›</a></p>
 
   <div class="grp">
     <label for="metric">Colour by</label>
@@ -55,25 +61,27 @@
   </div>
 
   <div class="grp">
-    <label for="year">Population year</label>
+    <label for="year">Year</label>
     <div class="yearrow">
+      <button id="play" title="Animate years">▶</button>
       <input type="range" id="year" />
       <span id="yearval"></span>
     </div>
   </div>
 
   <div class="grp">
-    <label>Show types</label>
-    <div class="chips" id="types"></div>
+    <label>Show</label>
+    <div class="chips" id="groups"></div>
   </div>
 
   <div class="grp legend" id="legend"></div>
+  <div class="total" id="total"></div>
   <div class="count" id="count"></div>
 
   <div class="foot" id="foot"></div>
 </div>
 
 <script src="vendor/leaflet/leaflet.js"></script>
-<script src="app.js"></script>
+<script src="golan.js"></script>
 </body>
 </html>
