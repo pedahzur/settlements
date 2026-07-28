@@ -1,4 +1,3 @@
-fatal: /dev/null: '/dev/null' is outside repository at '/workspace/scratch/e84ef4acba14/settlements'
 name: Deploy interactive maps
 
 on:
