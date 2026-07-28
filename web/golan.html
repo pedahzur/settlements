@@ -45,14 +45,19 @@
   .leaflet-popup-content table { border-collapse: collapse; margin-top: 4px; }
   .leaflet-popup-content td { padding: 1px 6px 1px 0; }
   .leaflet-popup-content td.k { color: var(--muted); }
+  .fallback-icon { background: transparent; border: 0; }
+  .fallback-icon span {
+    display: block; width: 8px; height: 8px; transform: rotate(45deg);
+    border: 1px solid #263746; box-shadow: 0 0 0 1px rgba(255,255,255,.7);
+  }
 </style>
 </head>
 <body>
 <div id="map"></div>
 <div class="panel">
   <h1>Golan Heights Jewish Localities</h1>
-  <p class="sub">Annual CBS locality populations, 2003–2024. Marker size =
-  population in the selected year; colour = the selected metric. Druze/Alawite
+  <p class="sub">Annual CBS locality populations, 2003–2024. Built-up locality
+  footprints are outlined and filled by the selected metric. Druze/Alawite
   localities can be added for comparison. <a href="./">West Bank map ›</a></p>
 
   <div class="grp">

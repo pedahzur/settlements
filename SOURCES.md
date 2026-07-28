@@ -98,8 +98,8 @@ finance. Religiosity-per-settlement is generally *inferred*, not measured.
 | Source | Type | Coverage | Format / licence |
 |---|---|---|---|
 | **UN OCHA oPt (HDX)** | Primary | Settlements, Barrier, Area A/B/C, checkpoints, firing zones, admin boundaries | Shapefile/GeoJSON/CSV — mostly **CC BY** — [org](https://data.humdata.org/organization/ocha-opt) |
-| **Geofabrik / OpenStreetMap** "Israel and Palestine" | Crowdsourced | Roads, buildings, places, land use, water | PBF/Shapefile/GeoPackage — **ODbL 1.0** — [download](https://download.geofabrik.de/asia/israel-and-palestine.html) **[reference; not currently ingested]** |
-| **Peace Now interactive map + GIS layers** | NGO | Settlements, outposts, Green Line, Areas A/B | KML/shapefile + PDF |
+| **Geofabrik / OpenStreetMap** "Israel and Palestine" | Crowdsourced | Roads, buildings, places, land use, water | PBF/Shapefile/GeoPackage — **ODbL 1.0** — [download](https://download.geofabrik.de/asia/israel-and-palestine.html) **[ingested → Golan residential footprints]** |
+| **Peace Now interactive map + GIS layers** | NGO | Settlements, outposts, Green Line, Areas A/B | ArcGIS map package containing shapefiles — [download page](https://peacenow.org.il/en/maps-and-gis-layers) **[ingested → West Bank/outpost and East Jerusalem footprints]** |
 | **B'Tselem maps** | NGO | Settlements, state land, firing zones, Barrier | Web map + PDF |
 | **Israel GovMap / Survey of Israel** | Primary | Cadastral blocks (Gush) & parcels (Helka), zoning | Viewer + WMS/feature services — [govmap.gov.il](https://www.govmap.gov.il/?lang=en) |
 | **GeoMOLG** (Palestinian Ministry of Local Government) | Primary (PA) | Parcels, master plans, land use | ArcGIS viewer / REST — [geomolg.ps](https://geomolg.ps) |
@@ -123,6 +123,16 @@ The consolidation pipeline (`pipeline/`) keys every record to one
 - **voting** ← data.gov.il `votes-knesset`, joined via CBS semel yishuv
 - **economic** ← CBS Socio-Economic Index, joined via Hebrew locality name
 - **expansion** ← OCHA settlement polygons → built-up dunams (point-in-polygon)
+- **map footprints** ← Peace Now settlement/outpost shapefiles (West Bank and
+  East Jerusalem) + OpenStreetMap `landuse=residential` polygons distributed by
+  Geofabrik (Golan)
+
+The compact derived footprint files are committed under `web/data/`. Peace Now
+features join primarily through its `DB_ID`/`pn_db_id` crosswalk and secondarily
+through point-in-polygon matching. Golan polygons join when the canonical
+locality point falls inside an OSM residential polygon. Unmatched entities are
+shown as point-only diamonds; the build does not manufacture approximate
+boundaries.
 
 Sources that require open egress (data.gov.il, CBS, HDX) populate on the weekly
 GitHub Actions run; the local build always produces population + geography. See

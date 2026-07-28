@@ -1,11 +1,10 @@
-/* Dynamic Golan Heights map. Loads data/golan.json (emitted by
-   pipeline.build_golan_map) and renders one circle marker per locality:
-   radius scales with population in the chosen year, fill encodes the selected
-   metric. Same stack as the West Bank map: pure Leaflet + vanilla JS, no build
-   step, so it runs as a static GitHub Pages site. */
+/* Dynamic Golan Heights map. Loads data/golan.json plus residential locality
+   footprints derived from the Geofabrik OpenStreetMap shapefile. Polygon fill
+   encodes the selected metric. Same stack as the West Bank map: pure Leaflet +
+   vanilla JS, no build step, so it runs as a static GitHub Pages site. */
 
 const state = { data: null, year: null, metric: "form",
-                groups: new Set(["jewish"]), timer: null };
+                groups: new Set(["jewish"]), footprints: new Map(), timer: null };
 
 // CARTO Bold categorical colours for settlement form; sequential YlOrRd for
 // population; diverging red->blue for growth.
@@ -49,7 +48,8 @@ const METRICS = {
 
 const map = L.map("map", { preferCanvas: true }).setView([33.0, 35.78], 10);
 L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-  attribution: '&copy; OpenStreetMap &copy; CARTO', subdomains: "abcd", maxZoom: 19
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  subdomains: "abcd", maxZoom: 19
 }).addTo(map);
 const layer = L.layerGroup().addTo(map);
 
@@ -71,12 +71,6 @@ function colorFor(loc, vals) {
   return def.ramp[0];
 }
 
-function radiusFor(loc) {
-  const pop = popOf(loc, state.year);
-  if (pop == null) return 4;                       // no published series (Nimrod)
-  return Math.max(4, Math.min(28, 0.6 * Math.sqrt(pop)));
-}
-
 function popupHtml(loc) {
   const rows = [];
   const add = (k, v) => { if (v !== null && v !== undefined && v !== "") rows.push(`<tr><td class="k">${k}</td><td>${v}</td></tr>`); };
@@ -96,16 +90,36 @@ function popupHtml(loc) {
          `<table>${rows.join("")}</table>`;
 }
 
+function fallbackIcon(fillColor) {
+  return L.divIcon({
+    className: "fallback-icon",
+    html: `<span style="background:${fillColor}"></span>`,
+    iconSize: [9, 9],
+    iconAnchor: [4.5, 4.5],
+  });
+}
+
 function render() {
   layer.clearLayers();
   const def = METRICS[state.metric];
   const visible = state.data.localities.filter(l => state.groups.has(l.group));
   const vals = visible.map(l => def.get(l)).filter(v => v != null && !isNaN(v)).sort((a,b)=>a-b);
+  let outlined = 0;
   for (const loc of visible) {
-    L.circleMarker([loc.lat, loc.lon], {
-      radius: radiusFor(loc), color: "#33414f", weight: .5, opacity: .7,
-      fillColor: colorFor(loc, vals), fillOpacity: .82,
-    }).bindPopup(popupHtml(loc)).addTo(layer);
+    const footprints = state.footprints.get(String(loc.id));
+    const fillColor = colorFor(loc, vals);
+    if (footprints?.length) {
+      L.geoJSON({ type: "FeatureCollection", features: footprints }, {
+        style: () => ({
+          color: "#263746", weight: 1, opacity: .9,
+          fillColor, fillOpacity: .78,
+        }),
+      }).bindPopup(popupHtml(loc)).addTo(layer);
+      outlined++;
+    } else {
+      L.marker([loc.lat, loc.lon], { icon: fallbackIcon(fillColor) })
+        .bindPopup(popupHtml(loc)).addTo(layer);
+    }
   }
 
   const totals = [];
@@ -118,7 +132,7 @@ function render() {
   document.getElementById("total").innerHTML =
     totals.length ? `Population in ${state.year} — ${totals.join(" · ")}` : "";
   document.getElementById("count").textContent =
-    `${visible.length} of ${state.data.localities.length} localities shown`;
+    `${visible.length} of ${state.data.localities.length} localities shown · ${outlined} outlined`;
   drawLegend(vals);
 }
 
@@ -195,12 +209,21 @@ function buildControls() {
   document.getElementById("foot").innerHTML =
     `Built ${d.built}. ${d.n_jewish} Jewish localities (Nimrod has no published ` +
     `CBS series) and ${d.n_druze} Druze/Alawite comparison localities, ` +
-    `years ${d.min_year}–${d.max_year}. Source: Israel CBS locality file — see ` +
+    `years ${d.min_year}–${d.max_year}. Population: Israel CBS; footprints: ` +
+    `OpenStreetMap/Geofabrik — see ` +
     `<a href="https://github.com/pedahzur/settlements/blob/main/SOURCES.md">SOURCES.md</a>.`;
 }
 
-fetch("data/golan.json").then(r => r.json()).then(d => {
+Promise.all([
+  fetch("data/golan.json").then(r => r.json()),
+  fetch("data/golan_footprints.geojson").then(r => r.json()),
+]).then(([d, footprints]) => {
   state.data = d;
+  for (const feature of footprints.features || []) {
+    const id = String(feature.properties.settlement_id);
+    if (!state.footprints.has(id)) state.footprints.set(id, []);
+    state.footprints.get(id).push(feature);
+  }
   buildControls();
   setYear(d.max_year);
 }).catch(err => {

@@ -1,12 +1,11 @@
-/* Dynamic settlement map. Loads the consolidated data emitted by the pipeline
-   (data/settlements.geojson, data/population_by_year.json, data/meta.json) and
-   renders one circle marker per settlement: radius scales with population in the
-   chosen year, fill encodes the selected metric. Pure Leaflet + vanilla JS, no
-   build step — so it runs as a static GitHub Pages site. */
+/* Dynamic settlement map. Loads the consolidated entity data plus derived
+   settlement/outpost footprints. Polygon fill encodes the selected metric;
+   entities without a mapped footprint use a small diamond. Pure Leaflet +
+   vanilla JS, with no build step, so it runs as a static GitHub Pages site. */
 
 const DATA = "data/";
 const state = { meta: null, features: [], popByYear: {}, year: null,
-                metric: "latest_pop", types: new Set() };
+                footprints: new Map(), metric: "latest_pop", types: new Set() };
 
 // Sequential / categorical colour ramps.
 const RAMP_BLUE = ["#eff3ff","#c6dbef","#9ecae1","#6baed6","#4292c6","#2171b5","#084594"];
@@ -22,7 +21,9 @@ const trajColor = v => { if (!v) return "#bbb";
   for (const [re, c] of TRAJ_RULES) if (re.test(v)) return c; return "#bbb"; };
 const TYPE_COLORS = { Settlement:"#2171b5", Outpost:"#e6550d",
                       "East Jerusalem":"#6a51a3", "Hebron Enclave":"#ce1256",
-                      "Settlement (B'Tselem-only)":"#3182bd" };
+                      "Settlement (B'Tselem-only)":"#3182bd",
+                      "Golan Settlement":"#238b45",
+                      "Golan Non-Jewish Locality":"#756bb1" };
 
 // Knesset ballot slate-letter codes (otiyot) -> party name. Tuned for the recent
 // cycles (K21-25), which is what the popup's latest-election value almost always
@@ -43,8 +44,8 @@ const partyLabel = code => {
 
 // Metric registry: how to read a value and how to colour it.
 const METRICS = {
-  latest_pop:      { label: "Population (latest)", kind: "seq", ramp: RAMP_BLUE,
-                     get: p => p.latest_pop, fmt: v => v?.toLocaleString() },
+  latest_pop:      { label: "Population (selected year)", kind: "seq", ramp: RAMP_BLUE,
+                     get: p => popOf(p, state.year), fmt: v => Math.round(v).toLocaleString() },
   cagr_pct:        { label: "Growth rate (CAGR %)", kind: "div", ramp: DIVERGE,
                      get: p => p.cagr_pct, fmt: v => v?.toFixed(1) + "%" },
   trajectory:      { label: "Trajectory typology", kind: "cat",
@@ -63,7 +64,8 @@ const METRICS = {
 
 const map = L.map("map", { preferCanvas: true }).setView([31.95, 35.15], 9);
 L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-  attribution: '&copy; OpenStreetMap &copy; CARTO', subdomains: "abcd", maxZoom: 19
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  subdomains: "abcd", maxZoom: 19
 }).addTo(map);
 const layer = L.layerGroup().addTo(map);
 
@@ -89,12 +91,6 @@ function colorFor(m, p, vals) {
     return def.ramp[idx];
   }
   return seqColor(v, vals, def.ramp);
-}
-
-function radiusFor(p) {
-  const pop = popOf(p, state.year);
-  if (pop == null) return 3;                       // outposts have no population
-  return Math.max(3, Math.min(34, 2.2 * Math.sqrt(pop) / 3.0));
 }
 
 function popOf(p, year) {
@@ -127,21 +123,55 @@ function popupHtml(p) {
          `<table>${rows.join("")}</table>`;
 }
 
+function indexFootprints(...collections) {
+  const index = new Map();
+  for (const collection of collections) {
+    for (const feature of collection.features || []) {
+      const id = String(feature.properties.settlement_id);
+      if (!index.has(id)) index.set(id, []);
+      index.get(id).push(feature);
+    }
+  }
+  return index;
+}
+
+function fallbackIcon(fillColor) {
+  return L.divIcon({
+    className: "fallback-icon",
+    html: `<span style="background:${fillColor}"></span>`,
+    iconSize: [9, 9],
+    iconAnchor: [4.5, 4.5],
+  });
+}
+
 function render() {
   layer.clearLayers();
   const def = METRICS[state.metric];
   const visible = state.features.filter(f => state.types.has(f.properties.type));
   const vals = visible.map(f => def.get(f.properties)).filter(v => v != null && !isNaN(v)).sort((a,b)=>a-b);
-  let shown = 0;
+  let shown = 0, outlined = 0;
   for (const f of visible) {
     const p = f.properties, c = f.geometry.coordinates;
-    L.circleMarker([c[1], c[0]], {
-      radius: radiusFor(p), color: "#33414f", weight: .5, opacity: .7,
-      fillColor: colorFor(state.metric, p, vals), fillOpacity: .82,
-    }).bindPopup(popupHtml(p)).addTo(layer);
+    const fillColor = colorFor(state.metric, p, vals);
+    const footprints = state.footprints.get(String(p.settlement_id));
+    if (footprints?.length) {
+      L.geoJSON({ type: "FeatureCollection", features: footprints }, {
+        style: () => ({
+          color: "#263746", weight: 1, opacity: .9,
+          fillColor, fillOpacity: .78,
+        }),
+      }).bindPopup(popupHtml(p)).addTo(layer);
+      outlined++;
+    } else {
+      L.marker([c[1], c[0]], { icon: fallbackIcon(fillColor) })
+        .bindPopup(popupHtml(p)).addTo(layer);
+    }
     shown++;
   }
-  document.getElementById("count").textContent = `${shown} of ${state.features.length} entities shown`;
+  const pointOnly = shown - outlined;
+  document.getElementById("count").textContent =
+    `${shown} of ${state.features.length} entities shown · ${outlined} outlined` +
+    (pointOnly ? ` · ${pointOnly} point-only` : "");
   drawLegend(vals);
 }
 
@@ -188,8 +218,11 @@ function buildControls() {
   const types = [...new Set(state.features.map(f => f.properties.type))];
   const box = document.getElementById("types");
   types.forEach(t => {
-    state.types.add(t);
-    const c = document.createElement("span"); c.className = "chip on"; c.textContent = t;
+    const defaultOn = !t.startsWith("Golan ");
+    if (defaultOn) state.types.add(t);
+    const c = document.createElement("span");
+    c.className = "chip" + (defaultOn ? " on" : "");
+    c.textContent = t;
     c.onclick = () => { if (state.types.has(t)) { state.types.delete(t); c.classList.remove("on"); }
                         else { state.types.add(t); c.classList.add("on"); } render(); };
     box.appendChild(c);
@@ -198,7 +231,8 @@ function buildControls() {
   document.getElementById("foot").innerHTML =
     `Built ${state.meta.built}. ${state.meta.settlement_count} mapped entities, ` +
     `years ${state.meta.min_year}–${state.meta.max_year}. ` +
-    `Sources: Peace Now, B'Tselem, Israel CBS, Central Elections Committee, UN OCHA — see ` +
+    `Footprints: Peace Now GIS and OpenStreetMap/Geofabrik. Other data: ` +
+    `Peace Now, B'Tselem, Israel CBS, Central Elections Committee and UN OCHA — see ` +
     `<a href="https://github.com/pedahzur/settlements/blob/main/SOURCES.md">SOURCES.md</a>. ` +
     `Refreshed weekly.`;
 }
@@ -207,8 +241,13 @@ Promise.all([
   fetch(DATA + "meta.json").then(r => r.json()),
   fetch(DATA + "settlements.geojson").then(r => r.json()),
   fetch(DATA + "population_by_year.json").then(r => r.json()),
-]).then(([meta, geo, pby]) => {
-  state.meta = meta; state.features = geo.features; state.popByYear = pby;
+  fetch(DATA + "settlement_footprints.geojson").then(r => r.json()),
+  fetch(DATA + "golan_footprints.geojson").then(r => r.json()),
+]).then(([meta, geo, pby, settlementFootprints, golanFootprints]) => {
+  state.meta = meta;
+  state.features = geo.features;
+  state.popByYear = pby;
+  state.footprints = indexFootprints(settlementFootprints, golanFootprints);
   buildControls();
   render();
 }).catch(err => {

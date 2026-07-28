@@ -80,7 +80,7 @@ below and should be read with the continuous measures in the workbook.
 | `db/settlements_latest.csv` | One-row-per-entity snapshot joining the latest available measures. |
 | `data/` | Committed source extracts used by the workbook and local population pipeline. |
 | `pipeline/` | Fetch, crosswalk, consolidation, SQLite, and map-data pipeline. |
-| `web/` | Static Leaflet application and generated GeoJSON/JSON data. |
+| `web/` | Static Leaflet application, generated entity data, and compact polygon-footprint GeoJSON. |
 | `figures/` | Six figures supporting the empirical brief. |
 | `analysis/` | Golan comparison artifact, reproducible builder, and proximity/travel-time summaries. |
 | `SOURCES.md` | Detailed provenance inventory, ingestion status, and source caveats. |
@@ -100,6 +100,13 @@ and `peacenow_settlements_wide`.
    files consumed by the static map, and `pipeline.build_golan_map` emits
    `web/data/golan.json` for the dynamic Golan Heights map (annual CBS
    locality populations, 2003–2024, with the Druze/Alawite comparison group).
+
+The web maps draw committed polygon extracts rather than population-scaled
+circles. `web/data/settlement_footprints.geojson` contains Peace Now
+settlement/outpost and East Jerusalem footprints matched to `settlement_id`;
+`web/data/golan_footprints.geojson` contains OpenStreetMap residential polygons
+for the 39 Golan localities. Entities without a reliable polygon remain visible
+as small diamonds rather than being assigned an invented boundary.
 
 Every generated fact table joins to `settlement_dimension.csv` through
 `settlement_id`. Israeli administrative sources first attach through CBS
