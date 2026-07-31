@@ -1,0 +1,103 @@
+idx,decision_date,name_he,region_he,region_en,decision_type
+1,2023-02-12,אביגיל,חברון,Hebron,outpost_legalization
+2,2023-02-12,בית חגלה,יריחו,Jericho,outpost_legalization
+3,2023-02-12,גבעות הרואה,שכם,Nablus,outpost_legalization
+4,2023-02-12,גבעת ארנון,שכם,Nablus,outpost_legalization
+5,2023-02-12,מלאכי השלום,שכם,Nablus,outpost_legalization
+6,2023-02-12,מצפה יהודה,ירושלים,Jerusalem,outpost_legalization
+7,2023-02-12,עשהאל,חברון,Hebron,outpost_legalization
+8,2023-02-12,שדה בועז,בית לחם,Bethlehem,outpost_legalization
+9,2023-02-12,שחרית,קלקיליה,Qalqilya,outpost_legalization
+10,2024-06-27,גבעת אסף,רמאללה,Ramallah,outpost_legalization
+11,2024-06-27,נחל חלץ,בית לחם,Bethlehem,outpost_legalization
+12,2024-06-27,אדוריים,חברון,Hebron,outpost_legalization
+13,2024-06-27,שדה אפרים,רמאללה,Ramallah,outpost_legalization
+14,2024-06-27,אביתר,שכם,Nablus,outpost_legalization
+15,2025-03-22,טל מנשה,ג'נין,Jenin,neighborhood_to_settlement
+16,2025-03-22,ברוש,בקעת הירדן,Jordan Valley,neighborhood_to_settlement
+17,2025-03-22,נופי נחמיה,שכם,Nablus,neighborhood_to_settlement
+18,2025-03-22,שבות רחל,שכם,Nablus,neighborhood_to_settlement
+19,2025-03-22,לשם,קלקיליה,Qalqilya,neighborhood_to_settlement
+20,2025-03-22,חרשה,רמאללה,Ramallah,neighborhood_to_settlement
+21,2025-03-22,כרם רעים,רמאללה,Ramallah,neighborhood_to_settlement
+22,2025-03-22,נריה,רמאללה,Ramallah,neighborhood_to_settlement
+23,2025-03-22,אלון,ירושלים,Jerusalem,neighborhood_to_settlement
+24,2025-03-22,מגרון,רמאללה,Ramallah,neighborhood_to_settlement
+25,2025-03-22,איבי הנחל,בית לחם,Bethlehem,neighborhood_to_settlement
+26,2025-03-22,אבנת,בקעת הירדן,Jordan Valley,neighborhood_to_settlement
+27,2025-03-22,גבעות,בית לחם,Bethlehem,neighborhood_to_settlement
+28,2025-05-18,עיר התמרים,יריחו,Jericho,outpost_legalization
+29,2025-05-18,חוות יאיר,קלקיליה,Qalqilya,outpost_legalization
+30,2025-05-18,עטרות אדר,רמאללה,Ramallah,new_settlement
+31,2025-05-18,בית חורון צפון,רמאללה,Ramallah,new_settlement
+32,2025-05-18,ענבר,רמאללה,Ramallah,outpost_legalization
+33,2025-05-18,אחיה,שכם,Nablus,outpost_legalization
+34,2025-05-18,עדי עד,שכם,Nablus,outpost_legalization
+35,2025-05-18,נופי פרת,ירושלים,Jerusalem,neighborhood_to_settlement
+36,2025-05-18,מחנה גדי,בקעת הירדן,Jordan Valley,outpost_legalization
+37,2025-05-18,גבעונית,בקעת הירדן,Jordan Valley,outpost_legalization
+38,2025-05-18,תבץ (גודר,בקעת הירדן,Jordan Valley,outpost_legalization
+39,2025-05-18,מעלות חלחול,חברון,Hebron,new_settlement
+40,2025-05-18,אפקה,חברון,Hebron,outpost_legalization
+41,2025-05-18,יונדב,חברון,Hebron,outpost_legalization
+42,2025-05-18,מצפה זיו,חברון,Hebron,new_settlement
+43,2025-05-18,רחבעם,שכם,Nablus,new_settlement
+44,2025-05-18,קדם ערבה,יריחו,Jericho,outpost_legalization
+45,2025-05-18,חומש,שכם,Nablus,outpost_legalization
+46,2025-05-18,שא־נור,שכם,Nablus,new_settlement
+47,2025-05-18,הר עיבל,שכם,Nablus,new_settlement
+48,2025-05-18,מעוז צבי,ג'נין,Jenin,outpost_legalization
+49,2025-05-18,אל נווה,ג'נין,Jenin,outpost_legalization
+50,2025-12-11,אלנבי,יריחו,Jericho,new_settlement
+51,2025-12-11,אש קודש,רמאללה,Ramallah,outpost_legalization
+52,2025-12-11,בזק,טובאס,Tubas,outpost_legalization
+53,2025-12-11,גבעת הראל,רמאללה,Ramallah,outpost_legalization
+54,2025-12-11,גנים,ג'נין,Jenin,new_settlement
+55,2025-12-11,דורן,חברון,Hebron,new_settlement
+56,2025-12-11,טמון,טובאס,Tubas,new_settlement
+57,2025-12-11,ייטב מערב,יריחו,Jericho,outpost_legalization
+58,2025-12-11,יער אל קרן,חברון,Hebron,new_settlement
+59,2025-12-11,יציב (שדמה,בית לחם,Bethlehem,outpost_legalization
+60,2025-12-11,כדים,ג'נין,Jenin,new_settlement
+61,2025-12-11,כוכב השחר צפון,רמאללה,Ramallah,outpost_legalization
+62,2025-12-11,משעול,רמאללה,Ramallah,outpost_legalization
+63,2025-12-11,נוף גלעד,רמאללה,Ramallah,outpost_legalization
+64,2025-12-11,פני קדם,חברון,Hebron,neighborhood_to_settlement
+65,2025-12-11,קידה,רמאללה,Ramallah,outpost_legalization
+66,2025-12-11,ראש העין מזרח,סלפית,Salfit,outpost_legalization
+67,2025-12-11,ריחנית,ג'נין,Jenin,outpost_legalization
+68,2025-12-11,שלם,שכם,Nablus,outpost_legalization
+69,2026-03-25,אלוני שומרון,ג'נין,Jenin,new_settlement
+70,2026-03-25,אלישע,יריחו,Jericho,new_settlement
+71,2026-03-25,בית צוער,יריחו,Jericho,new_settlement
+72,2026-03-25,גבעות עדולם,בית לחם,Bethlehem,outpost_legalization
+73,2026-03-25,גד נתן,חברון,Hebron,new_settlement
+74,2026-03-25,גיבורי דוד,בקעת הירדן,Jordan Valley,outpost_legalization
+75,2026-03-25,דיה,יריחו,Jericho,outpost_legalization
+76,2026-03-25,זיבדה,רמאללה,Ramallah,new_settlement
+77,2026-03-25,חיותה,בקעת הירדן,Jordan Valley,new_settlement
+78,2026-03-25,יישוב הדעת,רמאללה,Ramallah,outpost_legalization
+79,2026-03-25,כרמי יהודה,חברון,Hebron,new_settlement
+80,2026-03-25,מבוא השמש,בקעת הירדן,Jordan Valley,new_settlement
+81,2026-03-25,מבוא תרצה,בקעת הירדן,Jordan Valley,new_settlement
+82,2026-03-25,מבואות יהושע,רמאללה,Ramallah,new_settlement
+83,2026-03-25,מגד,חברון,Hebron,new_settlement
+84,2026-03-25,מעיינות,ג'נין,Jenin,new_settlement
+85,2026-03-25,מעלה ענב,חברון,Hebron,outpost_legalization
+86,2026-03-25,מעלה ערוגות,בית לחם,Bethlehem,new_settlement
+87,2026-03-25,מצפה דרגה,בית לחם,Bethlehem,new_settlement
+88,2026-03-25,מצפה יאיר,חברון,Hebron,outpost_legalization
+89,2026-03-25,משואות הר,בית לחם,Bethlehem,new_settlement
+90,2026-03-25,נאות הרים,רמאללה,Ramallah,new_settlement
+91,2026-03-25,נועה,ג'נין,Jenin,new_settlement
+92,2026-03-25,נופי ים,טול כרם,Tulkarem,new_settlement
+93,2026-03-25,נטוף,רמאללה,Ramallah,new_settlement
+94,2026-03-25,עמק דותן,ג'נין,Jenin,new_settlement
+95,2026-03-25,צאלון,סלפית,Salfit,outpost_legalization
+96,2026-03-25,צורי,יריחו,Jericho,new_settlement
+97,2026-03-25,צפנת,שכם,Nablus,outpost_legalization
+98,2026-03-25,רום גלבוע,ג'נין,Jenin,new_settlement
+99,2026-03-25,רמתיים צופים,רמאללה,Ramallah,outpost_legalization
+100,2026-03-25,רשאש,בקעת הירדן,Jordan Valley,outpost_legalization
+101,2026-03-25,שיזף,בית לחם,Bethlehem,new_settlement
+102,2026-04-01,תענך,ג'נין,Jenin,new_settlement

@@ -43,6 +43,18 @@ const partyLabel = code => {
 };
 
 // Metric registry: how to read a value and how to colour it.
+// Government establishment decisions 2023-26 (Peace Now / Kerem Navot report).
+const GOVT_LABELS = {
+  outpost_legalization: "Outpost legalized",
+  neighborhood_to_settlement: "Neighborhood → settlement",
+  new_settlement: "New settlement",
+};
+const GOVT_COLORS = {
+  "Outpost legalized": "#e6550d",
+  "Neighborhood → settlement": "#756bb1",
+  "New settlement": "#31a354",
+};
+
 const METRICS = {
   latest_pop:      { label: "Population (selected year)", kind: "seq", ramp: RAMP_BLUE,
                      get: p => popOf(p, state.year), fmt: v => Math.round(v).toLocaleString() },
@@ -60,6 +72,9 @@ const METRICS = {
                      get: p => p.se_cluster, fmt: v => "cluster " + v },
   built_up_dunams: { label: "Built-up area (dunams)", kind: "seq", ramp: RAMP_BLUE, needs: "has_builtup",
                      get: p => p.built_up_dunams, fmt: v => v?.toLocaleString() + " du" },
+  govt_decision:   { label: "Gov't establishment decision (2023–26)", kind: "cat", needs: "has_govt_decision",
+                     get: p => p.govt_decision_type ? GOVT_LABELS[p.govt_decision_type] : null,
+                     color: v => GOVT_COLORS[v] || "#bbb" },
 };
 
 const map = L.map("map", { preferCanvas: true }).setView([31.95, 35.15], 9);
@@ -119,6 +134,7 @@ function popupHtml(p) {
   add("Leading party", partyLabel(p.top_party));
   add("Socio-econ cluster", p.se_cluster != null ? `${p.se_cluster} (rank ${p.se_rank ?? "—"})` : null);
   add("Built-up area", p.built_up_dunams != null ? p.built_up_dunams.toLocaleString() + " dunams" : null);
+  add("Gov't decision", p.govt_decision_type ? `${GOVT_LABELS[p.govt_decision_type]} (${p.govt_decision_date})` : null);
   return `<b>${p.name_en || ""}</b> ${p.name_he ? `<span dir="rtl">${p.name_he}</span>` : ""}` +
          `<table>${rows.join("")}</table>`;
 }

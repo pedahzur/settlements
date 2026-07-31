@@ -34,7 +34,7 @@ def build() -> None:
         "latest_pop", "latest_pop_year", "peak_pop", "peak_year", "cagr_pct",
         "decline_from_peak_pct", "trajectory", "latest_knesset",
         "right_bloc_share", "top_party", "turnout", "se_cluster", "se_rank",
-        "built_up_dunams",
+        "built_up_dunams", "govt_decision_type", "govt_decision_date",
     ]
     have = [c for c in props_cols if c in snap.columns]
 
@@ -77,6 +77,8 @@ def build() -> None:
                              if "se_cluster" in snap.columns else False),
         "has_builtup": bool(snap.get("built_up_dunams").notna().any()
                             if "built_up_dunams" in snap.columns else False),
+        "has_govt_decision": bool(snap.get("govt_decision_type").notna().any()
+                                  if "govt_decision_type" in snap.columns else False),
     }
     (config.WEB_DATA / "meta.json").write_text(json.dumps(meta, ensure_ascii=False))
     log(f"meta: years {meta['min_year']}-{meta['max_year']}, "

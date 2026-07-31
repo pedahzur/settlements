@@ -83,6 +83,8 @@ below and should be read with the continuous measures in the workbook.
 | `web/` | Static Leaflet application, generated entity data, and compact polygon-footprint GeoJSON. |
 | `figures/` | Six figures supporting the empirical brief. |
 | `analysis/` | Golan comparison artifact, reproducible builder, and proximity/travel-time summaries. |
+| `data/govt_establishment_decisions.csv` | 102 government settlement-establishment decisions (2023–2026), extracted from the Peace Now / Kerem Navot report. |
+| `docs/` | Source publications (the Peace Now / Kerem Navot 2023–2025 report) and its extracted [key-figures summary](docs/report_2023-2025_key_figures.md). |
 | `SOURCES.md` | Detailed provenance inventory, ingestion status, and source caveats. |
 
 The workbook sheets are `README`, `master_panel_long`, `settlement_summary`,
@@ -151,6 +153,13 @@ The integrated sources are Peace Now Settlement Watch, B'Tselem, Israel Central
 Bureau of Statistics, the Israel Central Elections Committee/data.gov.il, and
 UN OCHA oPt/HDX. See [`SOURCES.md`](SOURCES.md) for exact endpoints, formats,
 coverage, ingestion status, and reliability notes.
+
+The **Peace Now / Kerem Navot report on 2023–2025** (`docs/`) adds recent
+context: aggregate figures on outposts, dispossession, construction planning,
+roads, and state-land declarations (summarized in
+[`docs/report_2023-2025_key_figures.md`](docs/report_2023-2025_key_figures.md)),
+and a per-settlement list of **102 government establishment decisions** joined
+onto the map as the metric "Gov't establishment decision (2023–26)".
 
 Key limitations:
 
