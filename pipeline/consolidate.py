@@ -83,6 +83,12 @@ def _latest_snapshot(dim, population, voting, economic, expansion) -> pd.DataFra
     if not expansion.empty:
         snap = snap.merge(expansion[["settlement_id", "built_up_dunams"]],
                           on="settlement_id", how="left")
+
+    # Government establishment decisions 2023-2026 (Peace Now / Kerem Navot).
+    from .fetch_govt_decisions import build as build_govt
+    gov = build_govt(dim)
+    if not gov.empty:
+        snap = snap.merge(gov, on="settlement_id", how="left")
     return snap
 
 
