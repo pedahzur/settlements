@@ -81,10 +81,20 @@ and joined onto the map (see below).
 - **Discussion:** the aggregate figures above (referenced from `README.md` and
   the empirical brief) situate the panel's settlement-level trends inside the
   2023–2025 acceleration.
-- **Map:** the 102 establishment decisions are joined to the settlement
-  dimension by Hebrew name. 24 match entities already in the panel (17 outpost
-  legalizations of existing outposts, 7 neighbourhoods) and appear on the
-  interactive map under the metric **"Gov't establishment decision (2023–26)"**,
-  coloured by decision type with the decision date in the popup. The remaining
-  ~78 (chiefly brand-new settlements) have no published coordinates yet and are
-  kept in the CSV for reference / future geocoding.
+- **Map (panel entities):** the 102 establishment decisions are joined to the
+  settlement dimension by Hebrew name. 24 match entities already in the panel
+  (17 outpost legalizations of existing outposts, 7 neighbourhoods) and appear
+  under the metric **"Gov't establishment decision (2023–26)"**, coloured by
+  decision type with the decision date in the popup.
+- **Map (geocoded overlay):** the remaining decisions — chiefly brand-new
+  settlements not in the panel — are geocoded from **authoritative open sources**
+  (`pipeline/geocode_new_settlements.py`): Wikidata coordinates (P625) first,
+  then OSM/Nominatim, each candidate validated to fall inside a West Bank
+  bounding box. Resolved points appear as a toggleable ring-marker overlay
+  ("◇ New settlements 2023–26"), and every point carries its `coord_source`
+  (`wikidata:<QID>` / `osm:<id>`) and `coord_confidence` (`exact`/`approximate`)
+  in the popup. Coordinates are cached to `data/new_settlement_coords.csv`.
+  Coverage is partial by design: well-known and re-established settlements
+  (Homesh, Sa-Nur, Ganim, Kadim) and named outposts resolve; brand-new farm
+  outposts absent from every gazetteer stay listed-but-unmapped rather than being
+  placed at a guessed location.
