@@ -5,7 +5,8 @@
 
 const DATA = "data/";
 const state = { meta: null, features: [], popByYear: {}, year: null,
-                footprints: new Map(), metric: "latest_pop", types: new Set() };
+                footprints: new Map(), metric: "latest_pop", types: new Set(),
+                newSettlements: [], showNew: true };
 
 // Sequential / categorical colour ramps.
 const RAMP_BLUE = ["#eff3ff","#c6dbef","#9ecae1","#6baed6","#4292c6","#2171b5","#084594"];
@@ -83,6 +84,7 @@ L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
   subdomains: "abcd", maxZoom: 19
 }).addTo(map);
 const layer = L.layerGroup().addTo(map);
+const newLayer = L.layerGroup().addTo(map);   // geocoded 2023-26 establishment decisions
 
 function quantile(sorted, q) {
   const pos = (sorted.length - 1) * q, base = Math.floor(pos), rest = pos - base;
@@ -191,6 +193,31 @@ function render() {
   drawLegend(vals);
 }
 
+function newPopupHtml(p) {
+  const conf = p.coord_confidence === "exact" ? "exact" : "approximate";
+  return `<b dir="rtl">${p.name_he}</b>` +
+    `<table>` +
+    `<tr><td class="k">Decision</td><td>${GOVT_LABELS[p.decision_type] || p.decision_type} (${p.decision_date})</td></tr>` +
+    (p.region_en ? `<tr><td class="k">Region</td><td>${p.region_en}</td></tr>` : "") +
+    `<tr><td class="k">Coordinate</td><td>${conf} — ${p.coord_source}</td></tr>` +
+    `</table>`;
+}
+
+function renderNew() {
+  newLayer.clearLayers();
+  if (!state.showNew) return;
+  for (const f of state.newSettlements) {
+    const p = f.properties, c = f.geometry.coordinates;
+    const col = GOVT_COLORS[GOVT_LABELS[p.decision_type]] || "#111";
+    // Ring marker (white fill, coloured stroke) to read distinctly from the panel.
+    L.circleMarker([c[1], c[0]], {
+      radius: 5, color: col, weight: 2.5, opacity: 1,
+      fillColor: "#ffffff", fillOpacity: 1,
+      dashArray: p.coord_confidence === "exact" ? null : "2,2",
+    }).bindPopup(newPopupHtml(p)).addTo(newLayer);
+  }
+}
+
 function drawLegend(vals) {
   const def = METRICS[state.metric], el = document.getElementById("legend");
   let html = `<label>${def.label}</label>`;
@@ -244,6 +271,18 @@ function buildControls() {
     box.appendChild(c);
   });
 
+  // Overlay toggle for the geocoded 2023-26 establishment decisions.
+  if (state.meta.has_new_settlements) {
+    const n = state.meta.new_settlement_count || state.newSettlements.length;
+    const c = document.createElement("span");
+    c.className = "chip on";
+    c.textContent = `◇ New settlements 2023–26 (${n})`;
+    c.title = "Government establishment decisions geocoded from Wikidata / OSM (ring markers)";
+    c.onclick = () => { state.showNew = !state.showNew;
+                        c.classList.toggle("on", state.showNew); renderNew(); };
+    box.appendChild(c);
+  }
+
   document.getElementById("foot").innerHTML =
     `Built ${state.meta.built}. ${state.meta.settlement_count} mapped entities, ` +
     `years ${state.meta.min_year}–${state.meta.max_year}. ` +
@@ -259,13 +298,17 @@ Promise.all([
   fetch(DATA + "population_by_year.json").then(r => r.json()),
   fetch(DATA + "settlement_footprints.geojson").then(r => r.json()),
   fetch(DATA + "golan_footprints.geojson").then(r => r.json()),
-]).then(([meta, geo, pby, settlementFootprints, golanFootprints]) => {
+  fetch(DATA + "new_settlements.geojson").then(r => r.ok ? r.json() : { features: [] })
+    .catch(() => ({ features: [] })),
+]).then(([meta, geo, pby, settlementFootprints, golanFootprints, newSettlements]) => {
   state.meta = meta;
   state.features = geo.features;
   state.popByYear = pby;
   state.footprints = indexFootprints(settlementFootprints, golanFootprints);
+  state.newSettlements = newSettlements.features || [];
   buildControls();
   render();
+  renderNew();
 }).catch(err => {
   document.getElementById("foot").innerHTML =
     `<b style="color:#b2182b">Could not load data.</b> ${err}`;
