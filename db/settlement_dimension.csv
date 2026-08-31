@@ -1,152 +1,152 @@
 settlement_id,name_en,name_he,type,source,regional_council,urban_pattern,dist_gl_km,elevation,year_established,pn_db_id,bt_gisid,lon,lat,status,cbs_semel,he_join_key
-1,Avnei Hefetz,אבני חפץ,Settlement,Peace Now + B'Tselem,Shomron,Urban,4.2,200.0,1990.0,1.0,3793.0,35.0734,32.2859,active,3793.0,אבני חפץ
+1,Avnei Hefetz,אבני חפץ,Settlement,Peace Now + B'Tselem,Shomron,Urban,4.2,200.0,1990.0,1.0,3793.0,35.0734,32.2859,active,,אבני חפץ
 2,Ovnat,אבנת,Settlement,Peace Now + B'Tselem,Megilot,Community,21.0,-330.0,1983.0,2.0,3786.0,35.436,31.6788,active,,אבנת
-3,Adora,אדורה,Settlement,Peace Now + B'Tselem,Har Hebron,Community,6.4,650.0,1984.0,3.0,3759.0,35.0165,31.5518,active,3759.0,אדורה
-4,Oranit,אורנית,Settlement,Peace Now + B'Tselem,Oranit,Urban,0.0,140.0,1985.0,4.0,3760.0,34.9909,32.1305,active,3760.0,אורנית
-5,Itamar,איתמר,Settlement,Peace Now + B'Tselem,Shomron,Community,28.0,660.0,1984.0,5.0,3762.0,35.3023,32.1761,active,3762.0,איתמר
-6,Alon,אלון,Settlement,Peace Now + B'Tselem,Binyamin,Community,12.6,,1990.0,6.0,,35.3527341,31.8330401,active,3898.0,אלון
-7,Elon More,אלון מורה,Settlement,Peace Now + B'Tselem,Shomron,Community,22.0,635.0,1979.0,7.0,3579.0,35.3334,32.2331,active,3579.0,אלון מורה
-8,Alon Shvut,אלון שבות,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,4.6,965.0,1970.0,8.0,3604.0,35.1245,31.6553,active,3604.0,אלון שבות
-9,Almog,אלמוג,Settlement,Peace Now + B'Tselem,Megilot,Kibbutz,20.6,-270.0,1977.0,9.0,3556.0,35.4604,31.7895,active,3556.0,אלמוג
+3,Adora,אדורה,Settlement,Peace Now + B'Tselem,Har Hebron,Community,6.4,650.0,1984.0,3.0,3759.0,35.0165,31.5518,active,,אדורה
+4,Oranit,אורנית,Settlement,Peace Now + B'Tselem,Oranit,Urban,0.0,140.0,1985.0,4.0,3760.0,34.9909,32.1305,active,,אורנית
+5,Itamar,איתמר,Settlement,Peace Now + B'Tselem,Shomron,Community,28.0,660.0,1984.0,5.0,3762.0,35.3023,32.1761,active,,איתמר
+6,Alon,אלון,Settlement,Peace Now + B'Tselem,Binyamin,Community,12.6,,1990.0,6.0,,35.3527341,31.8330401,active,,אלון
+7,Elon More,אלון מורה,Settlement,Peace Now + B'Tselem,Shomron,Community,22.0,635.0,1979.0,7.0,3579.0,35.3334,32.2331,active,,אלון מורה
+8,Alon Shvut,אלון שבות,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,4.6,965.0,1970.0,8.0,3604.0,35.1245,31.6553,active,,אלון שבות
+9,Almog,אלמוג,Settlement,Peace Now + B'Tselem,Megilot,Kibbutz,20.6,-270.0,1977.0,9.0,3556.0,35.4604,31.7895,active,,אלמוג
 10,Elmatan,אלמתן,Settlement,Peace Now,Shomron,,,,,228.0,,,,active,,אלמתן
-11,El'azar,אלעזר,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,5.5,910.0,1975.0,10.0,3618.0,35.1419,31.6598,active,3618.0,אלעזר
-12,Alfei Menashe,אלפי מנשה,Settlement,Peace Now + B'Tselem,Alfei Menashe,Urban,2.8,200.0,1983.0,11.0,3750.0,35.0127,32.173,active,3750.0,אלפי מנשה
-13,Elkana,אלקנה,Settlement,Peace Now + B'Tselem,Elkana,Urban,3.1,270.0,1977.0,12.0,3560.0,35.0342,32.1115,active,3560.0,אלקנה
+11,El'azar,אלעזר,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,5.5,910.0,1975.0,10.0,3618.0,35.1419,31.6598,active,,אלעזר
+12,Alfei Menashe,אלפי מנשה,Settlement,Peace Now + B'Tselem,Alfei Menashe,Urban,2.8,200.0,1983.0,11.0,3750.0,35.0127,32.173,active,,אלפי מנשה
+13,Elkana,אלקנה,Settlement,Peace Now + B'Tselem,Elkana,Urban,3.1,270.0,1977.0,12.0,3560.0,35.0342,32.1115,active,,אלקנה
 14,Asfar,אספר (מיצד),Settlement,Peace Now + B'Tselem,Gush Etzion,Community,14.5,940.0,1983.0,13.0,3754.0,35.1889,31.5866,active,,אספר מיצד
-15,Efrat,אפרת,Settlement,Peace Now + B'Tselem,Efrata,Community,6.5,910.0,1980.0,14.0,3650.0,35.1549,31.6607,active,3650.0,אפרת
-16,Argaman,ארגמן,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,23.7,-180.0,1968.0,15.0,3598.0,35.5221,32.172,active,3598.0,ארגמן
-17,Ariel,אריאל,Settlement,Peace Now + B'Tselem,Ariel,Urban,16.1,560.0,1978.0,16.0,3570.0,35.1871,32.1045,active,3570.0,אריאל
-18,Eshkolot,אשכולות,Settlement,Peace Now + B'Tselem,Har Hebron,Community,1.8,600.0,1982.0,17.0,3722.0,34.9044,31.3906,active,3722.0,אשכולות
-19,Beit El,בית אל,Settlement,Peace Now + B'Tselem,Beit El,Community,13.5,860.0,1977.0,18.0,3574.0,35.2225,31.9417,active,3574.0,בית אל
+15,Efrat,אפרת,Settlement,Peace Now + B'Tselem,Efrata,Community,6.5,910.0,1980.0,14.0,3650.0,35.1549,31.6607,active,,אפרת
+16,Argaman,ארגמן,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,23.7,-180.0,1968.0,15.0,3598.0,35.5221,32.172,active,,ארגמן
+17,Ariel,אריאל,Settlement,Peace Now + B'Tselem,Ariel,Urban,16.1,560.0,1978.0,16.0,3570.0,35.1871,32.1045,active,,אריאל
+18,Eshkolot,אשכולות,Settlement,Peace Now + B'Tselem,Har Hebron,Community,1.8,600.0,1982.0,17.0,3722.0,34.9044,31.3906,active,,אשכולות
+19,Beit El,בית אל,Settlement,Peace Now + B'Tselem,Beit El,Community,13.5,860.0,1977.0,18.0,3574.0,35.2225,31.9417,active,,בית אל
 20,Beit Al-Baraka,בית אלברכה,Settlement,Peace Now,Gush Etzion,,,,2015.0,1113.0,,,,active,,בית אלברכה
-21,Beit Arye,בית אריה,Settlement,Peace Now + B'Tselem,Beit Arye,Urban,3.8,345.0,1981.0,19.0,3652.0,35.0506,32.0361,active,3652.0,בית אריה
-22,Beit Ha'arava,בית הערבה,Settlement,Peace Now + B'Tselem,Jordan Valley,Kibbutz,22.5,-320.0,1980.0,20.0,3645.0,35.4769,31.8078,active,3645.0,בית הערבה
-23,Beit Horon,בית חורון,Settlement,Peace Now + B'Tselem,Binyamin,Community,4.7,625.0,1977.0,21.0,3575.0,35.1262,31.8776,active,3575.0,בית חורון
-24,Beitar Illit,ביתר עילית,Settlement,Peace Now + B'Tselem,Beitar Illit,Urban,0.4,870.0,1985.0,22.0,3780.0,35.1131,31.6973,active,3780.0,ביתר עלית
-25,Bqa'ot,בקעות,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,17.1,100.0,1972.0,23.0,3612.0,35.4546,32.2425,active,3612.0,בקעות
-26,Bruchin,ברוכין,Settlement,Peace Now + B'Tselem,Shomron,,9.3,,,233.0,15027.0,35.0858929586,32.0804660922,active,3744.0,ברוכין
-27,Bracha,ברכה,Settlement,Peace Now + B'Tselem,Shomron,Community,23.2,850.0,1983.0,24.0,3710.0,35.2635,32.1924,active,3710.0,ברכה
+21,Beit Arye,בית אריה,Settlement,Peace Now + B'Tselem,Beit Arye,Urban,3.8,345.0,1981.0,19.0,3652.0,35.0506,32.0361,active,,בית אריה
+22,Beit Ha'arava,בית הערבה,Settlement,Peace Now + B'Tselem,Jordan Valley,Kibbutz,22.5,-320.0,1980.0,20.0,3645.0,35.4769,31.8078,active,,בית הערבה
+23,Beit Horon,בית חורון,Settlement,Peace Now + B'Tselem,Binyamin,Community,4.7,625.0,1977.0,21.0,3575.0,35.1262,31.8776,active,,בית חורון
+24,Beitar Illit,ביתר עילית,Settlement,Peace Now + B'Tselem,Beitar Illit,Urban,0.4,870.0,1985.0,22.0,3780.0,35.1131,31.6973,active,,ביתר עלית
+25,Bqa'ot,בקעות,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,17.1,100.0,1972.0,23.0,3612.0,35.4546,32.2425,active,,בקעות
+26,Bruchin,ברוכין,Settlement,Peace Now + B'Tselem,Shomron,,9.3,,,233.0,15027.0,35.0858929586,32.0804660922,active,,ברוכין
+27,Bracha,ברכה,Settlement,Peace Now + B'Tselem,Shomron,Community,23.2,850.0,1983.0,24.0,3710.0,35.2635,32.1924,active,,ברכה
 28,Barqan,"ברקן (בית אב""א)",Settlement,Peace Now + B'Tselem,Shomron,Community,10.5,455.0,1981.0,25.0,3654.0,35.1054,32.1067,active,,ברקן בית אב א
-29,Bat Ayin,בת עין,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,2.8,870.0,1989.0,26.0,3794.0,35.101,31.6579,active,3794.0,בת עין
+29,Bat Ayin,בת עין,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,2.8,870.0,1989.0,26.0,3794.0,35.101,31.6579,active,,בת עין
 30,Geva Binyamin (aka Adam),גבע בנימין (אדם),Settlement,Peace Now + B'Tselem,Binyamin,Urban,6.6,655.0,1984.0,27.0,3763.0,35.2739,31.8493,active,,גבע בנימין אדם
 31,Giv'on,גבעון,Settlement,Peace Now,Givat Ze'ev,Community,4.9,,1977.0,28.0,,,,active,,גבעון
-32,Giv'on Ha'hadasha,גבעון החדשה,Settlement,Peace Now + B'Tselem,Binyamin,Community,4.0,755.0,1980.0,29.0,3644.0,35.1576,31.8477,active,3644.0,גבעון החדשה
-33,Gva'ot,גבעות,Settlement,Peace Now,Gush Etzion,Community,1.8,,,30.0,,,,active,3783.0,גבעות
-34,Givat Ze'ev,גבעת זאב,Settlement,Peace Now + B'Tselem,Givat Ze'ev,Urban,4.9,770.0,1983.0,31.0,3730.0,35.1676,31.861,active,3730.0,גבעת זאב
-35,Gitit,גיתית,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,37.0,305.0,1973.0,32.0,3613.0,35.3952,32.1012,active,3613.0,גיתית
-36,Gilgal,גלגל,Settlement,Peace Now + B'Tselem,Jordan Valley,Kibbutz,30.2,-235.0,1970.0,33.0,3606.0,35.4466,31.9998,active,3606.0,גלגל
-37,Ganei Modiin,גני מודיעין,Settlement,Peace Now,Binyamin,,0.5,,1985.0,1078.0,,,,active,3823.0,גני מודיעין
-38,Dolev,דולב,Settlement,Peace Now + B'Tselem,Binyamin,Community,8.6,610.0,1983.0,34.0,3747.0,35.133,31.926,active,3747.0,דולב
-39,Har Adar,הר אדר,Settlement,Peace Now + B'Tselem,Har Adar,Community,0.0,880.0,1986.0,35.0,3769.0,35.1285,31.8261,active,3769.0,הר אדר
-40,Har Gilo,הר גילה,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,1.8,915.0,1972.0,36.0,3603.0,35.1697,31.7222,active,3603.0,הר גילה
+32,Giv'on Ha'hadasha,גבעון החדשה,Settlement,Peace Now + B'Tselem,Binyamin,Community,4.0,755.0,1980.0,29.0,3644.0,35.1576,31.8477,active,,גבעון החדשה
+33,Gva'ot,גבעות,Settlement,Peace Now,Gush Etzion,Community,1.8,,,30.0,,,,active,,גבעות
+34,Givat Ze'ev,גבעת זאב,Settlement,Peace Now + B'Tselem,Givat Ze'ev,Urban,4.9,770.0,1983.0,31.0,3730.0,35.1676,31.861,active,,גבעת זאב
+35,Gitit,גיתית,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,37.0,305.0,1973.0,32.0,3613.0,35.3952,32.1012,active,,גיתית
+36,Gilgal,גלגל,Settlement,Peace Now + B'Tselem,Jordan Valley,Kibbutz,30.2,-235.0,1970.0,33.0,3606.0,35.4466,31.9998,active,,גלגל
+37,Ganei Modiin,גני מודיעין,Settlement,Peace Now,Binyamin,,0.5,,1985.0,1078.0,,,,active,,גני מודיעין
+38,Dolev,דולב,Settlement,Peace Now + B'Tselem,Binyamin,Community,8.6,610.0,1983.0,34.0,3747.0,35.133,31.926,active,,דולב
+39,Har Adar,הר אדר,Settlement,Peace Now + B'Tselem,Har Adar,Community,0.0,880.0,1986.0,35.0,3769.0,35.1285,31.8261,active,,הר אדר
+40,Har Gilo,הר גילה,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,1.8,915.0,1972.0,36.0,3603.0,35.1697,31.7222,active,,הר גילה
 41,Har Shmuel,הר שמואל,Settlement,Peace Now,Givat Ze'ev,Urban,4.9,,1998.0,37.0,,,,active,,הר שמואל
-42,Vered Yericho,ורד יריחו,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav/Community,18.7,-130.0,1980.0,38.0,3639.0,35.4313,31.826,active,3639.0,ורד יריחו
-43,Hebron,חברון,Settlement,Peace Now,Kiryat Arba,,15.0,,1978.0,39.0,,,,active,3400.0,חברון
-44,Haggai,חגי,Settlement,Peace Now + B'Tselem,Har Hebron,Community,12.3,880.0,1984.0,40.0,3764.0,35.0792,31.4926,active,3764.0,חגי
+42,Vered Yericho,ורד יריחו,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav/Community,18.7,-130.0,1980.0,38.0,3639.0,35.4313,31.826,active,,ורד יריחו
+43,Hebron,חברון,Settlement,Peace Now,Kiryat Arba,,15.0,,1978.0,39.0,,,,active,,חברון
+44,Haggai,חגי,Settlement,Peace Now + B'Tselem,Har Hebron,Community,12.3,880.0,1984.0,40.0,3764.0,35.0792,31.4926,active,,חגי
 45,Horesh Yaron,חורש ירון,Settlement,Peace Now,Binyamin,,,,,265.0,,,,active,,חורש ירון
-46,Hinanit,חיננית,Settlement,Peace Now + B'Tselem,Shomron,Community,2.3,390.0,1981.0,41.0,3643.0,35.1719,32.4801,active,3643.0,חיננית
+46,Hinanit,חיננית,Settlement,Peace Now + B'Tselem,Shomron,Community,2.3,390.0,1981.0,41.0,3643.0,35.1719,32.4801,active,,חיננית
 47,Halamish,חלמיש,Settlement,Peace Now + B'Tselem,Binyamin,Community,10.7,560.0,1977.0,42.0,3573.0,35.1262,32.0063,active,,חלמיש
-48,Chemdat,חמדת,Settlement,Peace Now + B'Tselem,Jordan Valley,Community,14.7,130.0,1980.0,43.0,3646.0,35.5257,32.2509,active,3646.0,חמדת
-49,Hamra,חמרה,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,22.5,-55.0,1971.0,44.0,3609.0,35.4366,32.1995,active,3609.0,חמרה
-50,Hermesh,חרמש,Settlement,Peace Now + B'Tselem,Shomron,Community,5.0,290.0,1982.0,45.0,3717.0,35.1184,32.423,active,3717.0,חרמש
-51,Hashmonaim,חשמונאים,Settlement,Peace Now + B'Tselem,Binyamin,Urban,0.0,190.0,1985.0,46.0,3770.0,35.0201,31.9299,active,3770.0,חשמונאים
-52,Tal Menashe,טל מנשה,Settlement,Peace Now,Shomron,Community,,,2000.0,47.0,,,,active,3873.0,טל מנשה
-53,Talmon,טלמון,Settlement,Peace Now + B'Tselem,Binyamin,Community,10.5,560.0,1989.0,48.0,3788.0,35.1317,31.9453,active,3788.0,טלמון
-54,Tene,טנא,Settlement,Peace Now + B'Tselem,Har Hebron,Community,2.3,550.0,1983.0,49.0,3743.0,34.9564,31.375,active,3743.0,טנא
+48,Chemdat,חמדת,Settlement,Peace Now + B'Tselem,Jordan Valley,Community,14.7,130.0,1980.0,43.0,3646.0,35.5257,32.2509,active,,חמדת
+49,Hamra,חמרה,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,22.5,-55.0,1971.0,44.0,3609.0,35.4366,32.1995,active,,חמרה
+50,Hermesh,חרמש,Settlement,Peace Now + B'Tselem,Shomron,Community,5.0,290.0,1982.0,45.0,3717.0,35.1184,32.423,active,,חרמש
+51,Hashmonaim,חשמונאים,Settlement,Peace Now + B'Tselem,Binyamin,Urban,0.0,190.0,1985.0,46.0,3770.0,35.0201,31.9299,active,,חשמונאים
+52,Tal Menashe,טל מנשה,Settlement,Peace Now,Shomron,Community,,,2000.0,47.0,,,,active,,טל מנשה
+53,Talmon,טלמון,Settlement,Peace Now + B'Tselem,Binyamin,Community,10.5,560.0,1989.0,48.0,3788.0,35.1317,31.9453,active,,טלמון
+54,Tene,טנא,Settlement,Peace Now + B'Tselem,Har Hebron,Community,2.3,550.0,1983.0,49.0,3743.0,34.9564,31.375,active,,טנא
 55,Yitav,"ייט""ב",Settlement,Peace Now + B'Tselem,Jordan Valley,Kibbutz,24.7,-100.0,1970.0,50.0,3607.0,35.4232,31.9467,active,,ייט ב
-56,Yafit,יפית,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,36.0,-245.0,1980.0,51.0,3566.0,35.4728,32.0619,active,3566.0,יפית
-57,Yitzhar,יצהר,Settlement,Peace Now + B'Tselem,Shomron,Community,20.5,620.0,1983.0,52.0,3749.0,35.2381,32.166,active,3749.0,יצהר
-58,Yakir,יקיר,Settlement,Peace Now + B'Tselem,Shomron,Community,11.2,390.0,1981.0,53.0,3647.0,35.1129,32.1493,active,3647.0,יקיר
-59,Kochav Ha'shachar,כוכב השחר,Settlement,Peace Now + B'Tselem,Binyamin,Community,20.5,600.0,1977.0,54.0,3564.0,35.3478,31.9592,active,3564.0,כוכב השחר
-60,Kochav Ya'akov,כוכב יעקב,Settlement,Peace Now + B'Tselem,Binyamin,Community,7.7,820.0,1985.0,55.0,3779.0,35.2421,31.8799,active,3779.0,כוכב יעקב
-61,Kfar Adumim,כפר אדומים,Settlement,Peace Now + B'Tselem,Binyamin,Community,10.6,350.0,1979.0,56.0,3638.0,35.3333,31.8236,active,3638.0,כפר אדומים
+56,Yafit,יפית,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,36.0,-245.0,1980.0,51.0,3566.0,35.4728,32.0619,active,,יפית
+57,Yitzhar,יצהר,Settlement,Peace Now + B'Tselem,Shomron,Community,20.5,620.0,1983.0,52.0,3749.0,35.2381,32.166,active,,יצהר
+58,Yakir,יקיר,Settlement,Peace Now + B'Tselem,Shomron,Community,11.2,390.0,1981.0,53.0,3647.0,35.1129,32.1493,active,,יקיר
+59,Kochav Ha'shachar,כוכב השחר,Settlement,Peace Now + B'Tselem,Binyamin,Community,20.5,600.0,1977.0,54.0,3564.0,35.3478,31.9592,active,,כוכב השחר
+60,Kochav Ya'akov,כוכב יעקב,Settlement,Peace Now + B'Tselem,Binyamin,Community,7.7,820.0,1985.0,55.0,3779.0,35.2421,31.8799,active,,כוכב יעקב
+61,Kfar Adumim,כפר אדומים,Settlement,Peace Now + B'Tselem,Binyamin,Community,10.6,350.0,1979.0,56.0,3638.0,35.3333,31.8236,active,,כפר אדומים
 62,Kfar Ha'oranim,כפר האורנים (מנורה),Settlement,Peace Now + B'Tselem,Binyamin,Urban,0.0,260.0,1998.0,57.0,3796.0,35.0363,31.9195,active,,כפר האורנים מנורה
-63,Kfar Etzion,כפר עציון,Settlement,Peace Now + B'Tselem,Gush Etzion,Kibbutz,4.7,955.0,1967.0,58.0,3488.0,35.1148,31.6489,active,3488.0,כפר עציון
-64,Kfar Tapuah,כפר תפוח,Settlement,Peace Now + B'Tselem,Shomron,Community,24.0,670.0,1978.0,59.0,3572.0,35.2474,32.1176,active,3572.0,כפר תפוח
-65,Karmei Tzur,כרמי צור,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,8.3,950.0,1984.0,60.0,3766.0,35.0998,31.6086,active,3766.0,כרמי צור
-66,Carmel,כרמל,Settlement,Peace Now + B'Tselem,Har Hebron,Cooperative,6.4,740.0,1981.0,61.0,3656.0,35.1843,31.4319,active,3656.0,כרמל
-67,Mevo Dotan,מבוא דותן,Settlement,Peace Now + B'Tselem,Shomron,Community,8.1,330.0,1978.0,62.0,3569.0,35.1738,32.4201,active,3569.0,מבוא דותן
-68,Mevo Horon,מבוא חורון,Settlement,Peace Now + B'Tselem,Binyamin,Cooperative,0.2,250.0,1970.0,63.0,3709.0,35.0356,31.8475,active,3709.0,מבוא חורון
-69,Mevo'ot Jericho,מבואות יריחו,Settlement,Peace Now,Jordan Valley,,,,2019.0,275.0,,,,active,3825.0,מבואות יריחו
-70,Migdal Oz,מגדל עוז,Settlement,Peace Now + B'Tselem,Gush Etzion,Kibbutz,7.4,940.0,1977.0,64.0,3561.0,35.1425,31.6392,active,3561.0,מגדל עוז
-71,Migdalim,מגדלים,Settlement,Peace Now + B'Tselem,Shomron,Community,32.7,790.0,1983.0,65.0,3751.0,35.3418,32.09,active,3751.0,מגדלים
+63,Kfar Etzion,כפר עציון,Settlement,Peace Now + B'Tselem,Gush Etzion,Kibbutz,4.7,955.0,1967.0,58.0,3488.0,35.1148,31.6489,active,,כפר עציון
+64,Kfar Tapuah,כפר תפוח,Settlement,Peace Now + B'Tselem,Shomron,Community,24.0,670.0,1978.0,59.0,3572.0,35.2474,32.1176,active,,כפר תפוח
+65,Karmei Tzur,כרמי צור,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,8.3,950.0,1984.0,60.0,3766.0,35.0998,31.6086,active,,כרמי צור
+66,Carmel,כרמל,Settlement,Peace Now + B'Tselem,Har Hebron,Cooperative,6.4,740.0,1981.0,61.0,3656.0,35.1843,31.4319,active,,כרמל
+67,Mevo Dotan,מבוא דותן,Settlement,Peace Now + B'Tselem,Shomron,Community,8.1,330.0,1978.0,62.0,3569.0,35.1738,32.4201,active,,מבוא דותן
+68,Mevo Horon,מבוא חורון,Settlement,Peace Now + B'Tselem,Binyamin,Cooperative,0.2,250.0,1970.0,63.0,3709.0,35.0356,31.8475,active,,מבוא חורון
+69,Mevo'ot Jericho,מבואות יריחו,Settlement,Peace Now,Jordan Valley,,,,2019.0,275.0,,,,active,,מבואות יריחו
+70,Migdal Oz,מגדל עוז,Settlement,Peace Now + B'Tselem,Gush Etzion,Kibbutz,7.4,940.0,1977.0,64.0,3561.0,35.1425,31.6392,active,,מגדל עוז
+71,Migdalim,מגדלים,Settlement,Peace Now + B'Tselem,Shomron,Community,32.7,790.0,1983.0,65.0,3751.0,35.3418,32.09,active,,מגדלים
 72,New Migron,מגרון החדשה,Settlement,Peace Now,Binyamin,,,,2012.0,335.0,,,,active,,מגרון החדשה
-73,Modi'in Ilit,מודיעין עילית,Settlement,Peace Now + B'Tselem,Modi'in Illit,Urban,0.6,280.0,1996.0,66.0,3797.0,35.0412,31.9316,active,3797.0,מודיעין עלית
-74,Mechola,מחולה,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,2.9,-180.0,1968.0,67.0,3599.0,35.5147,32.365,active,3599.0,מחולה
-75,Mechora,מכורה,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,26.4,225.0,1973.0,68.0,3614.0,35.4228,32.1646,active,3614.0,מכורה
-76,Ma'on,מעון,Settlement,Peace Now + B'Tselem,Har Hebron,Cooperative,4.7,770.0,1981.0,69.0,3657.0,35.163,31.4116,active,3657.0,מעון
-77,Ma'ale Adumim,מעלה אדומים,Settlement,Peace Now + B'Tselem,Ma'ale Adumim,Urban,4.5,500.0,1975.0,70.0,3616.0,35.3105,31.7812,active,3616.0,מעלה אדמים
-78,Ma'ale Efraim,מעלה אפרים,Settlement,Peace Now + B'Tselem,Jordan Valley,Urban,34.7,200.0,1970.0,71.0,3608.0,35.4054,32.0705,active,3608.0,מעלה אפרים
-79,Ma'ale Levona,מעלה לבונה,Settlement,Peace Now + B'Tselem,Binyamin,Community,21.8,770.0,1983.0,72.0,3752.0,35.2395,32.0544,active,3752.0,מעלה לבונה
-80,Ma'ale Michmash,מעלה מכמש,Settlement,Peace Now + B'Tselem,Binyamin,Community,10.9,590.0,1981.0,73.0,3651.0,35.3061,31.8789,active,3651.0,מעלה מכמש
-81,Ma'ale Amos,מעלה עמוס,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,14.1,715.0,1981.0,74.0,3653.0,35.2255,31.5989,active,3653.0,מעלה עמוס
+73,Modi'in Ilit,מודיעין עילית,Settlement,Peace Now + B'Tselem,Modi'in Illit,Urban,0.6,280.0,1996.0,66.0,3797.0,35.0412,31.9316,active,,מודיעין עלית
+74,Mechola,מחולה,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,2.9,-180.0,1968.0,67.0,3599.0,35.5147,32.365,active,,מחולה
+75,Mechora,מכורה,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,26.4,225.0,1973.0,68.0,3614.0,35.4228,32.1646,active,,מכורה
+76,Ma'on,מעון,Settlement,Peace Now + B'Tselem,Har Hebron,Cooperative,4.7,770.0,1981.0,69.0,3657.0,35.163,31.4116,active,,מעון
+77,Ma'ale Adumim,מעלה אדומים,Settlement,Peace Now + B'Tselem,Ma'ale Adumim,Urban,4.5,500.0,1975.0,70.0,3616.0,35.3105,31.7812,active,,מעלה אדמים
+78,Ma'ale Efraim,מעלה אפרים,Settlement,Peace Now + B'Tselem,Jordan Valley,Urban,34.7,200.0,1970.0,71.0,3608.0,35.4054,32.0705,active,,מעלה אפרים
+79,Ma'ale Levona,מעלה לבונה,Settlement,Peace Now + B'Tselem,Binyamin,Community,21.8,770.0,1983.0,72.0,3752.0,35.2395,32.0544,active,,מעלה לבונה
+80,Ma'ale Michmash,מעלה מכמש,Settlement,Peace Now + B'Tselem,Binyamin,Community,10.9,590.0,1981.0,73.0,3651.0,35.3061,31.8789,active,,מעלה מכמש
+81,Ma'ale Amos,מעלה עמוס,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,14.1,715.0,1981.0,74.0,3653.0,35.2255,31.5989,active,,מעלה עמוס
 82,Ma'ale Shomron,מעלה שומרון,Settlement,Peace Now + B'Tselem,Shomron,Community,7.9,315.0,1980.0,75.0,3637.0,35.0698,32.1644,active,,מעלה שומרון
 83,Yatir (aka Metzadot Yehuda),מצדות יהודה,Settlement,Peace Now + B'Tselem,Har Hebron,Community,0.2,780.0,1983.0,76.0,3745.0,35.1124,31.3632,active,,מצדות יהודה
 84,Mitzpe Eshtamoa,מצפה אשתמוע,Settlement,Peace Now,Har Hebron,,,,,286.0,,,,active,,מצפה אשתמוע
-85,Mitzpe Yericho,מצפה יריחו,Settlement,Peace Now + B'Tselem,Binyamin,Community,15.3,160.0,1978.0,77.0,3576.0,35.394,31.8159,active,3576.0,מצפה יריחו
-86,Mitzpe Shalem,מצפה שלם,Settlement,Peace Now + B'Tselem,Megilot,Kibbutz,7.8,-250.0,1971.0,78.0,3610.0,35.4,31.5688,active,3610.0,מצפה שלם
-87,Masu'a,משואה,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,30.0,-255.0,1970.0,79.0,3605.0,35.4916,32.1084,active,3605.0,משואה
-88,Maskiyot,משכיות,Settlement,Peace Now + B'Tselem,Jordan Valley,Community,8.5,30.0,,80.0,3785.0,35.5019,32.317,active,3785.0,משכיות
+85,Mitzpe Yericho,מצפה יריחו,Settlement,Peace Now + B'Tselem,Binyamin,Community,15.3,160.0,1978.0,77.0,3576.0,35.394,31.8159,active,,מצפה יריחו
+86,Mitzpe Shalem,מצפה שלם,Settlement,Peace Now + B'Tselem,Megilot,Kibbutz,7.8,-250.0,1971.0,78.0,3610.0,35.4,31.5688,active,,מצפה שלם
+87,Masu'a,משואה,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,30.0,-255.0,1970.0,79.0,3605.0,35.4916,32.1084,active,,משואה
+88,Maskiyot,משכיות,Settlement,Peace Now + B'Tselem,Jordan Valley,Community,8.5,30.0,,80.0,3785.0,35.5019,32.317,active,,משכיות
 89,Matityahu,מתיתיהו,Settlement,Peace Now + B'Tselem,Binyamin,Cooperative,0.0,290.0,1981.0,337.0,3648.0,35.042663,31.925974,active,,מתיתיהו
-90,Negohot,נגוהות,Settlement,Peace Now + B'Tselem,Har Hebron,Community,2.6,0.0,1999.0,82.0,3724.0,34.9791,31.4936,active,3724.0,נגוהות
-91,Neve Daniel,נווה דניאל,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,4.2,930.0,1982.0,83.0,3725.0,35.1428,31.6778,active,3725.0,נווה דניאל
-92,Nofei Prat,נופי פרת,Settlement,Peace Now + B'Tselem,Binyamin,Community,8.8,,1992.0,84.0,,35.3192284,31.8231247,active,3876.0,נופי פרת
-93,Nofim,נופים,Settlement,Peace Now + B'Tselem,Shomron,Urban,10.5,400.0,1987.0,85.0,3790.0,35.1006,32.1547,active,3790.0,נופים
-94,Nokdim,נוקדים,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,8.2,570.0,1982.0,86.0,3726.0,35.2464,31.6485,active,3726.0,נוקדים
+90,Negohot,נגוהות,Settlement,Peace Now + B'Tselem,Har Hebron,Community,2.6,0.0,1999.0,82.0,3724.0,34.9791,31.4936,active,,נגוהות
+91,Neve Daniel,נווה דניאל,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,4.2,930.0,1982.0,83.0,3725.0,35.1428,31.6778,active,,נווה דניאל
+92,Nofei Prat,נופי פרת,Settlement,Peace Now + B'Tselem,Binyamin,Community,8.8,,1992.0,84.0,,35.3192284,31.8231247,active,,נופי פרת
+93,Nofim,נופים,Settlement,Peace Now + B'Tselem,Shomron,Urban,10.5,400.0,1987.0,85.0,3790.0,35.1006,32.1547,active,,נופים
+94,Nokdim,נוקדים,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,8.2,570.0,1982.0,86.0,3726.0,35.2464,31.6485,active,,נוקדים
 95,Nahalei Tal (Kerem Reim),נחלי טל (כרם רעים),Settlement,Peace Now,Binyamin,,,,2012.0,339.0,,,,active,,נחלי טל כרם רעים
-96,Nahliel,נחליאל,Settlement,Peace Now + B'Tselem,Binyamin,Community,11.6,590.0,1984.0,87.0,3767.0,35.1389,31.9738,active,3767.0,נחליאל
+96,Nahliel,נחליאל,Settlement,Peace Now + B'Tselem,Binyamin,Community,11.6,590.0,1984.0,87.0,3767.0,35.1389,31.9738,active,,נחליאל
 97,Nili,"ניל""י",Settlement,Peace Now + B'Tselem,Binyamin,Community,3.8,360.0,1981.0,341.0,3655.0,35.047,31.9631,active,,ניל י
-98,Nirit,נירית,Settlement,Peace Now,Alfei Menashe,Community,0.0,,,89.0,,,,active,1236.0,נירית
+98,Nirit,נירית,Settlement,Peace Now,Alfei Menashe,Community,0.0,,,89.0,,,,active,,נירית
 99,Niran,נירן,Settlement,Peace Now + B'Tselem,Jordan Valley,Kibbutz,28.3,-165.0,1977.0,90.0,3620.0,35.4552,31.9673,active,,נירן
-100,Na'ale,נעלה,Settlement,Peace Now + B'Tselem,Binyamin,Community,4.9,420.0,1988.0,91.0,3787.0,35.0634,31.9626,active,3787.0,נעלה
+100,Na'ale,נעלה,Settlement,Peace Now + B'Tselem,Binyamin,Community,4.9,420.0,1988.0,91.0,3787.0,35.0634,31.9626,active,,נעלה
 101,Na'ama,נעמי (נעמה),Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,25.6,-200.0,1982.0,92.0,3713.0,35.4671,31.9063,active,,נעמי נעמה
-102,Nerya,נריה,Settlement,Peace Now,Binyamin,Community,,,1991.0,302.0,,,,active,3890.0,נריה
-103,Netiv Ha'gdud,נתיב הגדוד,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,29.0,-220.0,1976.0,94.0,3555.0,35.4439,31.9885,active,3555.0,נתיב הגדוד
-104,Susiya,סוסיה,Settlement,Peace Now + B'Tselem,Har Hebron,Community,3.2,800.0,1983.0,95.0,3756.0,35.1125,31.3925,active,3756.0,סוסיה
-105,Sal'it,סלעית,Settlement,Peace Now + B'Tselem,Shomron,Moshav,1.8,270.0,1977.0,96.0,3567.0,35.0511,32.2425,active,3567.0,סלעית
-106,Sansana,סנסנה,Settlement,Peace Now + B'Tselem,Har Hebron,Community,0.0,,1999.0,305.0,15101.0,34.9031843011,31.3629787383,active,3777.0,סנסנה
+102,Nerya,נריה,Settlement,Peace Now,Binyamin,Community,,,1991.0,302.0,,,,active,,נריה
+103,Netiv Ha'gdud,נתיב הגדוד,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,29.0,-220.0,1976.0,94.0,3555.0,35.4439,31.9885,active,,נתיב הגדוד
+104,Susiya,סוסיה,Settlement,Peace Now + B'Tselem,Har Hebron,Community,3.2,800.0,1983.0,95.0,3756.0,35.1125,31.3925,active,,סוסיה
+105,Sal'it,סלעית,Settlement,Peace Now + B'Tselem,Shomron,Moshav,1.8,270.0,1977.0,96.0,3567.0,35.0511,32.2425,active,,סלעית
+106,Sansana,סנסנה,Settlement,Peace Now + B'Tselem,Har Hebron,Community,0.0,,1999.0,305.0,15101.0,34.9031843011,31.3629787383,active,,סנסנה
 107,Ofarim,עופרים,Settlement,Peace Now,Beit Arye,Urban,3.3,,1989.0,98.0,,,,active,,עופרים
-108,Ateret,עטרת,Settlement,Peace Now + B'Tselem,Binyamin,Community,16.0,720.0,1981.0,99.0,3658.0,35.1763,32.0002,active,3658.0,עטרת
-109,Eli,עלי,Settlement,Peace Now + B'Tselem,Binyamin,Community,23.7,710.0,1984.0,100.0,3765.0,35.2666,32.072,active,3765.0,עלי
-110,Alei Zahav,עלי זהב,Settlement,Peace Now + B'Tselem,Shomron,Community,5.0,360.0,1982.0,101.0,3727.0,35.0654,32.0709,active,3727.0,עלי זהב
-111,Almon,עלמון,Settlement,Peace Now + B'Tselem,Binyamin,Community,6.9,590.0,1982.0,102.0,3715.0,35.2937,31.8294,active,3715.0,עלמון
-112,Amihai,עמיחי,Settlement,Peace Now + B'Tselem,Binyamin,Community,30.0,,2018.0,1062.0,,35.3223624,32.0457,active,3824.0,עמיחי
-113,Immanuel,עמנואל,Settlement,Peace Now + B'Tselem,Immanuel,Urban,13.2,400.0,1983.0,103.0,3660.0,35.1397,32.1641,active,3660.0,עמנואל
-114,Enav,ענב,Settlement,Peace Now + B'Tselem,Shomron,Community,8.8,300.0,1981.0,104.0,3712.0,35.1257,32.2845,active,3712.0,ענב
+108,Ateret,עטרת,Settlement,Peace Now + B'Tselem,Binyamin,Community,16.0,720.0,1981.0,99.0,3658.0,35.1763,32.0002,active,,עטרת
+109,Eli,עלי,Settlement,Peace Now + B'Tselem,Binyamin,Community,23.7,710.0,1984.0,100.0,3765.0,35.2666,32.072,active,,עלי
+110,Alei Zahav,עלי זהב,Settlement,Peace Now + B'Tselem,Shomron,Community,5.0,360.0,1982.0,101.0,3727.0,35.0654,32.0709,active,,עלי זהב
+111,Almon,עלמון,Settlement,Peace Now + B'Tselem,Binyamin,Community,6.9,590.0,1982.0,102.0,3715.0,35.2937,31.8294,active,,עלמון
+112,Amihai,עמיחי,Settlement,Peace Now + B'Tselem,Binyamin,Community,30.0,,2018.0,1062.0,,35.3223624,32.0457,active,,עמיחי
+113,Immanuel,עמנואל,Settlement,Peace Now + B'Tselem,Immanuel,Urban,13.2,400.0,1983.0,103.0,3660.0,35.1397,32.1641,active,,עמנואל
+114,Enav,ענב,Settlement,Peace Now + B'Tselem,Shomron,Community,8.8,300.0,1981.0,104.0,3712.0,35.1257,32.2845,active,,ענב
 115,Ofra,עפרה,Settlement,Peace Now + B'Tselem,Binyamin,Community,15.1,820.0,1975.0,105.0,3617.0,35.2623,31.9532,active,,עפרה
 116,Etz Efraim,עץ אפרים,Settlement,Peace Now + B'Tselem,Shomron,Urban,4.9,200.0,1985.0,106.0,3778.0,35.0457,32.119,active,,עץ אפרים
-117,Otniel,עתניאל,Settlement,Peace Now + B'Tselem,Har Hebron,Community,8.3,710.0,1983.0,107.0,3748.0,35.0288,31.4391,active,3748.0,עתניאל
-118,Pedu'el,פדואל,Settlement,Peace Now + B'Tselem,Shomron,Moshav,4.5,380.0,1984.0,108.0,3768.0,35.051,32.0618,active,3768.0,פדואל
-119,Pnei Hever,פני חבר,Settlement,Peace Now + B'Tselem,Har Hebron,Community,12.5,740.0,1982.0,109.0,3723.0,35.1647,31.4862,active,3723.0,פני חבר
-120,Psagot,פסגות,Settlement,Peace Now + B'Tselem,Binyamin,Community,9.6,860.0,1981.0,110.0,3659.0,35.2239,31.8985,active,3659.0,פסגות
-121,Petzael,פצאל,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,34.5,-235.0,1975.0,111.0,3615.0,35.4422,32.0438,active,3615.0,פצאל
-122,Tzofim,צופים,Settlement,Peace Now + B'Tselem,Shomron,Urban,1.8,160.0,1989.0,112.0,3791.0,35.0084,32.1982,active,3791.0,צופים
-123,Kedumim,קדומים,Settlement,Peace Now + B'Tselem,Kedumim,Community,12.5,405.0,1977.0,113.0,3557.0,35.1597,32.2168,active,3557.0,קדומים
-124,Keidar,קדר,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,6.0,530.0,1985.0,114.0,3781.0,35.3105,31.7538,active,3781.0,קדר
-125,Kalia,קליה,Settlement,Peace Now + B'Tselem,Megilot,Kibbutz,20.8,-360.0,1968.0,115.0,3601.0,35.4653,31.7502,active,3601.0,קליה
-126,Kiryat Arba,קרית ארבע,Settlement,Peace Now + B'Tselem,Kiryat Arba,Urban,15.2,945.0,1972.0,116.0,3611.0,35.1192,31.5332,active,3611.0,קרית ארבע
-127,Kiryat Netafim,קרית נטפים,Settlement,Peace Now + B'Tselem,Shomron,Community,10.7,445.0,1983.0,117.0,3746.0,35.1116,32.1165,active,3746.0,קרית נטפים
-128,Karnei Shomron,קרני שומרון,Settlement,Peace Now + B'Tselem,Karnei Shomron,Urban,9.0,340.0,1978.0,118.0,3640.0,35.0927,32.1705,active,3640.0,קרני שומרון
-129,Rosh Tzurim,ראש צורים,Settlement,Peace Now + B'Tselem,Gush Etzion,Kibbutz,3.9,940.0,1969.0,119.0,3602.0,35.1235,31.6679,active,3602.0,ראש צורים
-130,Revava,רבבה,Settlement,Peace Now + B'Tselem,Shomron,Community,12.3,420.0,1991.0,120.0,3795.0,35.1279,32.1183,active,3795.0,רבבה
-131,Ro'i,רועי,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,15.0,30.0,1976.0,121.0,3619.0,35.4882,32.2471,active,3619.0,רועי
-132,Rotem,רותם,Settlement,Peace Now + B'Tselem,Jordan Valley,Community,5.9,40.0,2001.0,122.0,3782.0,35.518,32.3361,active,3782.0,רותם
-133,Rechelim,רחלים,Settlement,Peace Now + B'Tselem,Shomron,Community,24.0,,1991.0,123.0,15031.0,35.2565731604,32.1022486546,active,3822.0,רחלים
-134,Reihan,ריחן,Settlement,Peace Now + B'Tselem,Shomron,Community,1.5,380.0,1977.0,124.0,3568.0,35.1361,32.4688,active,3568.0,ריחן
-135,Rimonim,רימונים,Settlement,Peace Now + B'Tselem,Binyamin,Community,18.2,680.0,1977.0,125.0,3565.0,35.3401,31.9334,active,3565.0,רימונים
-136,Shvut Rachel,שבות רחל,Settlement,Peace Now,Binyamin,Community,29.0,,1991.0,126.0,,,,active,3872.0,שבות רחל
-137,Shavei Shomron,שבי שומרון,Settlement,Peace Now + B'Tselem,Shomron,Community,13.3,350.0,1977.0,127.0,3571.0,35.1843,32.2629,active,3571.0,שבי שומרון
-138,Shadmot Mehola,שדמות מחולה,Settlement,Peace Now + B'Tselem,Jordan Valley,Cooperative,3.4,-155.0,1979.0,128.0,3578.0,35.5339,32.3461,active,3578.0,שדמות מחולה
-139,Shilo,שילה,Settlement,Peace Now + B'Tselem,Binyamin,Community,27.1,700.0,1979.0,129.0,3641.0,35.2998,32.0525,active,3641.0,שילה
-140,Shim'a,שמעה,Settlement,Peace Now + B'Tselem,Har Hebron,Community,2.9,615.0,1985.0,130.0,3784.0,35.0125,31.3877,active,3784.0,שמעה
-141,Shani,שני,Settlement,Peace Now + B'Tselem,Shimon,Community,0.0,,1981.0,131.0,,35.0709238,31.3574711,active,1287.0,שני
-142,Shaar Shomron,שער שומרון,Settlement,Peace Now,Shaar Shomron,Urban,,,2022.0,1169.0,,,,active,3826.0,שער שומרון
+117,Otniel,עתניאל,Settlement,Peace Now + B'Tselem,Har Hebron,Community,8.3,710.0,1983.0,107.0,3748.0,35.0288,31.4391,active,,עתניאל
+118,Pedu'el,פדואל,Settlement,Peace Now + B'Tselem,Shomron,Moshav,4.5,380.0,1984.0,108.0,3768.0,35.051,32.0618,active,,פדואל
+119,Pnei Hever,פני חבר,Settlement,Peace Now + B'Tselem,Har Hebron,Community,12.5,740.0,1982.0,109.0,3723.0,35.1647,31.4862,active,,פני חבר
+120,Psagot,פסגות,Settlement,Peace Now + B'Tselem,Binyamin,Community,9.6,860.0,1981.0,110.0,3659.0,35.2239,31.8985,active,,פסגות
+121,Petzael,פצאל,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,34.5,-235.0,1975.0,111.0,3615.0,35.4422,32.0438,active,,פצאל
+122,Tzofim,צופים,Settlement,Peace Now + B'Tselem,Shomron,Urban,1.8,160.0,1989.0,112.0,3791.0,35.0084,32.1982,active,,צופים
+123,Kedumim,קדומים,Settlement,Peace Now + B'Tselem,Kedumim,Community,12.5,405.0,1977.0,113.0,3557.0,35.1597,32.2168,active,,קדומים
+124,Keidar,קדר,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,6.0,530.0,1985.0,114.0,3781.0,35.3105,31.7538,active,,קדר
+125,Kalia,קליה,Settlement,Peace Now + B'Tselem,Megilot,Kibbutz,20.8,-360.0,1968.0,115.0,3601.0,35.4653,31.7502,active,,קליה
+126,Kiryat Arba,קרית ארבע,Settlement,Peace Now + B'Tselem,Kiryat Arba,Urban,15.2,945.0,1972.0,116.0,3611.0,35.1192,31.5332,active,,קרית ארבע
+127,Kiryat Netafim,קרית נטפים,Settlement,Peace Now + B'Tselem,Shomron,Community,10.7,445.0,1983.0,117.0,3746.0,35.1116,32.1165,active,,קרית נטפים
+128,Karnei Shomron,קרני שומרון,Settlement,Peace Now + B'Tselem,Karnei Shomron,Urban,9.0,340.0,1978.0,118.0,3640.0,35.0927,32.1705,active,,קרני שומרון
+129,Rosh Tzurim,ראש צורים,Settlement,Peace Now + B'Tselem,Gush Etzion,Kibbutz,3.9,940.0,1969.0,119.0,3602.0,35.1235,31.6679,active,,ראש צורים
+130,Revava,רבבה,Settlement,Peace Now + B'Tselem,Shomron,Community,12.3,420.0,1991.0,120.0,3795.0,35.1279,32.1183,active,,רבבה
+131,Ro'i,רועי,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,15.0,30.0,1976.0,121.0,3619.0,35.4882,32.2471,active,,רועי
+132,Rotem,רותם,Settlement,Peace Now + B'Tselem,Jordan Valley,Community,5.9,40.0,2001.0,122.0,3782.0,35.518,32.3361,active,,רותם
+133,Rechelim,רחלים,Settlement,Peace Now + B'Tselem,Shomron,Community,24.0,,1991.0,123.0,15031.0,35.2565731604,32.1022486546,active,,רחלים
+134,Reihan,ריחן,Settlement,Peace Now + B'Tselem,Shomron,Community,1.5,380.0,1977.0,124.0,3568.0,35.1361,32.4688,active,,ריחן
+135,Rimonim,רימונים,Settlement,Peace Now + B'Tselem,Binyamin,Community,18.2,680.0,1977.0,125.0,3565.0,35.3401,31.9334,active,,רימונים
+136,Shvut Rachel,שבות רחל,Settlement,Peace Now,Binyamin,Community,29.0,,1991.0,126.0,,,,active,,שבות רחל
+137,Shavei Shomron,שבי שומרון,Settlement,Peace Now + B'Tselem,Shomron,Community,13.3,350.0,1977.0,127.0,3571.0,35.1843,32.2629,active,,שבי שומרון
+138,Shadmot Mehola,שדמות מחולה,Settlement,Peace Now + B'Tselem,Jordan Valley,Cooperative,3.4,-155.0,1979.0,128.0,3578.0,35.5339,32.3461,active,,שדמות מחולה
+139,Shilo,שילה,Settlement,Peace Now + B'Tselem,Binyamin,Community,27.1,700.0,1979.0,129.0,3641.0,35.2998,32.0525,active,,שילה
+140,Shim'a,שמעה,Settlement,Peace Now + B'Tselem,Har Hebron,Community,2.9,615.0,1985.0,130.0,3784.0,35.0125,31.3877,active,,שמעה
+141,Shani,שני,Settlement,Peace Now + B'Tselem,Shimon,Community,0.0,,1981.0,131.0,,35.0709238,31.3574711,active,,שני
+142,Shaar Shomron,שער שומרון,Settlement,Peace Now,Shaar Shomron,Urban,,,2022.0,1169.0,,,,active,,שער שומרון
 143,Sha'arei Tikva,שערי תקווה,Settlement,Peace Now + B'Tselem,Shomron,Urban,2.7,185.0,1983.0,132.0,3720.0,35.0253,32.1227,active,,שערי תקווה
-144,Shaked,שקד,Settlement,Peace Now + B'Tselem,Shomron,Community,2.9,415.0,1981.0,133.0,3649.0,35.1679,32.4732,active,3649.0,שקד
-145,Tomer,תומר,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,31.2,-220.0,1978.0,134.0,3558.0,35.4383,32.0187,active,3558.0,תומר
-146,Telem,תלם,Settlement,Peace Now + B'Tselem,Har Hebron,Community,7.4,720.0,1982.0,135.0,3719.0,35.0306,31.5636,active,3719.0,תלם
-147,Tko'a,תקוע,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,8.4,675.0,1977.0,136.0,3563.0,35.2299,31.6489,active,3563.0,תקוע
-148,Tel Zion,תל ציון,Settlement,Peace Now,Binyamin,Urban,,,2000.0,1231.0,,,,active,3815.0,תל ציון
+144,Shaked,שקד,Settlement,Peace Now + B'Tselem,Shomron,Community,2.9,415.0,1981.0,133.0,3649.0,35.1679,32.4732,active,,שקד
+145,Tomer,תומר,Settlement,Peace Now + B'Tselem,Jordan Valley,Moshav,31.2,-220.0,1978.0,134.0,3558.0,35.4383,32.0187,active,,תומר
+146,Telem,תלם,Settlement,Peace Now + B'Tselem,Har Hebron,Community,7.4,720.0,1982.0,135.0,3719.0,35.0306,31.5636,active,,תלם
+147,Tko'a,תקוע,Settlement,Peace Now + B'Tselem,Gush Etzion,Community,8.4,675.0,1977.0,136.0,3563.0,35.2299,31.6489,active,,תקוע
+148,Tel Zion,תל ציון,Settlement,Peace Now,Binyamin,Urban,,,2000.0,1231.0,,,,active,,תל ציון
 149,Gilad Farm,חוות גלעד,Settlement (B'Tselem-only),B'Tselem,,,,,2002.0,,15009.0,35.1811931992,32.1994737719,active,,חוות גלעד
 150,,קדר הישנה,Settlement (B'Tselem-only),B'Tselem,,,,,1995.0,,,35.3010143,31.7455251,active,,קדר הישנה
 151,Avraham Avinu,אברהם אבינו,Hebron Enclave,B'Tselem,,,,,,,16007.0,35.1069241102,31.5233897798,active,,אברהם אבינו
@@ -172,7 +172,7 @@ settlement_id,name_en,name_he,type,source,regional_council,urban_pattern,dist_gl
 171,Har Hemed,הר חמד,Outpost,Peace Now,Kedumim,Outpost,,,1996.0,257.0,,35.151163,32.230107,active,,הר חמד
 172,Nahalat Ami,נחלת עמי,Outpost,Peace Now,Har Hebron,Outpost,,,1996.0,1209.0,,35.033134,31.438937,active,,נחלת עמי
 173,Ma'ale Yisrael,מעלה ישראל,Outpost,Peace Now,Shomron,Outpost,,,1997.0,283.0,,35.10414,32.115099,active,,מעלה ישראל
-174,Ahiya,אחיה,Outpost,Peace Now,Binyamin,Outpost,,,1997.0,224.0,,35.327384,32.060513,active,3875.0,אחיה
+174,Ahiya,אחיה,Outpost,Peace Now,Binyamin,Outpost,,,1997.0,224.0,,35.327384,32.060513,active,,אחיה
 175,Givat Barkai - Mizpe Jericho East,גבעת ברקאי - מצפה יריחו מזרח,Outpost,Peace Now,Binyamin,Outpost,,,1997.0,291.0,,35.401979,31.823026,active,,גבעת ברקאי מצפה יריחו מזרח
 176,Bat Ayin East,בת עין מזרח,Outpost,Peace Now,Gush Etzion,Outpost,,,1998.0,235.0,,35.107815,31.65289,active,,בת עין מזרח
 177,Lehavat Yitzhar,להבת יצהר,Outpost,Peace Now,Shomron,Outpost,,,1998.0,273.0,,35.246139,32.163212,active,,להבת יצהר
@@ -185,7 +185,7 @@ settlement_id,name_en,name_he,type,source,regional_council,urban_pattern,dist_gl
 184,Gva'ot Olam,גבעות עולם,Outpost,Peace Now,Shomron,Outpost,,,1998.0,243.0,,35.351898,32.159946,active,,גבעות עולם
 185,Givat Harel,גבעת הראל,Outpost,Peace Now,Binyamin,Outpost,,,1998.0,247.0,,35.274044,32.058602,active,,גבעת הראל
 186,Hahar,ההר,Outpost,Peace Now,Shomron,Outpost,,,1998.0,252.0,,35.084059,32.287291,active,,ההר
-187,Adei Ad,עדי עד,Outpost,Peace Now,Binyamin,Outpost,,,1998.0,306.0,,35.334802,32.04018,active,3874.0,עדי עד
+187,Adei Ad,עדי עד,Outpost,Peace Now,Binyamin,Outpost,,,1998.0,306.0,,35.334802,32.04018,active,,עדי עד
 188,Hayovel,היובל,Outpost,Peace Now,Binyamin,Outpost,,,1998.0,254.0,,35.283895,32.070888,active,,היובל
 189,Ahavat Hayim,אהבת חיים,Outpost,Peace Now,Binyamin,Outpost,,,1999.0,222.0,,35.341201,31.957796,active,,אהבת חיים
 190,Alonei Shilo,אלוני שילה,Outpost,Peace Now,Karnei Shomron,Outpost,,,1999.0,226.0,,35.120487,32.163411,active,,אלוני שילה
@@ -208,7 +208,7 @@ settlement_id,name_en,name_he,type,source,regional_council,urban_pattern,dist_gl
 207,Mitzpe Kramim,מצפה כרמים,Outpost,Peace Now,Binyamin,Outpost,,,2001.0,292.0,,35.356661,31.958034,active,,מצפה כרמים
 208,Jabel Artis,ג'בל ע'רטיס,Outpost,Peace Now,Beit El,Outpost,,,2001.0,237.0,,35.223137,31.940537,active,,ג בל ע רטיס
 209,Mul Nevo Beit Hogla,מול נבו בית חגלה,Outpost,Peace Now,Jordan Valley,Outpost,,,2001.0,278.0,,35.506933,31.820793,active,,מול נבו בית חגלה
-210,Avigayil,אביגיל,Outpost,Peace Now,Har Hebron,Outpost,,,2001.0,221.0,,35.140399,31.402505,active,3869.0,אביגיל
+210,Avigayil,אביגיל,Outpost,Peace Now,Har Hebron,Outpost,,,2001.0,221.0,,35.140399,31.402505,active,,אביגיל
 211,Tkuma Hill 725,גבעת תקומה 725,Outpost,Peace Now,Shomron,Outpost,,,2001.0,238.0,,35.238442,32.157564,active,,גבעת תקומה 725
 212,Susiya - The Rujm Neighborhood/Givat Hachlil,סוסיא צפון מערב - שכונת הרוג'ום/גבעת חכליל,Outpost,Peace Now,Har Hebron,Outpost,,,2001.0,303.0,,35.109122,31.394702,active,,סוסיא צפון מערב שכונת הרוג ום/גבעת חכליל
 213,Tzur Shalem,צור שלם,Outpost,Peace Now,Gush Etzion,Outpost,,,2001.0,312.0,,35.096885,31.605709,active,,צור שלם
@@ -222,7 +222,7 @@ settlement_id,name_en,name_he,type,source,regional_council,urban_pattern,dist_gl
 221,Ma'ale Rehav'am,מעלה רחבעם,Outpost,Peace Now,Gush Etzion,Outpost,,,2002.0,284.0,,35.257522,31.648737,active,,מעלה רחבעם
 222,Mitzpe Lachish,מצפה לכיש - גבעת הבוסטר,Outpost,Peace Now,Har Hebron,Outpost,,,2002.0,293.0,,34.970185,31.496257,active,,מצפה לכיש גבעת הבוסטר
 223,Granit Hill Alt. 468,גבעת גרניט נ.ג. 468,Outpost,Peace Now,Binyamin,Outpost,,,2002.0,328.0,,35.314288,31.819604,active,,גבעת גרניט נ ג 468
-224,Asa'el,עשהאל,Outpost,Peace Now,Har Hebron,Outpost,,,2002.0,309.0,,35.042343,31.373761,active,3861.0,עשהאל
+224,Asa'el,עשהאל,Outpost,Peace Now,Har Hebron,Outpost,,,2002.0,309.0,,35.042343,31.373761,active,,עשהאל
 225,Ramat Gilad,רמת גלעד,Outpost,Peace Now,Karnei Shomron,Outpost,,,2002.0,315.0,,35.112789,32.179405,active,,רמת גלעד
 226,Tko'a D,תקוע ד,Outpost,Peace Now,Gush Etzion,Outpost,,,2002.0,319.0,,35.238074,31.636487,active,,תקוע ד
 227,Ancient Susiya Synagogue,"ביהכנ""ס העתיק סוסיא",Outpost,Peace Now,Har Hebron,Outpost,,,2002.0,230.0,,35.10361,31.406605,active,,ביהכנ ס העתיק סוסיא
@@ -254,14 +254,14 @@ settlement_id,name_en,name_he,type,source,regional_council,urban_pattern,dist_gl
 253,Kumi Uri,קומי אורי,Outpost,Peace Now,,Outpost,,,2014.0,1172.0,,35.236804,32.157813,active,,קומי אורי
 254,Oz Vegaon,עוז וגאון,Outpost,Peace Now,Gush Etzion,Outpost,,,2014.0,1089.0,,35.13356,31.641507,active,,עוז וגאון
 255,keidar South,קדר דרום - קדר הישנה,Outpost,Peace Now,Gush Etzion,Outpost,,,2014.0,347.0,,35.301578,31.746074,active,,קדר דרום קדר הישנה
-256,Malachei HaShalom,מלאכי השלום,Outpost,Peace Now,Binyamin,Farm Outpost,,,2015.0,1072.0,,35.363438,32.023651,active,3863.0,מלאכי השלום
+256,Malachei HaShalom,מלאכי השלום,Outpost,Peace Now,Binyamin,Farm Outpost,,,2015.0,1072.0,,35.363438,32.023651,active,,מלאכי השלום
 257,Mehula West - Neve Roim,שירת העשבים - נווה רועים,Outpost,Peace Now,Jordan Valley,Farm Outpost,,,2016.0,1068.0,,35.503758,32.36455,active,,שירת העשבים נווה רועים
 258,Nof Gilad Farm - Um Zuka,"אום זוקא, חוות נוף גלעד",Outpost,Peace Now,Jordan Valley,Farm Outpost,,,2016.0,1069.0,,35.51909,32.289011,active,,"אום זוקא, חוות נוף גלעד"
 259,Meged Shami'm,מגד שמים,Outpost,Peace Now,Shomron,Outpost,,,2016.0,1211.0,,35.244525,32.166206,active,,מגד שמים
-260,Kedem Arava,קדם ערבה,Outpost,Peace Now,Megilot,Outpost,,,2017.0,1067.0,,35.498923,31.806608,active,3895.0,קדם ערבה
+260,Kedem Arava,קדם ערבה,Outpost,Peace Now,Megilot,Outpost,,,2017.0,1067.0,,35.498923,31.806608,active,,קדם ערבה
 261,Shabtay's Farm,"החווה של שבתאי, חוות אברהם",Outpost,Peace Now,Har Hebron,Farm Outpost,,,2017.0,1074.0,,34.966772,31.368181,active,,"החווה של שבתאי, חוות אברהם"
 262,Neve Achi,"נווה אח""י",Outpost,Peace Now,Binyamin,Outpost,,,2017.0,1073.0,,35.130973,32.008805,active,,נווה אח י
-263,Homesh,חומש,Outpost,Peace Now,Shomron,Outpost,,,2017.0,333.0,,35.192455,32.30769,active,3642.0,חומש
+263,Homesh,חומש,Outpost,Peace Now,Shomron,Outpost,,,2017.0,333.0,,35.192455,32.30769,active,,חומש
 264,Bentayim Farm,חוות בינתיים,Outpost,Peace Now,Jordan Valley,Farm Outpost,,,2018.0,1095.0,,35.50823,32.317917,active,,חוות בינתיים
 265,Yetedot Farm,חוות יתדות - חוות גלעד דרום,Outpost,Peace Now,Shomron,Farm Outpost,,,2018.0,1097.0,,35.181981,32.190618,active,,חוות יתדות חוות גלעד דרום
 266,Negohot Farm,חוות נגוהות,Outpost,Peace Now,Har Hebron,Farm Outpost,,,2018.0,1091.0,,34.972828,31.491369,active,,חוות נגוהות
@@ -271,7 +271,7 @@ settlement_id,name_en,name_he,type,source,regional_council,urban_pattern,dist_gl
 270,Gadi Base,מחנה גדי,Outpost,Peace Now,Jordan Valley,Outpost,,,2018.0,1093.0,,35.486226,32.122814,active,,מחנה גדי
 271,Kida East,קידה מזרח - כחלית,Outpost,Peace Now,Binyamin,Farm Outpost,,,2018.0,1096.0,,35.345302,32.051717,active,,קידה מזרח כחלית
 272,Geulat Zion,גאולת ציון,Outpost,Peace Now,Binyamin,Outpost,,,2018.0,353.0,,35.323079,32.046158,active,,גאולת ציון
-273,Adorayim,אדוריים,Outpost,Peace Now,Har Hebron,Outpost,,,2019.0,1132.0,,35.042662,31.484008,active,3987.0,אדוריים
+273,Adorayim,אדוריים,Outpost,Peace Now,Har Hebron,Outpost,,,2019.0,1132.0,,35.042662,31.484008,active,,אדוריים
 274,Adis Elem Farm,חוות אדיס אלם,Outpost,Peace Now,Binyamin,Farm Outpost,,,2019.0,1137.0,,34.986705,31.836244,active,,חוות אדיס אלם
 275,Eretz Hatzvi Farm - Nachliel,חוות ארץ הצבי - נחליאל,Outpost,Peace Now,Binyamin,Farm Outpost,,,2019.0,1125.0,,35.137577,31.971451,active,,חוות ארץ הצבי נחליאל
 276,Meged Haaretz Farm,חוות מגד הארץ אבני חפץ,Outpost,Peace Now,Shomron,Farm Outpost,,,2019.0,1124.0,,35.065373,32.292534,active,,חוות מגד הארץ אבני חפץ
@@ -482,42 +482,42 @@ settlement_id,name_en,name_he,type,source,regional_council,urban_pattern,dist_gl
 481,Nof Mishkan Farm,חוות נוף המשכן,Outpost,Peace Now,Binyamin,Farm Outpost,,,2025.0,1389.0,,35.298817,32.058425,active,,חוות נוף המשכן
 482,Meitr LaAretz Farm,חוות מאיר לארץ,Outpost,Peace Now,Binyamin,Farm Outpost,,,2025.0,1380.0,,35.064342,32.008023,active,,חוות מאיר לארץ
 483,Narhiva,נרחיבה,Outpost,Peace Now,Shomron,Outpost,,,2025.0,1346.0,,35.120873,32.126285,active,,נרחיבה
-484,Avne Etan,אבני איתן,Golan Settlement,CBS,Golan,Moshav,,381.0,1978.0,,,35.7652,32.8232,active,4011.0,אבני איתן
-485,Odem,אודם,Golan Settlement,CBS,Golan,Moshav Shitufi,,1050.0,1976.0,,,35.7495,33.1935,active,4010.0,אודם
-486,Ortal,אורטל,Golan Settlement,CBS,Golan,Kibbutz,,885.0,1978.0,,,35.7587,33.0869,active,4013.0,אורטל
-487,El-Rom,אל -רום,Golan Settlement,CBS,Golan,Kibbutz,,1049.0,1971.0,,,35.7713,33.1807,active,4003.0,אל רום
-488,Allone HaBashan,אלוני הבשן,Golan Settlement,CBS,Golan,Moshav Shitufi,,962.0,1981.0,,,35.8387,33.044,active,4017.0,אלוני הבשן
-489,Eli-Ad,אלי-עד,Golan Settlement,CBS,Golan,Moshav,,367.0,1968.0,,,35.7349,32.8051,active,4002.0,אלי עד
-490,Ani'am,אניעם,Golan Settlement,CBS,Golan,Moshav,,426.0,1978.0,,,35.7401,32.9573,active,4012.0,אניעם
-491,Afiq,אפיק,Golan Settlement,CBS,Golan,Kibbutz,,339.0,1967.0,,,35.7011,32.7783,active,4301.0,אפיק
-492,Buq'ata,בוקעאתא,Golan Non-Jewish Locality,CBS,Buq'ata,Village,,1096.0,,,,35.7787,33.2016,active,4001.0,בוקעאתא
-493,Bene Yehuda,בני יהודה,Golan Settlement,CBS,Golan,Community,,344.0,1972.0,,,35.6894,32.7982,active,4015.0,בני יהודה
-494,Giv'at Yo'av,גבעת יואב,Golan Settlement,CBS,Golan,Moshav,,311.0,1968.0,,,35.6817,32.7991,active,4021.0,גבעת יואב
-495,Geshur,גשור,Golan Settlement,CBS,Golan,Kibbutz,,347.0,1971.0,,,35.717,32.8188,active,4022.0,גשור
-496,Had-Nes,חד-נס,Golan Settlement,CBS,Golan,Community,,-7.0,1989.0,,,35.6424,32.9274,active,4026.0,חד נס
-497,Haspin,חספין,Golan Settlement,CBS,Golan,Community,,418.0,1973.0,,,35.7943,32.8454,active,4005.0,חספין
-498,Yonatan,יונתן,Golan Settlement,CBS,Golan,Moshav Shitufi,,550.0,1976.0,,,35.7944,32.938,active,4007.0,יונתן
-499,Kanaf,כנף,Golan Settlement,CBS,Golan,Moshav,,294.0,1991.0,,,35.6999,32.8696,active,4028.0,כנף
-500,Kefar Haruv,כפר חרוב,Golan Settlement,CBS,Golan,Kibbutz,,310.0,1974.0,,,35.6633,32.7627,active,4004.0,כפר חרוב
-501,Mevo Hamma,מבוא חמה,Golan Settlement,CBS,Golan,Kibbutz,,347.0,1968.0,,,35.6554,32.7377,active,4204.0,מבוא חמה
-502,Majdal Shams,מג'דל שמס,Golan Non-Jewish Locality,CBS,Majdal Shams,Village,,1226.0,,,,35.7702,33.2636,active,4201.0,מג דל שמס
-503,Mezar,מיצר,Golan Settlement,CBS,Golan,Moshav,,359.0,1981.0,,,35.736,32.7671,active,4019.0,מיצר
-504,Mas'ade,מסעדה,Golan Non-Jewish Locality,CBS,Mas'ade,Village,,1035.0,,,,35.7567,33.231,active,4203.0,מסעדה
-505,Ma'ale Gamla,מעלה גמלא,Golan Settlement,CBS,Golan,Moshav,,113.0,1976.0,,,35.6842,32.8894,active,4008.0,מעלה גמלא
-506,Merom Golan,מרום גולן,Golan Settlement,CBS,Golan,Kibbutz,,977.0,1967.0,,,35.7758,33.1331,active,4101.0,מרום גולן
-507,Ne'ot Golan,נאות גולן,Golan Settlement,CBS,Golan,Moshav,,312.0,1967.0,,,35.6911,32.7864,active,4551.0,נאות גולן
-508,Nov,נוב,Golan Settlement,CBS,Golan,Moshav,,408.0,1973.0,,,35.7827,32.8328,active,4304.0,נוב
+484,Avne Etan,אבני איתן,Golan Settlement,CBS,Golan,Moshav,,381.0,1978.0,,,35.7652,32.8232,active,,אבני איתן
+485,Odem,אודם,Golan Settlement,CBS,Golan,Moshav Shitufi,,1050.0,1976.0,,,35.7495,33.1935,active,,אודם
+486,Ortal,אורטל,Golan Settlement,CBS,Golan,Kibbutz,,885.0,1978.0,,,35.7587,33.0869,active,,אורטל
+487,El-Rom,אל -רום,Golan Settlement,CBS,Golan,Kibbutz,,1049.0,1971.0,,,35.7713,33.1807,active,,אל רום
+488,Allone HaBashan,אלוני הבשן,Golan Settlement,CBS,Golan,Moshav Shitufi,,962.0,1981.0,,,35.8387,33.044,active,,אלוני הבשן
+489,Eli-Ad,אלי-עד,Golan Settlement,CBS,Golan,Moshav,,367.0,1968.0,,,35.7349,32.8051,active,,אלי עד
+490,Ani'am,אניעם,Golan Settlement,CBS,Golan,Moshav,,426.0,1978.0,,,35.7401,32.9573,active,,אניעם
+491,Afiq,אפיק,Golan Settlement,CBS,Golan,Kibbutz,,339.0,1967.0,,,35.7011,32.7783,active,,אפיק
+492,Buq'ata,בוקעאתא,Golan Non-Jewish Locality,CBS,Buq'ata,Village,,1096.0,,,,35.7787,33.2016,active,,בוקעאתא
+493,Bene Yehuda,בני יהודה,Golan Settlement,CBS,Golan,Community,,344.0,1972.0,,,35.6894,32.7982,active,,בני יהודה
+494,Giv'at Yo'av,גבעת יואב,Golan Settlement,CBS,Golan,Moshav,,311.0,1968.0,,,35.6817,32.7991,active,,גבעת יואב
+495,Geshur,גשור,Golan Settlement,CBS,Golan,Kibbutz,,347.0,1971.0,,,35.717,32.8188,active,,גשור
+496,Had-Nes,חד-נס,Golan Settlement,CBS,Golan,Community,,-7.0,1989.0,,,35.6424,32.9274,active,,חד נס
+497,Haspin,חספין,Golan Settlement,CBS,Golan,Community,,418.0,1973.0,,,35.7943,32.8454,active,,חספין
+498,Yonatan,יונתן,Golan Settlement,CBS,Golan,Moshav Shitufi,,550.0,1976.0,,,35.7944,32.938,active,,יונתן
+499,Kanaf,כנף,Golan Settlement,CBS,Golan,Moshav,,294.0,1991.0,,,35.6999,32.8696,active,,כנף
+500,Kefar Haruv,כפר חרוב,Golan Settlement,CBS,Golan,Kibbutz,,310.0,1974.0,,,35.6633,32.7627,active,,כפר חרוב
+501,Mevo Hamma,מבוא חמה,Golan Settlement,CBS,Golan,Kibbutz,,347.0,1968.0,,,35.6554,32.7377,active,,מבוא חמה
+502,Majdal Shams,מג'דל שמס,Golan Non-Jewish Locality,CBS,Majdal Shams,Village,,1226.0,,,,35.7702,33.2636,active,,מג דל שמס
+503,Mezar,מיצר,Golan Settlement,CBS,Golan,Moshav,,359.0,1981.0,,,35.736,32.7671,active,,מיצר
+504,Mas'ade,מסעדה,Golan Non-Jewish Locality,CBS,Mas'ade,Village,,1035.0,,,,35.7567,33.231,active,,מסעדה
+505,Ma'ale Gamla,מעלה גמלא,Golan Settlement,CBS,Golan,Moshav,,113.0,1976.0,,,35.6842,32.8894,active,,מעלה גמלא
+506,Merom Golan,מרום גולן,Golan Settlement,CBS,Golan,Kibbutz,,977.0,1967.0,,,35.7758,33.1331,active,,מרום גולן
+507,Ne'ot Golan,נאות גולן,Golan Settlement,CBS,Golan,Moshav,,312.0,1967.0,,,35.6911,32.7864,active,,נאות גולן
+508,Nov,נוב,Golan Settlement,CBS,Golan,Moshav,,408.0,1973.0,,,35.7827,32.8328,active,,נוב
 509,Newe Ativ,"נווה אטי""ב",Golan Settlement,CBS,Golan,Moshav,,978.0,1972.0,,,35.7417,33.2622,active,,נווה אטי ב
-510,Natur,נטור,Golan Settlement,CBS,Golan,Moshav,,411.0,1980.0,,,35.7531,32.8532,active,4014.0,נטור
-511,Nimrod,נמרוד,Golan Settlement,CBS,Golan,Community,,1095.0,,,,35.7517,33.2457,active,4035.0,נמרוד
-512,Ghajar,ע'ג'ר,Golan Non-Jewish Locality,CBS,Ghajar,Village,,282.0,,,,35.6234,33.2707,active,4501.0,ע ג ר
-513,En Ziwan,עין זיוון,Golan Settlement,CBS,Golan,Kibbutz,,969.0,1968.0,,,35.796,33.0965,active,4503.0,עין זיוון
-514,Ein Qiniyye,עין קנייא,Golan Non-Jewish Locality,CBS,Ein Qiniyye,Village,,801.0,,,,35.7315,33.2371,active,4502.0,עין קנייא
-515,Qidmat Zevi,קדמת צבי,Golan Settlement,CBS,Golan,Moshav,,475.0,1985.0,,,35.6977,33.03,active,4025.0,קדמת צבי
-516,Qela,קלע,Golan Settlement,CBS,Golan,Community,,612.0,1984.0,,,35.684,33.1317,active,4024.0,קלע
-517,Qazrin,קצרין,Golan Settlement,CBS,Katzrin,Urban,,332.0,1977.0,,,35.6868,32.9925,active,4100.0,קצרין
-518,Qeshet,קשת,Golan Settlement,CBS,Golan,Moshav Shitufi,,702.0,1974.0,,,35.8085,32.9798,active,4006.0,קשת
-519,Ramot,רמות,Golan Settlement,CBS,Golan,Moshav,,-9.0,1970.0,,,35.6667,32.8497,active,4702.0,רמות
-520,President Trump Heights,רמת הנשיא טראמפ,Golan Settlement,CBS,Golan,Community,,662.0,2022.0,,,35.6907,33.1323,active,4029.0,רמת הנשיא טראמפ
-521,Ramat Magshimim,רמת מגשימים,Golan Settlement,CBS,Golan,Moshav Shitufi,,429.0,1968.0,,,35.8079,32.8448,active,4701.0,רמת מגשימים
-522,Sha'al,שעל,Golan Settlement,CBS,Golan,Moshav,,779.0,1976.0,,,35.7182,33.1165,active,4009.0,שעל
+510,Natur,נטור,Golan Settlement,CBS,Golan,Moshav,,411.0,1980.0,,,35.7531,32.8532,active,,נטור
+511,Nimrod,נמרוד,Golan Settlement,CBS,Golan,Community,,1095.0,,,,35.7517,33.2457,active,,נמרוד
+512,Ghajar,ע'ג'ר,Golan Non-Jewish Locality,CBS,Ghajar,Village,,282.0,,,,35.6234,33.2707,active,,ע ג ר
+513,En Ziwan,עין זיוון,Golan Settlement,CBS,Golan,Kibbutz,,969.0,1968.0,,,35.796,33.0965,active,,עין זיוון
+514,Ein Qiniyye,עין קנייא,Golan Non-Jewish Locality,CBS,Ein Qiniyye,Village,,801.0,,,,35.7315,33.2371,active,,עין קנייא
+515,Qidmat Zevi,קדמת צבי,Golan Settlement,CBS,Golan,Moshav,,475.0,1985.0,,,35.6977,33.03,active,,קדמת צבי
+516,Qela,קלע,Golan Settlement,CBS,Golan,Community,,612.0,1984.0,,,35.684,33.1317,active,,קלע
+517,Qazrin,קצרין,Golan Settlement,CBS,Katzrin,Urban,,332.0,1977.0,,,35.6868,32.9925,active,,קצרין
+518,Qeshet,קשת,Golan Settlement,CBS,Golan,Moshav Shitufi,,702.0,1974.0,,,35.8085,32.9798,active,,קשת
+519,Ramot,רמות,Golan Settlement,CBS,Golan,Moshav,,-9.0,1970.0,,,35.6667,32.8497,active,,רמות
+520,President Trump Heights,רמת הנשיא טראמפ,Golan Settlement,CBS,Golan,Community,,662.0,2022.0,,,35.6907,33.1323,active,,רמת הנשיא טראמפ
+521,Ramat Magshimim,רמת מגשימים,Golan Settlement,CBS,Golan,Moshav Shitufi,,429.0,1968.0,,,35.8079,32.8448,active,,רמת מגשימים
+522,Sha'al,שעל,Golan Settlement,CBS,Golan,Moshav,,779.0,1976.0,,,35.7182,33.1165,active,,שעל
